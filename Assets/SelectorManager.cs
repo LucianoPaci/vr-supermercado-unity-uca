@@ -115,7 +115,6 @@ public class SelectorManager : MonoBehaviour
         Iniciado = true;
         if (Iniciado)
         {
-
         }
     }
     public void carne()
@@ -203,7 +202,7 @@ public class SelectorManager : MonoBehaviour
         {
             case 1://carne
 
-                if (Input.GetKeyDown(KeyCode.Alpha1))
+                if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetButtonDown("ButtonB"))
                 {
                     carne();
                     //boolCarne = true;
@@ -212,7 +211,7 @@ public class SelectorManager : MonoBehaviour
                     GuardarTiempoCARNE.text = Tiempo.GetComponent<Timer>().tiempotext.text;
                     stan = 0;
                 }
-                if (Input.GetKeyDown(KeyCode.Alpha2))
+                if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetButtonDown("ButtonC"))
                 {
                     //queso();
                     //StartCoroutine(LateCall(feedbackCARNE));
@@ -221,7 +220,7 @@ public class SelectorManager : MonoBehaviour
                     PE_Pollo.SetActive(true);
                     stan = 0;
                 }
-                if (Input.GetKeyDown(KeyCode.Alpha3))
+                if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetButtonDown("ButtonA"))
                 {
                     //juguetes();
                     //StartCoroutine(LateCall(feedbackCARNE));
@@ -233,7 +232,7 @@ public class SelectorManager : MonoBehaviour
                 break;
             case 2://Juguetes
 
-                if (Input.GetKeyDown(KeyCode.Alpha1))
+                if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetButtonDown("ButtonB"))
                 {
                     //carne();
                     StartCoroutine(LateCall(feedbackJUGUETES));
@@ -242,7 +241,7 @@ public class SelectorManager : MonoBehaviour
                     PE_Osito.SetActive(true);
                     stan = 0;
                 }
-                if (Input.GetKeyDown(KeyCode.Alpha2))
+                if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetButtonDown("ButtonC"))
                 {
                     //queso();
                     StartCoroutine(LateCall(feedbackJUGUETES));
@@ -251,7 +250,7 @@ public class SelectorManager : MonoBehaviour
                     PE_Auto.SetActive(true);
                     stan = 0;
                 }
-                if (Input.GetKeyDown(KeyCode.Alpha3))
+                if (Input.GetKeyDown(KeyCode.Alpha3)|| Input.GetButtonDown("ButtonA"))
                 {
                     juguetes();
                     //boolJuguetes = true;
@@ -263,7 +262,7 @@ public class SelectorManager : MonoBehaviour
                 break;
             case 3://Lacteos
 
-                if (Input.GetKeyDown(KeyCode.Alpha1))
+                if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetButtonDown("ButtonB"))
                 {
                     //carne();
                     //StartCoroutine(LateCall(feedbackLACTEOS));
@@ -272,7 +271,7 @@ public class SelectorManager : MonoBehaviour
                     PE_Leche.SetActive(true);
                     stan = 0;
                 }
-                if (Input.GetKeyDown(KeyCode.Alpha2))
+                if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetButtonDown("ButtonC"))
                 {
 
                     //StartCoroutine(LateCall(feedbackLACTEOS));
@@ -282,7 +281,7 @@ public class SelectorManager : MonoBehaviour
                     queso();
                     stan = 0;
                 }
-                if (Input.GetKeyDown(KeyCode.Alpha3))
+                if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetButtonDown("ButtonA"))
                 {
                     //juguetes();
                     feedbackLACTEOS.SetActive(false);
@@ -294,7 +293,7 @@ public class SelectorManager : MonoBehaviour
                 break;
             case 4://Perfumes
 
-                if (Input.GetKeyDown(KeyCode.Alpha1))
+                if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetButtonDown("ButtonB"))
                 {
                     feedbackPERFUME.SetActive(true);
                     StartCoroutine(LateCall(feedbackPERFUME));
@@ -303,7 +302,7 @@ public class SelectorManager : MonoBehaviour
                     PE_Perfume.SetActive(true);
                     stan = 0;
                 }
-                if (Input.GetKeyDown(KeyCode.Alpha2))
+                if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetButtonDown("ButtonC"))
                 {
                     Opciones.SetActive(false);
                     stan = 0;
@@ -311,7 +310,7 @@ public class SelectorManager : MonoBehaviour
                 break;
             case 5://Electronica
 
-                if (Input.GetKeyDown(KeyCode.Alpha1))
+                if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetButtonDown("ButtonB"))
                 {
                     feedbackELECTRONICA.SetActive(true);
                     StartCoroutine(LateCall(feedbackELECTRONICA));
@@ -320,7 +319,7 @@ public class SelectorManager : MonoBehaviour
                     PE_Monitor.SetActive(true);
                     stan = 0;
                 }
-                if (Input.GetKeyDown(KeyCode.Alpha2))
+                if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetButtonDown("ButtonC"))
                 {
                     Opciones.SetActive(false);
                     stan = 0;
@@ -328,7 +327,7 @@ public class SelectorManager : MonoBehaviour
                 break;
             case 6://Deporte
 
-                if (Input.GetKeyDown(KeyCode.Alpha1))
+                if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetButtonDown("ButtonB"))
                 {
                     feedbackDEPORTES.SetActive(true);
                     StartCoroutine(LateCall(feedbackDEPORTES));
@@ -337,7 +336,7 @@ public class SelectorManager : MonoBehaviour
                     PE_Pelota.SetActive(true);
                     stan = 0;
                 }
-                if (Input.GetKeyDown(KeyCode.Alpha2))
+                if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetButtonDown("ButtonC"))
                 {
                     Opciones.SetActive(false);
                     stan = 0;
@@ -345,7 +344,7 @@ public class SelectorManager : MonoBehaviour
                 break;
             case 7://Harinas
 
-                if (Input.GetKeyDown(KeyCode.Alpha1))
+                if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetButtonDown("ButtonB"))
                 {
                     boolHarinas = true;
                     _harinas.SetActive(true);
@@ -364,7 +363,7 @@ public class SelectorManager : MonoBehaviour
                 break;
             case 8://Bebidas
 
-                if (Input.GetKeyDown(KeyCode.Alpha1))
+                if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetButtonDown("ButtonB"))
                 {
                     boolBebidas = true;
                     _bebidas.SetActive(true);
@@ -375,7 +374,7 @@ public class SelectorManager : MonoBehaviour
                     Opciones.SetActive(false);
                     stan = 0;
                 }
-                if (Input.GetKeyDown(KeyCode.Alpha2))
+                if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetButtonDown("ButtonC"))
                 {
                     Opciones.SetActive(false);
                     stan = 0;
@@ -383,7 +382,7 @@ public class SelectorManager : MonoBehaviour
                 break;
             case 9://Verduras
 
-                if (Input.GetKeyDown(KeyCode.Alpha1))
+                if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetButtonDown("ButtonB"))
                 {
                     boolVerdura = true;
                     _verdura.SetActive(true);
@@ -394,7 +393,7 @@ public class SelectorManager : MonoBehaviour
                     Opciones.SetActive(false);
                     stan = 0;
                 }
-                if (Input.GetKeyDown(KeyCode.Alpha2))
+                if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetButtonDown("ButtonC"))
                 {
                     Opciones.SetActive(false);
                     stan = 0;
@@ -402,7 +401,7 @@ public class SelectorManager : MonoBehaviour
                 break;
             case 10://Veterinaria
 
-                if (Input.GetKeyDown(KeyCode.Alpha1))
+                if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetButtonDown("ButtonB"))
                 {
                     feedbackVETERINARIA.SetActive(true);
                     StartCoroutine(LateCall(feedbackVETERINARIA));
@@ -411,13 +410,13 @@ public class SelectorManager : MonoBehaviour
                     PE_Balanceado.SetActive(true);
                     stan = 0;
                 }
-                if (Input.GetKeyDown(KeyCode.Alpha2))
+                if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetButtonDown("ButtonC"))
                 {
                     Opciones.SetActive(false);
                     stan = 0;
                 }
                 break;
-                
+
         }
     }
     private void Update()
@@ -432,7 +431,7 @@ public class SelectorManager : MonoBehaviour
         Condicionales();
         if (CarneBool)
         {
-            
+
         }
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         //var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -440,7 +439,7 @@ public class SelectorManager : MonoBehaviour
         if (Physics.Raycast(ray, out hit))
         {
             var selection = hit.transform;
-            if (hit.distance < 5 && selection.CompareTag(selectableTag) && Input.GetMouseButtonDown(0))
+            if (hit.distance < 5 && selection.CompareTag(selectableTag) && (Input.GetMouseButtonDown(0) || Input.GetButtonDown("BottomTrigger")))
             {
                 string SELECTOR = selection.GetComponent<NombreObjeto>().Objeto;
 
@@ -458,8 +457,8 @@ public class SelectorManager : MonoBehaviour
                             Tiempo.GetComponent<Timer>().tick = false;
                             Tiempo.GetComponent<Timer>().resettime();
                             cuadro.SetActive(true);
-                            string esto= Tiempo.GetComponent<Timer>().tiempotextAnterior.text;
-                            
+                            string esto = Tiempo.GetComponent<Timer>().tiempotextAnterior.text;
+
                             FinalFrase.text = "Ud a finalizado las compras con un tiempo total de " + esto;
                             _panaderia.SetActive(false);
                             PAN.SetActive(false);
@@ -493,33 +492,34 @@ public class SelectorManager : MonoBehaviour
                             GuardarTiempoLACTEOS.text = "00:00";
                             GuardarTiempoJUGUETES.text = "00:00";
 
-                            
+
 
 
                             break;
                         case "PANADERIA":
-                            if (Iniciado&&boolPanaderia!=true) {
-                                boolPanaderia=true;
+                            if (Iniciado && boolPanaderia != true)
+                            {
+                                boolPanaderia = true;
                                 _panaderia.SetActive(true);
                                 PAN.SetActive(true);
                                 UnityEngine.Debug.Log(SELECTOR);
                                 feedbackPAN.SetActive(true);
                                 GuardarTiempoPAN.text = Tiempo.GetComponent<Timer>().tiempotext.text;
                                 StartCoroutine(LateCall(feedbackPAN));
-                                
+
                             }
                             break;
                         case "VERDULERIA":
-                            if (Iniciado&& boolVerdura!=true)
+                            if (Iniciado && boolVerdura != true)
                             {
-                                
+
                                 Opciones.SetActive(true);
                                 SioNo.text = ("Desea agregar Verdura?");
                                 stan = 9;
                             }
                             break;
                         case "CARNICERIA":
-                            if (Iniciado&&boolCarne!=true)
+                            if (Iniciado && boolCarne != true)
                             {
                                 //boolCarne = true;
                                 //_carne.SetActive(true);
@@ -532,16 +532,16 @@ public class SelectorManager : MonoBehaviour
                             }
                             break;
                         case "BEBIDAS":
-                            if (Iniciado&&boolBebidas!=true)
+                            if (Iniciado && boolBebidas != true)
                             {
-                                
+
                                 Opciones.SetActive(true);
                                 SioNo.text = ("Desea agregar Bebida?");
                                 stan = 8;
                             }
                             break;
                         case "HARINAS":
-                            if (Iniciado&&boolHarinas!=true)
+                            if (Iniciado && boolHarinas != true)
                             {
                                 /*boolHarinas = true;
                                 _harinas.SetActive(true);
@@ -556,7 +556,7 @@ public class SelectorManager : MonoBehaviour
                             }
                             break;
                         case "LACTEOS":
-                            if (Iniciado&&boolLacteos!=true)
+                            if (Iniciado && boolLacteos != true)
                             {
                                 //boolLacteos = true;
                                 //_lacteos.SetActive(true);
@@ -569,7 +569,7 @@ public class SelectorManager : MonoBehaviour
                             }
                             break;
                         case "JUGUETES":
-                            if (Iniciado&&boolJuguetes!=true)
+                            if (Iniciado && boolJuguetes != true)
                             {
                                 //boolJuguetes = true;
                                 //_juguetes.SetActive(true);
@@ -607,14 +607,14 @@ public class SelectorManager : MonoBehaviour
                                 //feedbackPERFUME.SetActive(true);
                                 //StartCoroutine(LateCall(feedbackPERFUME));
                                 Opciones.SetActive(true);
-                                SioNo.text=("Desea agregar Perfume?");
+                                SioNo.text = ("Desea agregar Perfume?");
                                 stan = 4;
                             }
                             break;
                         case "VETERINARIA":
                             if (Iniciado)
                             {
-                             
+
                                 Opciones.SetActive(true);
                                 SioNo.text = ("Desea agregar Balanceado?");
                                 stan = 10;
