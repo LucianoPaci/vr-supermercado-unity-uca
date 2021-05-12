@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Selectable
+  - StartGame
+  - EndGame
   layers:
   - Default
   - TransparentFX
