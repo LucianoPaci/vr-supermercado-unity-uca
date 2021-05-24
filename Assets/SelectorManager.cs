@@ -110,12 +110,17 @@ public class SelectorManager : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Tiempo.GetComponent<Timer>().tick = true;
-        //UnityEngine.Debug.Log(SELECTOR);
-        Iniciado = true;
-        if (Iniciado)
+        if (other.gameObject.CompareTag("StartGame"))
         {
+            Tiempo.GetComponent<Timer>().tick = true;
+            Iniciado = true;
         }
+
+        // Logica que puede llevarse al gameController
+        if(other.gameObject.CompareTag("EndGame"))
+        {
+            Finalizar();
+        }    
     }
     public void carne()
     {
@@ -146,7 +151,7 @@ public class SelectorManager : MonoBehaviour
             cuadro.SetActive(true);
             string esto = Tiempo.GetComponent<Timer>().tiempotextAnterior.text;
 
-            FinalFrase.text = "Ud a finalizado las compras con un tiempo total de " + esto + " tiempo";
+            FinalFrase.text = "Ud ha finalizado las compras con un tiempo total de " + esto + " tiempo";
             ProductosErroneos.SetActive(true);
             /*_panaderia.SetActive(false);
             PAN.SetActive(false);
@@ -429,73 +434,79 @@ public class SelectorManager : MonoBehaviour
             StartCoroutine(LateCall(Minimapa_Camara));
         }
         Condicionales();
-        if (CarneBool)
-        {
-
-        }
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         //var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit))
+        //RaycastHit hit;
+
+        //if (Physics.Raycast(ray, out hit))
+        if (GvrPointerInputModule.CurrentRaycastResult.isValid)
         {
-            var selection = hit.transform;
-            if (hit.distance < 5 && selection.CompareTag(selectableTag) && (Input.GetMouseButtonDown(0) || Input.GetButtonDown("BottomTrigger")))
-            {
+
+            //var selection = hit.transform;
+            var selection = GvrPointerInputModule.CurrentRaycastResult.gameObject.transform;
+
+            //if (hit.distance < 5 && selection.CompareTag(selectableTag) && (Input.GetMouseButtonDown(0) || Input.GetButtonDown("BottomTrigger")))
+                if (selection.CompareTag(selectableTag) && (Input.GetMouseButtonDown(0) || Input.GetButtonDown("BottomTrigger")))
+                {
                 string SELECTOR = selection.GetComponent<NombreObjeto>().Objeto;
+
+                Debug.Log("SELECTOR" + SELECTOR);
 
                 if (SELECTOR != null)
                 {
                     switch (SELECTOR)
                     {
-                        case "Iniciar":
-                            Tiempo.GetComponent<Timer>().tick = true;
-                            UnityEngine.Debug.Log(SELECTOR);
-                            Iniciado = true;
-                            break;
-                        case "Terminar":
-                            Tiempo.GetComponent<Timer>().saveTime();
-                            Tiempo.GetComponent<Timer>().tick = false;
-                            Tiempo.GetComponent<Timer>().resettime();
-                            cuadro.SetActive(true);
-                            string esto = Tiempo.GetComponent<Timer>().tiempotextAnterior.text;
+                        //case "Iniciar":
+                        //    Tiempo.GetComponent<Timer>().tick = true;
+                        //    UnityEngine.Debug.Log(SELECTOR);
+                        //    Iniciado = true;
+                        //    break;
+                        //case "Terminar":
+                        //    Tiempo.GetComponent<Timer>().saveTime();
+                        //    Tiempo.GetComponent<Timer>().tick = false;
+                        //    Tiempo.GetComponent<Timer>().resettime();
+                        //    cuadro.SetActive(true);
+                        //    string esto = Tiempo.GetComponent<Timer>().tiempotextAnterior.text;
 
-                            FinalFrase.text = "Ud a finalizado las compras con un tiempo total de " + esto;
-                            _panaderia.SetActive(false);
-                            PAN.SetActive(false);
-                            _verdura.SetActive(false);
-                            VERDURA.SetActive(false);
-                            _carne.SetActive(false);
-                            CARNE.SetActive(false);
-                            _bebidas.SetActive(false);
-                            BEBIDAS.SetActive(false);
-                            _harinas.SetActive(false);
-                            HARINAS.SetActive(false);
-                            _lacteos.SetActive(false);
-                            LACTEOS.SetActive(false);
-                            _juguetes.SetActive(true);
-                            JUGUETES.SetActive(false);
+                        //    Debug.Log("Tiempo!!! " + esto);
 
-                            boolBebidas = false;
-                            boolCarne = false;
-                            boolHarinas = false;
-                            boolJuguetes = false;
-                            boolLacteos = false;
-                            boolPanaderia = false;
-                            boolVerdura = false;
-                            Iniciado = false;
+                        //    FinalFrase.text = "Ud a finalizado las compras con un tiempo total de " + esto;
+                        //    _panaderia.SetActive(false);
+                        //    PAN.SetActive(false);
+                        //    _verdura.SetActive(false);
+                        //    VERDURA.SetActive(false);
+                        //    _carne.SetActive(false);
+                        //    CARNE.SetActive(false);
+                        //    _bebidas.SetActive(false);
+                        //    BEBIDAS.SetActive(false);
+                        //    _harinas.SetActive(false);
+                        //    HARINAS.SetActive(false);
+                        //    _lacteos.SetActive(false);
+                        //    LACTEOS.SetActive(false);
+                        //    _juguetes.SetActive(true);
+                        //    JUGUETES.SetActive(false);
 
-                            GuardarTiempoPAN.text = "00:00";
-                            GuardarTiempoVERDURA.text = "00:00";
-                            GuardarTiempoCARNE.text = "00:00";
-                            GuardarTiempoBEBIDAS.text = "00:00";
-                            GuardarTiempoHARINAS.text = "00:00";
-                            GuardarTiempoLACTEOS.text = "00:00";
-                            GuardarTiempoJUGUETES.text = "00:00";
+                        //    boolBebidas = false;
+                        //    boolCarne = false;
+                        //    boolHarinas = false;
+                        //    boolJuguetes = false;
+                        //    boolLacteos = false;
+                        //    boolPanaderia = false;
+                        //    boolVerdura = false;
+                        //    Iniciado = false;
+
+                        //    GuardarTiempoPAN.text = "00:00";
+                        //    GuardarTiempoVERDURA.text = "00:00";
+                        //    GuardarTiempoCARNE.text = "00:00";
+                        //    GuardarTiempoBEBIDAS.text = "00:00";
+                        //    GuardarTiempoHARINAS.text = "00:00";
+                        //    GuardarTiempoLACTEOS.text = "00:00";
+                        //    GuardarTiempoJUGUETES.text = "00:00";
 
 
 
 
-                            break;
+                        //    break;
                         case "PANADERIA":
                             if (Iniciado && boolPanaderia != true)
                             {

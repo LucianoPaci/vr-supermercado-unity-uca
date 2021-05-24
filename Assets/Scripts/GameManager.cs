@@ -5,6 +5,18 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
+    private static bool _gameStarted = false;
+
+    public static bool GameStarted()
+    {
+        return _gameStarted;
+    }
+
+    private void Awake()
+    {
+        PlayerManager.OnPlayerStartedGame += StartGame;
+        PlayerManager.OnPlayerEndedGame += EndGame;
+    }
     void Start()
     {
 
@@ -18,8 +30,7 @@ public class GameManager : MonoBehaviour
 
     private void OnEnable()
     {
-        PlayerManager.OnPlayerStartedGame += StartGame;
-        PlayerManager.OnPlayerEndedGame += EndGame;
+        
     }
 
     private void OnDisable()
@@ -31,12 +42,14 @@ public class GameManager : MonoBehaviour
 
     void StartGame()
     {
+        _gameStarted = true;
         Debug.Log("EMPEZAMOS!!!");
     }
 
 
     void EndGame()
     {
+        _gameStarted = false;
         Debug.Log("TERMINAMOS!!!");
     }
 }
