@@ -88,8 +88,6 @@ public class SelectorManager : MonoBehaviour
     [SerializeField] private Text GuardarTiempoPAN;
     [SerializeField] private Text GuardarTiempoJUGUETES;
 
-    [SerializeField] private GameObject Resetboton;
-
     [SerializeField] private int sec;
 
     [SerializeField] private GameObject Minimapa_Camara;

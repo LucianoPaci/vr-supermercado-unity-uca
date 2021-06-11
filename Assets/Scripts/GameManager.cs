@@ -1,12 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
     private static bool _gameStarted = false;
+    public static Action OnRestart;
 
     public static bool GameStarted()
     {
@@ -26,7 +28,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(Input.GetButtonDown("ButtonD") || Input.GetKeyDown(KeyCode.R))
+        {
+            RestartGame();
+        }
     }
 
     private void OnEnable()
@@ -44,14 +49,22 @@ public class GameManager : MonoBehaviour
     void StartGame()
     {
         _gameStarted = true;
-        Debug.Log("EMPEZAMOS!!!");
     }
 
 
     void EndGame()
     {
         _gameStarted = false;
-        Debug.Log("TERMINAMOS!!!");
+    }
+
+    void RestartGame()
+    {
+        //if (OnRestart != null)
+        //{
+        //    OnRestart();
+        //}
+
+        SceneManager.LoadScene("Intro");
     }
 
    
