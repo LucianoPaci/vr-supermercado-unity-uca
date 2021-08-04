@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class ObjectPicker :  MonoBehaviour
 {
 
-    public static Action<string> OnSelectedObject = (objectName) => { }; // This is to avoid having to do null checks everytime
+    public static event Action<string> OnSelectedObject = (objectName) => { }; // This is to avoid having to do null checks everytime
 
     private bool looking = false;
     private float distance;
@@ -44,7 +44,9 @@ public class ObjectPicker :  MonoBehaviour
     */
     public void OnGazeEnter()
     {
-        
+        //Debug.Log("OnGazeEnter > " + GvrPointerInputModule.CurrentRaycastResult.gameObject.GetComponent<NombreObjeto>().Objeto.ToString());
+        String name = GvrPointerInputModule.CurrentRaycastResult.gameObject.GetComponent<NombreObjeto>().Objeto.ToString();
+        OnSelectedObject(name);
         looking = true;
     }
 
@@ -59,7 +61,9 @@ public class ObjectPicker :  MonoBehaviour
         //if(distance <= minDistance)
         //{
 
-        Debug.Log("OnGazeTrigger" + GvrPointerInputModule.CurrentRaycastResult.gameObject.GetComponent<NombreObjeto>().Objeto.ToString());
+        Debug.Log("OnGazeTrigger > " + GvrPointerInputModule.CurrentRaycastResult.gameObject.GetComponent<NombreObjeto>().Objeto.ToString());
+
+        
         //}
     }
 

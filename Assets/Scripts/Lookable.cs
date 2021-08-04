@@ -18,6 +18,7 @@ public class Lookable : MonoBehaviour
     // Funcion que recibe un EventType y EventAction y permite setear los EventTriggers desde el codigo, sin usar UI
 
 
+    // https://docs.unity3d.com/2019.1/Documentation/ScriptReference/EventSystems.EventTrigger.html
     // REVISAR POR QUE FALLA
     void SetEventTrigger(EventTriggerType eventType, Action<PointerEventData> eventAction)
     {

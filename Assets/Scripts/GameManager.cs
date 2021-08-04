@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
     private static bool _gameStarted = false;
-    public static Action OnRestart;
+    public static event Action OnRestart;
 
     public static bool GameStarted()
     {

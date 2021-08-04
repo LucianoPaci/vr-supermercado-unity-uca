@@ -8,6 +8,9 @@ TagManager:
   - StartGame
   - EndGame
   - CartCamera
+  - TestingCanvas
+  - Text_startgame
+  - Text_PickedObject
   layers:
   - Default
   - TransparentFX

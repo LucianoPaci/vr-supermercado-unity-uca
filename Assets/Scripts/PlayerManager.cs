@@ -6,8 +6,8 @@ using UnityEngine.EventSystems;
 
 public class PlayerManager : MonoBehaviour
 {
-    public static Action OnPlayerStartedGame = null;
-    public static Action OnPlayerEndedGame = null;
+    public static event Action OnPlayerStartedGame = null;
+    public static event Action OnPlayerEndedGame = null;
 
     // Start is called before the first frame update
     void Start()

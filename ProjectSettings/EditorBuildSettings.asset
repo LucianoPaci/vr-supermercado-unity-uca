@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Final.unity
     guid: 6a7920a54c46a384e9f5a83afc51dd2a
+  - enabled: 0
+    path: Assets/Scenes/v2-Main_Scene-VR.unity
+    guid: 302d8277c3a484288b4ec8021e2c3bf6
   m_configObjects: {}
