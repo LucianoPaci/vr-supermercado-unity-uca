@@ -237,6 +237,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Objeto: VERDULERIA
+--- !u!114 &6014579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6014574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: bananas
+  picked: 0
 --- !u!1 &11349470 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1260707715405542, guid: 569e747f279899a48962776dce61c52c,
@@ -398,7 +412,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4eedafad5084240419e649245c7b2093, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
@@ -839,7 +853,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4eedafad5084240419e649245c7b2093, type: 3}
     m_FontSize: 12
     m_FontStyle: 0
     m_BestFit: 0
@@ -1255,7 +1269,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4eedafad5084240419e649245c7b2093, type: 3}
     m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
@@ -1335,7 +1349,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4eedafad5084240419e649245c7b2093, type: 3}
     m_FontSize: 12
     m_FontStyle: 0
     m_BestFit: 0
@@ -3692,7 +3706,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4291763268081462, guid: 6fdaddc3b693adf48bcb3dc847735a20, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4291763268081462, guid: 6fdaddc3b693adf48bcb3dc847735a20, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5521,7 +5535,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4eedafad5084240419e649245c7b2093, type: 3}
     m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
@@ -5591,7 +5605,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4910928687701328, guid: c83d416685c998b418590fc52809aa42, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4910928687701328, guid: c83d416685c998b418590fc52809aa42, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7086,7 +7100,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4eedafad5084240419e649245c7b2093, type: 3}
     m_FontSize: 12
     m_FontStyle: 0
     m_BestFit: 0
@@ -7765,7 +7779,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4910928687701328, guid: c83d416685c998b418590fc52809aa42, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4910928687701328, guid: c83d416685c998b418590fc52809aa42, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -8772,7 +8786,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4291763268081462, guid: 6fdaddc3b693adf48bcb3dc847735a20, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4291763268081462, guid: 6fdaddc3b693adf48bcb3dc847735a20, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -9514,7 +9528,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4eedafad5084240419e649245c7b2093, type: 3}
     m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
@@ -9631,7 +9645,7 @@ GameObject:
   - component: {fileID: 365864497}
   - component: {fileID: 365864496}
   m_Layer: 0
-  m_Name: Deporte
+  m_Name: pelota
   m_TagString: Selectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10592,6 +10606,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Objeto: DEPORTE
+--- !u!114 &395210029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395210027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: pelota
+  picked: 0
 --- !u!4 &395210030 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4708457521795894, guid: 71b64c1d32134d44e95db0d45ba8f03b,
@@ -10668,7 +10696,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4eedafad5084240419e649245c7b2093, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
@@ -10733,7 +10761,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4eedafad5084240419e649245c7b2093, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -12452,6 +12480,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Objeto: VERDULERIA
+--- !u!114 &474105614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474105609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: bananas
+  picked: 0
 --- !u!1 &474402391
 GameObject:
   m_ObjectHideFlags: 0
@@ -12586,7 +12628,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4eedafad5084240419e649245c7b2093, type: 3}
     m_FontSize: 12
     m_FontStyle: 0
     m_BestFit: 0
@@ -12639,6 +12681,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Objeto: VERDULERIA
+--- !u!114 &475619464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475619459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: bananas
+  picked: 0
 --- !u!1001 &476109883
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14312,7 +14368,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4eedafad5084240419e649245c7b2093, type: 3}
     m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
@@ -14484,7 +14540,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4eedafad5084240419e649245c7b2093, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -14756,7 +14812,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4eedafad5084240419e649245c7b2093, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -15657,7 +15713,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4eedafad5084240419e649245c7b2093, type: 3}
     m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
@@ -15774,6 +15830,7 @@ GameObject:
   - component: {fileID: 604192907}
   - component: {fileID: 604192906}
   - component: {fileID: 604192908}
+  - component: {fileID: 604192909}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -15867,6 +15924,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   maxRaycastHits: 64
+--- !u!114 &604192909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604192904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5765f9319af374ff48edcd26257f6790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _camera: {fileID: 604192907}
 --- !u!1 &607040432
 GameObject:
   m_ObjectHideFlags: 0
@@ -16745,6 +16815,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Objeto: DEPORTE
+--- !u!114 &648795832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648795830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: pelota
+  picked: 0
 --- !u!4 &648795833 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4708457521795894, guid: 71b64c1d32134d44e95db0d45ba8f03b,
@@ -16976,6 +17060,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Objeto: HARINAS
+--- !u!114 &654350546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654350540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 
+  picked: 0
 --- !u!1001 &655187325
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17713,6 +17811,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Objeto: HARINAS
+--- !u!114 &675240048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675240042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 
+  picked: 0
 --- !u!1001 &679510194
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17762,7 +17874,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4291763268081462, guid: 6fdaddc3b693adf48bcb3dc847735a20, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4291763268081462, guid: 6fdaddc3b693adf48bcb3dc847735a20, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -18070,7 +18182,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4eedafad5084240419e649245c7b2093, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -18148,7 +18260,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4eedafad5084240419e649245c7b2093, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -20102,7 +20214,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4eedafad5084240419e649245c7b2093, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
@@ -21432,83 +21544,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Objeto: BEBIDAS
---- !u!1001 &868621116
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1828351882}
-    m_Modifications:
-    - target: {fileID: 1811876434957630, guid: c83d416685c998b418590fc52809aa42, type: 3}
-      propertyPath: m_Name
-      value: PF_interior_display_stand_fruits_001_gr_mesh (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1811876434957630, guid: c83d416685c998b418590fc52809aa42, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 1811876434957630, guid: c83d416685c998b418590fc52809aa42, type: 3}
-      propertyPath: m_TagString
-      value: Selectable
-      objectReference: {fileID: 0}
-    - target: {fileID: 4910928687701328, guid: c83d416685c998b418590fc52809aa42, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -6.0299997
-      objectReference: {fileID: 0}
-    - target: {fileID: 4910928687701328, guid: c83d416685c998b418590fc52809aa42, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.6703815
-      objectReference: {fileID: 0}
-    - target: {fileID: 4910928687701328, guid: c83d416685c998b418590fc52809aa42, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 9.32
-      objectReference: {fileID: 0}
-    - target: {fileID: 4910928687701328, guid: c83d416685c998b418590fc52809aa42, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 6.3726795e-14
-      objectReference: {fileID: 0}
-    - target: {fileID: 4910928687701328, guid: c83d416685c998b418590fc52809aa42, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4910928687701328, guid: c83d416685c998b418590fc52809aa42, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.000000021855714
-      objectReference: {fileID: 0}
-    - target: {fileID: 4910928687701328, guid: c83d416685c998b418590fc52809aa42, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.0000032037492
-      objectReference: {fileID: 0}
-    - target: {fileID: 4910928687701328, guid: c83d416685c998b418590fc52809aa42, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4910928687701328, guid: c83d416685c998b418590fc52809aa42, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4910928687701328, guid: c83d416685c998b418590fc52809aa42, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180.00002
-      objectReference: {fileID: 0}
-    - target: {fileID: 4910928687701328, guid: c83d416685c998b418590fc52809aa42, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4910928687701328, guid: c83d416685c998b418590fc52809aa42, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4910928687701328, guid: c83d416685c998b418590fc52809aa42, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4910928687701328, guid: c83d416685c998b418590fc52809aa42, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.15
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c83d416685c998b418590fc52809aa42, type: 3}
 --- !u!1 &868715536
 GameObject:
   m_ObjectHideFlags: 0
@@ -21755,7 +21790,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1668312570272644, guid: 6fdaddc3b693adf48bcb3dc847735a20, type: 3}
       propertyPath: m_Name
-      value: PF_interior_display_stand_vegetables_001_mesh
+      value: verdurasPrefab
       objectReference: {fileID: 0}
     - target: {fileID: 1668312570272644, guid: 6fdaddc3b693adf48bcb3dc847735a20, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -22298,7 +22333,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4eedafad5084240419e649245c7b2093, type: 3}
     m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
@@ -22378,7 +22413,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4eedafad5084240419e649245c7b2093, type: 3}
     m_FontSize: 12
     m_FontStyle: 0
     m_BestFit: 0
@@ -24514,6 +24549,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Objeto: VERDULERIA
+--- !u!114 &990519211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990519206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: bananas
+  picked: 0
 --- !u!1 &995858217
 GameObject:
   m_ObjectHideFlags: 0
@@ -25573,6 +25622,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Objeto: HARINAS
+--- !u!114 &1054185598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054185592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 
+  picked: 0
 --- !u!1 &1054277302
 GameObject:
   m_ObjectHideFlags: 0
@@ -25686,6 +25749,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Objeto: VERDULERIA
+--- !u!114 &1060127375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060127370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: bananas
+  picked: 0
 --- !u!1001 &1060404770
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25941,12 +26018,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1089370617}
   m_CullTransparentMesh: 0
---- !u!4 &1091911296 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4910928687701328, guid: c83d416685c998b418590fc52809aa42,
-    type: 3}
-  m_PrefabInstance: {fileID: 868621116}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1093411575
 GameObject:
   m_ObjectHideFlags: 0
@@ -27347,7 +27418,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4eedafad5084240419e649245c7b2093, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
@@ -28229,7 +28300,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4eedafad5084240419e649245c7b2093, type: 3}
     m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
@@ -28754,7 +28825,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4eedafad5084240419e649245c7b2093, type: 3}
     m_FontSize: 17
     m_FontStyle: 0
     m_BestFit: 0
@@ -28953,7 +29024,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4eedafad5084240419e649245c7b2093, type: 3}
     m_FontSize: 13
     m_FontStyle: 0
     m_BestFit: 0
@@ -29375,6 +29446,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Objeto: HARINAS
+--- !u!114 &1232108763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232108757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 
+  picked: 0
 --- !u!1 &1242497449
 GameObject:
   m_ObjectHideFlags: 0
@@ -29816,7 +29901,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4910928687701328, guid: c83d416685c998b418590fc52809aa42, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4910928687701328, guid: c83d416685c998b418590fc52809aa42, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -29876,6 +29961,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Objeto: VERDULERIA
+--- !u!114 &1254045290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254045285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: bananas
+  picked: 0
 --- !u!1 &1257386131
 GameObject:
   m_ObjectHideFlags: 0
@@ -30416,7 +30515,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4eedafad5084240419e649245c7b2093, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
@@ -30469,6 +30568,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Objeto: VERDULERIA
+--- !u!114 &1288435920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1288435915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: bananas
+  picked: 0
 --- !u!1 &1299273296
 GameObject:
   m_ObjectHideFlags: 0
@@ -31220,7 +31333,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4eedafad5084240419e649245c7b2093, type: 3}
     m_FontSize: 12
     m_FontStyle: 0
     m_BestFit: 0
@@ -31447,6 +31560,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Objeto: VERDULERIA
+--- !u!114 &1335494738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1335494733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: bananas
+  picked: 0
 --- !u!1 &1340562115
 GameObject:
   m_ObjectHideFlags: 0
@@ -32082,7 +32209,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4eedafad5084240419e649245c7b2093, type: 3}
     m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
@@ -32713,7 +32840,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1811876434957630, guid: c83d416685c998b418590fc52809aa42, type: 3}
       propertyPath: m_Name
-      value: PF_interior_display_stand_fruits_001_gr_mesh
+      value: frutasPrefab
       objectReference: {fileID: 0}
     - target: {fileID: 1811876434957630, guid: c83d416685c998b418590fc52809aa42, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -33293,7 +33420,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4eedafad5084240419e649245c7b2093, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
@@ -33466,7 +33593,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4eedafad5084240419e649245c7b2093, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
@@ -35822,7 +35949,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4eedafad5084240419e649245c7b2093, type: 3}
     m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
@@ -36851,6 +36978,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Objeto: VERDULERIA
+--- !u!114 &1506034626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506034621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: bananas
+  picked: 0
 --- !u!1 &1514777084 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1914546184541166, guid: d8c4bad953601a54eb5e96b9ff4dd23b,
@@ -38982,7 +39123,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4eedafad5084240419e649245c7b2093, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -39780,7 +39921,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4eedafad5084240419e649245c7b2093, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -40534,7 +40675,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4eedafad5084240419e649245c7b2093, type: 3}
     m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
@@ -40867,7 +41008,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4291763268081462, guid: 6fdaddc3b693adf48bcb3dc847735a20, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4291763268081462, guid: 6fdaddc3b693adf48bcb3dc847735a20, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -40952,7 +41093,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4eedafad5084240419e649245c7b2093, type: 3}
     m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
@@ -41104,7 +41245,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4eedafad5084240419e649245c7b2093, type: 3}
     m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
@@ -42185,7 +42326,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4291763268081462, guid: 6fdaddc3b693adf48bcb3dc847735a20, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4291763268081462, guid: 6fdaddc3b693adf48bcb3dc847735a20, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -43090,7 +43231,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4eedafad5084240419e649245c7b2093, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
@@ -45921,7 +46062,6 @@ Transform:
   m_Children:
   - {fileID: 31125579}
   - {fileID: 768297609}
-  - {fileID: 1091911296}
   - {fileID: 555529097}
   - {fileID: 1469848834}
   - {fileID: 636638669}
@@ -46304,7 +46444,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4eedafad5084240419e649245c7b2093, type: 3}
     m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
@@ -46694,6 +46834,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Objeto: DEPORTE
+--- !u!114 &1853975341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853975339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: pelota
+  picked: 0
 --- !u!4 &1853975342 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4708457521795894, guid: 71b64c1d32134d44e95db0d45ba8f03b,
@@ -48439,7 +48593,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4eedafad5084240419e649245c7b2093, type: 3}
     m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
@@ -48847,7 +49001,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4eedafad5084240419e649245c7b2093, type: 3}
     m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
@@ -48925,7 +49079,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4eedafad5084240419e649245c7b2093, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
@@ -49505,38 +49659,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be2e367c5b41c7e4696ef1f446df1ca1, type: 3}
---- !u!1 &1954852747 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1811876434957630, guid: c83d416685c998b418590fc52809aa42,
-    type: 3}
-  m_PrefabInstance: {fileID: 868621116}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1954852750
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1954852747}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 28.968225, y: 11.398235, z: 10.783266}
-  m_Center: {x: 0.0000038146973, y: 5.6991105, z: -0.00000047683713}
---- !u!114 &1954852751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1954852747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b95c7569fe38af042bb412b9a737b8e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Objeto: VERDULERIA
 --- !u!1 &1960532193 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1884390166989146, guid: 591c7c163ef7cb9488543335a7c235d7,
@@ -49607,6 +49729,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Objeto: VERDULERIA
+--- !u!114 &1962471075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962471070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: bananas
+  picked: 0
 --- !u!1001 &1963357866
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49880,7 +50016,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1967398932}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 6.5144396, y: 3.0299, z: 1}
   m_Children: []
   m_Father: {fileID: 1264199864}
@@ -50060,7 +50196,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4eedafad5084240419e649245c7b2093, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
@@ -50314,7 +50450,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4910928687701328, guid: c83d416685c998b418590fc52809aa42, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4910928687701328, guid: c83d416685c998b418590fc52809aa42, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -50548,6 +50684,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Objeto: HARINAS
+--- !u!114 &1988978688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988978682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 
+  picked: 0
 --- !u!1 &1992901705
 GameObject:
   m_ObjectHideFlags: 0
@@ -51829,6 +51979,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Objeto: VERDULERIA
+--- !u!114 &2060111170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060111165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: bananas
+  picked: 0
 --- !u!1 &2062818937
 GameObject:
   m_ObjectHideFlags: 0
@@ -53155,6 +53319,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Objeto: HARINAS
+--- !u!114 &2109071005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109070999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 
+  picked: 0
 --- !u!1 &2114433677
 GameObject:
   m_ObjectHideFlags: 0
