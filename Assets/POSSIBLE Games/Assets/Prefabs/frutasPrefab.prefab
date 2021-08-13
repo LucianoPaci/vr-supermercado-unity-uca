@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33708042340817748}
   - component: {fileID: 23704631294071780}
   m_Layer: 0
-  m_Name: PF_interior_display_stand_fruits_001_gr_mesh
+  m_Name: frutasPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -11,6 +11,7 @@ TagManager:
   - TestingCanvas
   - Text_startgame
   - Text_PickedObject
+  - UI_Camera
   layers:
   - Default
   - TransparentFX
@@ -22,9 +23,9 @@ TagManager:
   - 
   - Minimapa
   - CartCamera
-  - 
-  - 
-  - 
+  - BLUE
+  - RED
+  - UI_2
   - 
   - 
   - 

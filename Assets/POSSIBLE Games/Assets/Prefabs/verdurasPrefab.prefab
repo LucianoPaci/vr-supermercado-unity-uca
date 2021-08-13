@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33888016076213904}
   - component: {fileID: 23668144399966636}
   m_Layer: 0
-  m_Name: PF_interior_display_stand_vegetables_001_mesh
+  m_Name: verdurasPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
