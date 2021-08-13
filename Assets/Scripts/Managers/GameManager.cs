@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
     private static bool _gameStarted = false;
+    private GameObject _player;
     public static event Action OnRestart;
 
     public static bool GameStarted()
@@ -43,6 +44,11 @@ public class GameManager : MonoBehaviour
     {
         PlayerManager.OnPlayerStartedGame -= StartGame;
         PlayerManager.OnPlayerEndedGame -= EndGame;
+    }
+
+    void OnLoadPlayer()
+    {
+        _player = GameObject.FindGameObjectWithTag("Player");
     }
 
 
