@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System;
+using System.Linq;
 using UnityEngine;
 
 public class SelectController : MonoBehaviour
@@ -8,8 +9,10 @@ public class SelectController : MonoBehaviour
     [SerializeField] private Camera _camera;
 
     public static event Action<Entity> OnSelectedEntityChanged;
+    public static Entity SelectedEntity { get; private set; } 
+    public static event Action <List<Entity>> OnSelectingEntity;
 
-    public static Entity SelectedEntity { get; private set; }
+    public List<Entity> possibleEntities = new List<Entity>();
 
     // Start is called before the first frame update
     void Start()
@@ -23,15 +26,34 @@ public class SelectController : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))// TODO: agregar las variantes    
         {
             var ray = GvrPointerInputModule.CurrentRaycastResult;
-            var entity = ray.gameObject.GetComponent<Entity>();
-            if (entity)
+            var entitiesList = ray.gameObject.GetComponents<Entity>().ToList();
+            
+            possibleEntities.Clear();
+            if (entitiesList.Count > 0)
             {
-                SelectedEntity = entity;
-                OnSelectedEntityChanged?.Invoke(entity);
-                SelectedEntity.ChangeStatus();
+                possibleEntities = entitiesList;
+
+                // TODO: TESTING!
+                var entity = possibleEntities.First();
+                
+                
+                OnSelectingEntity?.Invoke(possibleEntities);
+
+                if (entity)
+                {
+                    SelectedEntity = entity;
+                    OnSelectedEntityChanged?.Invoke(entity);
+                    SelectedEntity.ChangeStatus();
+                }
+                  
             }
 
             //Debug.Log("SELECT CONTROLLER" + GvrPointerInputModule.CurrentRaycastResult.gameObject.GetComponent<Entity>().gameObject.transform.parent.name);
         } 
+    }
+
+    public List<Entity> GetPossibleEntities()
+    {
+        return possibleEntities;
     }
 }
