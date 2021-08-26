@@ -11,6 +11,8 @@ public class SelectController : MonoBehaviour
     public static event Action<Entity> OnSelectedEntityChanged;
     public static Entity SelectedEntity { get; private set; } 
     public static event Action <List<Entity>> OnSelectingEntity;
+    
+    public static event Action<List<Entity>, Transform> OnDisplayingSelectionCanvas;
 
     public List<Entity> possibleEntities = new List<Entity>();
 
@@ -27,6 +29,7 @@ public class SelectController : MonoBehaviour
         {
             var ray = GvrPointerInputModule.CurrentRaycastResult;
             var entitiesList = ray.gameObject.GetComponents<Entity>().ToList();
+            Transform pointedObjectTransform = ray.gameObject.transform;
             
             possibleEntities.Clear();
             if (entitiesList.Count > 0)
@@ -38,6 +41,7 @@ public class SelectController : MonoBehaviour
                 
                 
                 OnSelectingEntity?.Invoke(possibleEntities);
+                OnDisplayingSelectionCanvas?.Invoke(possibleEntities, pointedObjectTransform);
 
                 if (entity)
                 {

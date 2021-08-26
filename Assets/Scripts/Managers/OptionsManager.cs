@@ -19,9 +19,9 @@ public class OptionsManager : MonoBehaviour
 
     [Header("Options List")] public List<SelectableOptionItem> selectableOptionsList = new List<SelectableOptionItem>();
 
-    private Canvas canvas;
 
-    private float elapsedTime = 0f;
+
+    private Canvas canvas;
 
     public static event Action<bool> OnDisplayingOptions;
 
@@ -49,26 +49,29 @@ public class OptionsManager : MonoBehaviour
 
     public void DisplayPickingOptions(List<Entity> entities)
     {
-
-        Entity[] entitiesArray = entities.ToArray();
-        
-        if (entities.Count == 1)
+        if (entities.Count > 0)
         {
-            titleText.SetText("Deseas comprar " + entities.First().GetKey() + " ?");
-            CreateOptionObject("SI", "Presionar 1", entities.First());
-            CreateOptionObject("NO", "Presionar 2", null);
-        }
-        else if (entities.Count > 1)
-        {
-            titleText.SetText("Qué deseas comprar?");
-            int index = 0;
-            foreach (var entity in entities)
+            selectableOptionsList.Clear();
+            if (entities.Count == 1)
             {
-                CreateOptionObject(entity.GetName(), "Presionar algo", entity);
-                index++;
+                titleText.SetText("Deseas comprar " + entities.First().GetKey() + " ?");
+                CreateOptionObject("SI", "Presionar 1", entities.First());
+                CreateOptionObject("NO", "Presionar 2", null);
             }
-            CreateOptionObject("Cancelar", "--", null);
+            else if (entities.Count > 1)
+            {
+                titleText.SetText("Qué deseas comprar?");
+                int index = 0;
+                foreach (var entity in entities)
+                {
+                    CreateOptionObject(entity.GetName(), "Presionar algo", entity);
+                    index++;
+                }
+                CreateOptionObject("Cancelar", "--", null);
+            }
         }
+        
+      
         
     }
 
@@ -92,13 +95,11 @@ public class OptionsManager : MonoBehaviour
         {
             if (canvas.enabled)
             {
-                elapsedTime += Time.deltaTime;
-                StartCoroutine(DisableCanvasLateCall());
+                StartCoroutine(DisableCanvasLateCall(3));
                
             }
             else
             {
-                elapsedTime += Time.deltaTime;
                 canvas.enabled = true;
                 OnDisplayingOptions?.Invoke(true);
             }
@@ -106,10 +107,10 @@ public class OptionsManager : MonoBehaviour
 
            
     }
-    IEnumerator DisableCanvasLateCall()
+    IEnumerator DisableCanvasLateCall(int seconds = 3)
     {
    
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(seconds);
            
             canvas.enabled = false;
             OnDisplayingOptions?.Invoke(false);
