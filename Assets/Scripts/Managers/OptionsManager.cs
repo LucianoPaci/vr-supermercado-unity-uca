@@ -6,6 +6,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+
 public class OptionsManager : MonoBehaviour
 {
 
@@ -18,10 +20,10 @@ public class OptionsManager : MonoBehaviour
     [Header("Options Title")] public TMP_Text titleText;
 
     [Header("Options List")] public List<SelectableOptionItem> selectableOptionsList = new List<SelectableOptionItem>();
-
-
-
+    
     private Canvas canvas;
+
+    public static event Action<Entity> ReturnEntity;
 
     public static event Action<bool> OnDisplayingOptions;
 
@@ -31,7 +33,7 @@ public class OptionsManager : MonoBehaviour
         canvas = this.GetComponent<Canvas>();
         canvas.enabled = false;
         SelectController.OnSelectingEntity += DisplayPickingOptions;
-        
+
     }
 
     private void OnDestroy()
@@ -61,11 +63,9 @@ public class OptionsManager : MonoBehaviour
             else if (entities.Count > 1)
             {
                 titleText.SetText("Qué deseas comprar?");
-                int index = 0;
                 foreach (var entity in entities)
                 {
                     CreateOptionObject(entity.GetName(), "Presionar algo", entity);
-                    index++;
                 }
                 CreateOptionObject("Cancelar", "--", null);
             }
@@ -81,22 +81,20 @@ public class OptionsManager : MonoBehaviour
         item.transform.SetParent(content, false);
         
         SelectableOptionItem itemObject = item.GetComponent<SelectableOptionItem>();
-        itemObject.SetObjectInfo(title, subtitle, e);
+        itemObject.SetObjectInfo(title, subtitle, e, SelectController.GetEntity);
         
         selectableOptionsList.Add(itemObject);
     }
     
+    
     // Update is called once per frame
     void Update()
     {
-       
-        
         if (selectableOptionsList.Count > 0)
         {
             if (canvas.enabled)
             {
                 StartCoroutine(DisableCanvasLateCall(3));
-               
             }
             else
             {

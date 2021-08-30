@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -9,6 +11,10 @@ public class UIController : MonoBehaviour
     [SerializeField] private ListPanel _wrongItemsListPanel;
 
     [SerializeField] private OptionsManager _optionsCanvas;
+    [SerializeField] private GameObject _optionCanvasGO;
+
+    [SerializeField] private GameObject InformationPanel;
+
 
     private void Awake()
     {
@@ -20,51 +26,55 @@ public class UIController : MonoBehaviour
     private void OnDestroy()
     {
         SelectController.OnSelectedEntityChanged -= HandleSelectedEntityChanged;
+        SelectController.OnDisplayingSelectionCanvas -= AppendOptionsCanvasToObject;
     }
- 
+
+
+
     private void HandleSelectedEntityChanged(Entity entity)
     {
 
-         if(_listPanel != null)
+        if (_listPanel != null)
         {
             _listPanel.Bind(entity);
         }
 
-         if(_wrongItemsListPanel !=null)
+        if (_wrongItemsListPanel != null)
         {
             _wrongItemsListPanel.Bind(entity);
         }
+
+        if (entity)
+        {
+            DisplayInformation(entity);
+        }
+        
     }
 
     // Faltaria ver el DESTROY del Canvas
-    private void AppendOptionsCanvasToObject(List<Entity> entities, Transform targetTransform)
+    private void AppendOptionsCanvasToObject(Transform targetTransform)
     {
-        var player = GameObject.FindGameObjectWithTag("Player");
-        var camera = player.GetComponentInChildren<Camera>();
-        var playerCamera = player.GetComponentInChildren<Camera>();
-        var playerPosition = player.transform.position;
-        var playerRotation = player.transform.rotation;
-
-        var gameObjectPosition = targetTransform.position;
-        var gameObjectRotation = targetTransform.rotation;
-        var ray = GvrPointerInputModule.CurrentRaycastResult;
-
-        var zOffset = 5f;
-        var yOffset = 11f;
-
-        Vector3 rayCastPosition = Camera.main.ScreenToWorldPoint(ray.worldPosition);
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        Camera mainCam = player.GetComponentInChildren<Camera>();
+        float distance = 2f;
         
-        // Debug.DrawRay(rayCastPosition, Camera.main.transform.forward * 1000, Color.green);
-
-        Vector3 screenPosition = new Vector3(ray.screenPosition.x, ray.screenPosition.y, ray.distance);
-
-        Vector3 instantiatePosition = ray.worldPosition;
-
-
-
-        // _optionsCanvas.gameObject.transform.SetParent(playerCamera.transform);
         _optionsCanvas.gameObject.transform.SetParent(targetTransform, true);
-        // _optionsCanvas.gameObject.transform.localRotation = gameObjectRotation;
-        _optionsCanvas.gameObject.transform.localPosition = screenPosition;
+        _optionsCanvas.gameObject.transform.position =
+            mainCam.transform.position + mainCam.transform.forward * distance;
+        _optionsCanvas.gameObject.transform.rotation = mainCam.transform.rotation;
+    }
+
+    private void DisplayInformation(Entity e)
+    {
+        
+        InformationPanel.SetActive(true);
+        InformationPanel.GetComponentInChildren<TMP_Text>().text = $"Recogiste {e.GetKey()}";
+        StartCoroutine(DisableCanvas());
+    }
+    
+    IEnumerator DisableCanvas(int seconds = 3)
+    {
+        yield return new WaitForSeconds(seconds);
+        InformationPanel.SetActive(false);
     }
 }
