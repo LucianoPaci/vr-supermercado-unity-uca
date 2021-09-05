@@ -77,4 +77,22 @@ public class UIController : MonoBehaviour
         yield return new WaitForSeconds(seconds);
         InformationPanel.SetActive(false);
     }
+
+    private void Update()
+    {
+        if (_optionsCanvas.selectableOptionsList.Count > 0)
+        {
+            Debug.Log("SelectedEntity " + SelectController.SelectedEntity);
+            if (_optionsCanvas.GetComponent<Canvas>().enabled && !_optionsCanvas.isLoading)
+            
+            {
+                StartCoroutine(_optionsCanvas.DisableCanvasLateCall());
+            }
+            else
+            {
+            
+                _optionsCanvas.GetComponent<Canvas>().enabled = true;
+            }
+        }
+    }
 }

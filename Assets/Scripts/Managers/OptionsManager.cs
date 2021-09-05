@@ -22,6 +22,7 @@ public class OptionsManager : MonoBehaviour
     [Header("Options List")] public List<SelectableOptionItem> selectableOptionsList = new List<SelectableOptionItem>();
     
     private Canvas canvas;
+    public bool isLoading = false;
 
     public static event Action<Entity> ReturnEntity;
 
@@ -51,7 +52,7 @@ public class OptionsManager : MonoBehaviour
 
     public void DisplayPickingOptions(List<Entity> entities)
     {
-        if (entities.Count > 0)
+        if (entities.Count > 0 && !canvas.enabled)
         {
             selectableOptionsList.Clear();
             if (entities.Count == 1)
@@ -81,42 +82,34 @@ public class OptionsManager : MonoBehaviour
         item.transform.SetParent(content, false);
         
         SelectableOptionItem itemObject = item.GetComponent<SelectableOptionItem>();
-        itemObject.SetObjectInfo(title, subtitle, e, SelectController.GetEntity);
+        itemObject.SetObjectInfo(title, subtitle, e, TriggerEntitySelection);
         
         selectableOptionsList.Add(itemObject);
     }
-    
-    
-    // Update is called once per frame
-    void Update()
-    {
-        if (selectableOptionsList.Count > 0)
-        {
-            if (canvas.enabled)
-            {
-                StartCoroutine(DisableCanvasLateCall(3));
-            }
-            else
-            {
-                canvas.enabled = true;
-                OnDisplayingOptions?.Invoke(true);
-            }
-        }
 
-           
-    }
-    IEnumerator DisableCanvasLateCall(int seconds = 3)
+    void TriggerEntitySelection(Entity e)
     {
-   
+        DisableCanvas();
+        SelectController.GetEntity(e);
+    }
+
+    public IEnumerator DisableCanvasLateCall(int seconds = 3)
+    {   
+            isLoading = true;
             yield return new WaitForSeconds(seconds);
-           
-            canvas.enabled = false;
-            OnDisplayingOptions?.Invoke(false);
-            selectableOptionsList.Clear();
-            foreach (var option in content.GetComponentsInChildren<SelectableOptionItem>())
-            {
-                option.DestroyOption();
-            }
-            
+            DisableCanvas();
+            isLoading = false;
+    }
+
+    private void DisableCanvas()
+    {
+        canvas.enabled = false;
+        OnDisplayingOptions?.Invoke(false);
+        selectableOptionsList.Clear();
+        foreach (var option in content.GetComponentsInChildren<SelectableOptionItem>())
+        {
+            option.DestroyOption();
+        }
+        
     }
 }

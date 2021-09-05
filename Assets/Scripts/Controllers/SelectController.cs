@@ -52,19 +52,12 @@ public class SelectController : MonoBehaviour
 
     public static void GetEntity(Entity e)
     {
-        Debug.Log(" GET ENTITY " + e);
-
-        if (e)
-        {
             SelectedEntity = e;
             OnSelectedEntityChanged?.Invoke(e);
-            SelectedEntity.ChangeStatus();
-        }
+            if (SelectedEntity)
+            {
+               SelectedEntity.ChangeStatus();
+            }
     }
-
-    void SetSelectedEntity(Entity e)
-    {
-        Debug.Log(" ME EJECUTE " + e);
-        SelectedEntity = e;
-    }
+    
 }
