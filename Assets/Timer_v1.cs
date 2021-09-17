@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Timer : MonoBehaviour
+public class Timer_v1 : MonoBehaviour
 {
     public Text tiempotext;
     public Text tiempotextAnterior;
