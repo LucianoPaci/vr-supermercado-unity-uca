@@ -16,6 +16,7 @@ public class ListPanel : MonoBehaviour
     private void Awake()
     {
         _checkListObjects = GetComponent<CheckListManager>().GetList();
+        this.gameObject.SetActive(false);
     }
 
     private void OnDestroy()
@@ -48,7 +49,10 @@ public class ListPanel : MonoBehaviour
         if(found)
         {
             found.gameObject.GetComponentInParent<Toggle>().isOn = true;
-            _text.SetText("Picked " + entity.GetKey());
+            // var text = GameManager.fetchedEntitiesWithTime.TryGetValue(entity, out string outputText);
+            // found.gameObject.GetComponentInParent<Text>().text = outputText;
+            // found.gameObject.GetComponentInParent<Text>().gameObject.SetActive(true);
+
         }
         
        

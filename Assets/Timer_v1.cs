@@ -40,4 +40,26 @@ public class Timer : MonoBehaviour
         tiempo = 0;
         tiempotext.text = "00:00";
     }
+
+    public void StartTimer()
+    {
+        tick = true;
+    }
+
+    public void StopTimer()
+    {
+        tick = false;
+    }
+
+    public void ResetTimer()
+    {
+        tiempotext.text = "00:00";
+    }
+
+    public void SaveTimer()
+    {
+        tiempotextAnterior.text = tiempotext.text;
+        tiempo = 0;
+        tiempotext.text = "00:00";
+    }
 }

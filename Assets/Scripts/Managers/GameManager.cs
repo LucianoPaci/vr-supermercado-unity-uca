@@ -10,6 +10,12 @@ public class GameManager : MonoBehaviour
     private static bool _gameStarted = false;
     private GameObject _player;
     public static event Action OnRestart;
+    public static event Action OnGameStarted;
+    public static event Action OnGameEnded;
+
+    public List<Entity> fetchedEntities = new List<Entity>();
+    public List<string> fetchedEntitiesTime = new List<string>();
+    public static Dictionary<Entity, string> fetchedEntitiesWithTime = new Dictionary<Entity, string>();
 
     public static bool GameStarted()
     {
@@ -20,6 +26,7 @@ public class GameManager : MonoBehaviour
     {
         PlayerManager.OnPlayerStartedGame += StartGame;
         PlayerManager.OnPlayerEndedGame += EndGame;
+        SelectController.OnSelectedEntityChanged += HandleEntitiesFetched;
     }
     void Start()
     {
@@ -29,7 +36,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("ButtonD") || Input.GetKeyDown(KeyCode.R))
+        if (Input.GetButtonDown("ButtonD") || Input.GetKeyDown(KeyCode.R))
         {
             RestartGame();
         }
@@ -44,6 +51,7 @@ public class GameManager : MonoBehaviour
     {
         PlayerManager.OnPlayerStartedGame -= StartGame;
         PlayerManager.OnPlayerEndedGame -= EndGame;
+        SelectController.OnSelectedEntityChanged -= HandleEntitiesFetched;
     }
 
     void OnLoadPlayer()
@@ -55,12 +63,34 @@ public class GameManager : MonoBehaviour
     void StartGame()
     {
         _gameStarted = true;
+        Timer.StartTimer();
+        OnGameStarted?.Invoke();
     }
 
 
     void EndGame()
     {
         _gameStarted = false;
+        Timer.StopTimer();
+        OnGameEnded?.Invoke();
+    }
+
+    void HandleEntitiesFetched(Entity e)
+    {
+        if (e)
+        {
+            // try
+            // {
+            //     fetchedEntitiesWithTime.Add(e, Timer.GetCurrentTime());
+            // }
+            // catch (Exception exception)
+            // {
+            //     Debug.Log($"An element with key {e} already exists");
+            //     throw;
+            // }
+            fetchedEntitiesTime.Add(Timer.GetCurrentTime());
+            fetchedEntities.Add(e);
+        }
     }
 
     void RestartGame()
@@ -70,8 +100,11 @@ public class GameManager : MonoBehaviour
         //    OnRestart();
         //}
 
+        Timer.StopTimer();
+        Timer.ResetTimer();
         SceneManager.LoadScene("Intro");
     }
 
    
 }
+

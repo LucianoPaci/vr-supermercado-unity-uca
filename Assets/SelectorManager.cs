@@ -110,7 +110,7 @@ public class SelectorManager : MonoBehaviour
     {
         if (other.gameObject.CompareTag("StartGame"))
         {
-            Tiempo.GetComponent<Timer>().tick = true;
+            Tiempo.GetComponent<Timer_v1>().tick = true;
             Iniciado = true;
         }
 
@@ -143,11 +143,11 @@ public class SelectorManager : MonoBehaviour
     {
         if (Iniciado)
         {
-            Tiempo.GetComponent<Timer>().saveTime();
-            Tiempo.GetComponent<Timer>().tick = false;
-            Tiempo.GetComponent<Timer>().resettime();
+            Tiempo.GetComponent<Timer_v1>().saveTime();
+            Tiempo.GetComponent<Timer_v1>().tick = false;
+            Tiempo.GetComponent<Timer_v1>().resettime();
             cuadro.SetActive(true);
-            string esto = Tiempo.GetComponent<Timer>().tiempotextAnterior.text;
+            string esto = Tiempo.GetComponent<Timer_v1>().tiempotextAnterior.text;
 
             FinalFrase.text = "Ud ha finalizado las compras con un tiempo total de " + esto + " tiempo";
             ProductosErroneos.SetActive(true);
@@ -211,7 +211,7 @@ public class SelectorManager : MonoBehaviour
                     //boolCarne = true;
                     //StartCoroutine(LateCall(feedbackCARNE));
                     feedbackCARNE.SetActive(false);
-                    GuardarTiempoCARNE.text = Tiempo.GetComponent<Timer>().tiempotext.text;
+                    GuardarTiempoCARNE.text = Tiempo.GetComponent<Timer_v1>().tiempotext.text;
                     stan = 0;
                 }
                 if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetButtonDown("ButtonC"))
@@ -259,7 +259,7 @@ public class SelectorManager : MonoBehaviour
                     //boolJuguetes = true;
                     //StartCoroutine(LateCall(feedbackJUGUETES)); 
                     feedbackJUGUETES.SetActive(false);
-                    GuardarTiempoJUGUETES.text = Tiempo.GetComponent<Timer>().tiempotext.text;
+                    GuardarTiempoJUGUETES.text = Tiempo.GetComponent<Timer_v1>().tiempotext.text;
                     stan = 0;
                 }
                 break;
@@ -280,7 +280,7 @@ public class SelectorManager : MonoBehaviour
                     //StartCoroutine(LateCall(feedbackLACTEOS));
                     //boolLacteos = true;
                     feedbackLACTEOS.SetActive(false);
-                    GuardarTiempoLACTEOS.text = Tiempo.GetComponent<Timer>().tiempotext.text;
+                    GuardarTiempoLACTEOS.text = Tiempo.GetComponent<Timer_v1>().tiempotext.text;
                     queso();
                     stan = 0;
                 }
@@ -353,7 +353,7 @@ public class SelectorManager : MonoBehaviour
                     _harinas.SetActive(true);
                     HARINAS.SetActive(true);
                     feedbackHARINAS.SetActive(true);
-                    GuardarTiempoHARINAS.text = Tiempo.GetComponent<Timer>().tiempotext.text;
+                    GuardarTiempoHARINAS.text = Tiempo.GetComponent<Timer_v1>().tiempotext.text;
                     StartCoroutine(LateCall(feedbackHARINAS));
                     Opciones.SetActive(false);
                     stan = 0;
@@ -372,7 +372,7 @@ public class SelectorManager : MonoBehaviour
                     _bebidas.SetActive(true);
                     BEBIDAS.SetActive(true);
                     feedbackBEBIDAS.SetActive(true);
-                    GuardarTiempoBEBIDAS.text = Tiempo.GetComponent<Timer>().tiempotext.text;
+                    GuardarTiempoBEBIDAS.text = Tiempo.GetComponent<Timer_v1>().tiempotext.text;
                     StartCoroutine(LateCall(feedbackBEBIDAS));
                     Opciones.SetActive(false);
                     stan = 0;
@@ -391,7 +391,7 @@ public class SelectorManager : MonoBehaviour
                     _verdura.SetActive(true);
                     VERDURA.SetActive(true);
                     feedbackVERDURA.SetActive(true);
-                    GuardarTiempoVERDURA.text = Tiempo.GetComponent<Timer>().tiempotext.text;
+                    GuardarTiempoVERDURA.text = Tiempo.GetComponent<Timer_v1>().tiempotext.text;
                     StartCoroutine(LateCall(feedbackVERDURA));
                     Opciones.SetActive(false);
                     stan = 0;
@@ -455,16 +455,16 @@ public class SelectorManager : MonoBehaviour
                     switch (SELECTOR)
                     {
                         //case "Iniciar":
-                        //    Tiempo.GetComponent<Timer>().tick = true;
+                        //    Tiempo.GetComponent<Timer_v1>().tick = true;
                         //    UnityEngine.Debug.Log(SELECTOR);
                         //    Iniciado = true;
                         //    break;
                         //case "Terminar":
-                        //    Tiempo.GetComponent<Timer>().saveTime();
-                        //    Tiempo.GetComponent<Timer>().tick = false;
-                        //    Tiempo.GetComponent<Timer>().resettime();
+                        //    Tiempo.GetComponent<Timer_v1>().saveTime();
+                        //    Tiempo.GetComponent<Timer_v1>().tick = false;
+                        //    Tiempo.GetComponent<Timer_v1>().resettime();
                         //    cuadro.SetActive(true);
-                        //    string esto = Tiempo.GetComponent<Timer>().tiempotextAnterior.text;
+                        //    string esto = Tiempo.GetComponent<Timer_v1>().tiempotextAnterior.text;
 
                         //    Debug.Log("Tiempo!!! " + esto);
 
@@ -513,7 +513,7 @@ public class SelectorManager : MonoBehaviour
                                 PAN.SetActive(true);
                                 UnityEngine.Debug.Log(SELECTOR);
                                 feedbackPAN.SetActive(true);
-                                GuardarTiempoPAN.text = Tiempo.GetComponent<Timer>().tiempotext.text;
+                                GuardarTiempoPAN.text = Tiempo.GetComponent<Timer_v1>().tiempotext.text;
                                 StartCoroutine(LateCall(feedbackPAN));
 
                             }
@@ -535,7 +535,7 @@ public class SelectorManager : MonoBehaviour
                                 //CARNE.SetActive(true);
                                 //UnityEngine.Debug.Log(SELECTOR);
                                 feedbackCARNE.SetActive(true);
-                                //GuardarTiempoCARNE.text = Tiempo.GetComponent<Timer>().tiempotext.text;
+                                //GuardarTiempoCARNE.text = Tiempo.GetComponent<Timer_v1>().tiempotext.text;
                                 // StartCoroutine(LateCall(feedbackCARNE));
                                 stan = 1;
                             }
@@ -557,7 +557,7 @@ public class SelectorManager : MonoBehaviour
                                 HARINAS.SetActive(true);
                                 UnityEngine.Debug.Log(SELECTOR);
                                 feedbackHARINAS.SetActive(true);
-                                GuardarTiempoHARINAS.text = Tiempo.GetComponent<Timer>().tiempotext.text;
+                                GuardarTiempoHARINAS.text = Tiempo.GetComponent<Timer_v1>().tiempotext.text;
                                 StartCoroutine(LateCall(feedbackHARINAS));*/
                                 Opciones.SetActive(true);
                                 SioNo.text = ("Desea agregar Harina?");
@@ -572,7 +572,7 @@ public class SelectorManager : MonoBehaviour
                                 //LACTEOS.SetActive(true);
                                 //UnityEngine.Debug.Log(SELECTOR);
                                 feedbackLACTEOS.SetActive(true);
-                                //GuardarTiempoLACTEOS.text = Tiempo.GetComponent<Timer>().tiempotext.text;
+                                //GuardarTiempoLACTEOS.text = Tiempo.GetComponent<Timer_v1>().tiempotext.text;
                                 //StartCoroutine(LateCall(feedbackLACTEOS));
                                 stan = 3;
                             }
@@ -585,7 +585,7 @@ public class SelectorManager : MonoBehaviour
                                 //JUGUETES.SetActive(true);
                                 //UnityEngine.Debug.Log(SELECTOR);
                                 feedbackJUGUETES.SetActive(true);
-                                //GuardarTiempoJUGUETES.text = Tiempo.GetComponent<Timer>().tiempotext.text;
+                                //GuardarTiempoJUGUETES.text = Tiempo.GetComponent<Timer_v1>().tiempotext.text;
                                 //StartCoroutine(LateCall(feedbackJUGUETES));
                                 stan = 2;
                             }

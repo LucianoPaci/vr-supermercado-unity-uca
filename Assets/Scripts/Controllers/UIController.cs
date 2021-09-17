@@ -11,9 +11,9 @@ public class UIController : MonoBehaviour
     [SerializeField] private ListPanel _wrongItemsListPanel;
 
     [SerializeField] private OptionsManager _optionsCanvas;
-    [SerializeField] private GameObject _optionCanvasGO;
-
+    [SerializeField] private StatsPanel _statsPanel;
     [SerializeField] private GameObject InformationPanel;
+    public float spawnDistance = 2f;
 
 
     private void Awake()
@@ -21,12 +21,16 @@ public class UIController : MonoBehaviour
         SelectController.OnSelectedEntityChanged += HandleSelectedEntityChanged;
         HandleSelectedEntityChanged(SelectController.SelectedEntity);
         SelectController.OnDisplayingSelectionCanvas += AppendOptionsCanvasToObject;
+        GameManager.OnGameStarted += SetStartGameUI;
+        GameManager.OnGameEnded += SetEndGameUI;
     }
 
     private void OnDestroy()
     {
         SelectController.OnSelectedEntityChanged -= HandleSelectedEntityChanged;
         SelectController.OnDisplayingSelectionCanvas -= AppendOptionsCanvasToObject;
+        GameManager.OnGameStarted -= SetStartGameUI;
+        GameManager.OnGameEnded -= SetEndGameUI;
     }
 
 
@@ -56,11 +60,10 @@ public class UIController : MonoBehaviour
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         Camera mainCam = player.GetComponentInChildren<Camera>();
-        float distance = 2f;
-        
+
         _optionsCanvas.gameObject.transform.SetParent(targetTransform, true);
         _optionsCanvas.gameObject.transform.position =
-            mainCam.transform.position + mainCam.transform.forward * distance;
+            mainCam.transform.position + mainCam.transform.forward * spawnDistance;
         _optionsCanvas.gameObject.transform.rotation = mainCam.transform.rotation;
     }
 
@@ -93,6 +96,42 @@ public class UIController : MonoBehaviour
             
                 _optionsCanvas.GetComponent<Canvas>().enabled = true;
             }
+        }
+    }
+
+    private void SetStartGameUI()
+    {
+        if (_statsPanel != null)
+        {
+            _statsPanel.gameObject.SetActive(true);
+        }
+
+        if (_listPanel != null)
+        {
+            _listPanel.gameObject.SetActive(true);
+        }
+
+        if (_wrongItemsListPanel != null)
+        {
+            _wrongItemsListPanel.gameObject.SetActive(false);
+        }
+    }
+
+    private void SetEndGameUI()
+    {
+        if (_statsPanel != null)
+        {
+            _statsPanel.gameObject.SetActive(true);
+        }
+
+        if (_listPanel != null)
+        {
+            _listPanel.gameObject.SetActive(true);
+        }
+
+        if (_wrongItemsListPanel != null)
+        {
+            _wrongItemsListPanel.gameObject.SetActive(true);
         }
     }
 }
