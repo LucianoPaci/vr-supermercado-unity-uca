@@ -12,6 +12,10 @@ public class Entity : MonoBehaviour
     void Start()
     {
         entityName = transform.root.name;
+        if (key != null)
+        {
+            gameObject.name = key;
+        }
 
     }
 

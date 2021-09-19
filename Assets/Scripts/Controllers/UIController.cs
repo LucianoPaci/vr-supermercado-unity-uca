@@ -23,6 +23,7 @@ public class UIController : MonoBehaviour
         SelectController.OnDisplayingSelectionCanvas += AppendOptionsCanvasToObject;
         GameManager.OnGameStarted += SetStartGameUI;
         GameManager.OnGameEnded += SetEndGameUI;
+        GameManager.OnNewElementAddedToDictionary += DisplayInformation;
     }
 
     private void OnDestroy()
@@ -31,6 +32,7 @@ public class UIController : MonoBehaviour
         SelectController.OnDisplayingSelectionCanvas -= AppendOptionsCanvasToObject;
         GameManager.OnGameStarted -= SetStartGameUI;
         GameManager.OnGameEnded -= SetEndGameUI;
+        GameManager.OnNewElementAddedToDictionary -= DisplayInformation;
     }
 
 
@@ -48,11 +50,6 @@ public class UIController : MonoBehaviour
             _wrongItemsListPanel.Bind(entity);
         }
 
-        if (entity)
-        {
-            DisplayInformation(entity);
-        }
-        
     }
 
     // Faltaria ver el DESTROY del Canvas
@@ -69,9 +66,17 @@ public class UIController : MonoBehaviour
 
     private void DisplayInformation(Entity e)
     {
-        
         InformationPanel.SetActive(true);
-        InformationPanel.GetComponentInChildren<TMP_Text>().text = $"Recogiste {e.GetKey()}";
+
+        if (e)
+        {
+            InformationPanel.GetComponentInChildren<TMP_Text>().text = $"Recogiste {e.GetKey()}";
+        }
+        else
+        {
+            InformationPanel.GetComponentInChildren<TMP_Text>().text = "Ya habias recogido eso!";
+        }
+            
         StartCoroutine(DisableCanvas());
     }
     

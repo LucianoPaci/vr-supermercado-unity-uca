@@ -66,7 +66,7 @@ public class OptionsManager : MonoBehaviour
                 titleText.SetText("Qué deseas comprar?");
                 foreach (var entity in entities)
                 {
-                    CreateOptionObject(entity.GetName(), "Presionar algo", entity);
+                    CreateOptionObject(entity.GetKey(), "", entity);
                 }
                 CreateOptionObject("Cancelar", "--", null);
             }

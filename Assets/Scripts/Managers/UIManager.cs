@@ -62,15 +62,13 @@ public class UIManager : MonoBehaviour
 
     private void OnEnable()
     {
-
-        ObjectPicker.OnSelectedObject += DisplayPickedObject;
+        
         PlayerManager.OnPlayerStartedGame += DisplayBasicUI;
         PlayerManager.OnPlayerEndedGame += DisplayBasicUI;
     }
 
     private void OnDisable()
     {
-        ObjectPicker.OnSelectedObject -= DisplayPickedObject;
         PlayerManager.OnPlayerStartedGame -= DisplayBasicUI;
         PlayerManager.OnPlayerEndedGame -= DisplayBasicUI;
     }
