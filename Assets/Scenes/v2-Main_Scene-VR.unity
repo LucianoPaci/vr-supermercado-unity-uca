@@ -1927,6 +1927,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key: leche
   picked: 0
+--- !u!114 &75607782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75607774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: crema
+  picked: 0
 --- !u!4 &76863009 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4291763268081462, guid: 6fdaddc3b693adf48bcb3dc847735a20,
@@ -2403,6 +2417,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 29.583868, y: 22.228277, z: 10.860299}
   m_Center: {x: 0.00000095367426, y: 11.114139, z: -0.18260287}
+--- !u!114 &90836413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90836407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: perfume
+  picked: 0
 --- !u!1001 &99103770
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3094,6 +3122,48 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 29.58387, y: 22.137518, z: 11.681785}
   m_Center: {x: -0.0000047683716, y: 11.068757, z: -0.5933468}
+--- !u!114 &111815371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111815365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: rompecabezas
+  picked: 0
+--- !u!114 &111815372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111815365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: auto_policia
+  picked: 0
+--- !u!114 &111815373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111815365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: osito
+  picked: 0
 --- !u!1 &112006929
 GameObject:
   m_ObjectHideFlags: 0
@@ -3592,6 +3662,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Objeto: BEBIDAS
+--- !u!114 &131501637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131501631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: bebidas
+  picked: 0
 --- !u!1 &140627613
 GameObject:
   m_ObjectHideFlags: 0
@@ -4179,6 +4263,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 29.583868, y: 22.228277, z: 10.860299}
   m_Center: {x: 0.00000095367426, y: 11.114139, z: -0.18260287}
+--- !u!114 &179905963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179905957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: perfume
+  picked: 0
 --- !u!1 &182017732
 GameObject:
   m_ObjectHideFlags: 0
@@ -9595,7 +9693,7 @@ GameObject:
   - component: {fileID: 365864497}
   - component: {fileID: 365864496}
   m_Layer: 0
-  m_Name: pelota
+  m_Name: Deportes
   m_TagString: Selectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10881,6 +10979,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Objeto: BEBIDAS
+--- !u!114 &418363140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418363134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: bebidas
+  picked: 0
 --- !u!1 &425070789
 GameObject:
   m_ObjectHideFlags: 0
@@ -13801,6 +13913,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Objeto: BEBIDAS
+--- !u!114 &538265552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 538265546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: bebidas
+  picked: 0
 --- !u!1 &540069831
 GameObject:
   m_ObjectHideFlags: 0
@@ -16194,6 +16320,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 29.58387, y: 21.302748, z: 9.911632}
   m_Center: {x: -0.00000095367426, y: 10.651371, z: 0.29172775}
+--- !u!114 &618225404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618225398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: monitor
+  picked: 0
 --- !u!1 &621475073
 GameObject:
   m_ObjectHideFlags: 0
@@ -19159,6 +19299,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Objeto: BEBIDAS
+--- !u!114 &754758542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754758536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: bebidas
+  picked: 0
 --- !u!1 &754842166 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1875275194796056, guid: 0e56649700bcbba46b280ac748f830d7,
@@ -19675,6 +19829,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 29.58387, y: 21.302748, z: 9.911632}
   m_Center: {x: -0.0000047683716, y: 10.651372, z: 0.29173157}
+--- !u!114 &772997985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772997979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: monitor
+  picked: 0
 --- !u!1 &776562713
 GameObject:
   m_ObjectHideFlags: 0
@@ -20006,6 +20174,135 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 785647366}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &785823980
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1828351882}
+    m_Modifications:
+    - target: {fileID: 1668312570272644, guid: 6fdaddc3b693adf48bcb3dc847735a20, type: 3}
+      propertyPath: m_Name
+      value: PF_interior_display_stand_vegetables_001_mesh (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1668312570272644, guid: 6fdaddc3b693adf48bcb3dc847735a20, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1668312570272644, guid: 6fdaddc3b693adf48bcb3dc847735a20, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4291763268081462, guid: 6fdaddc3b693adf48bcb3dc847735a20, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4291763268081462, guid: 6fdaddc3b693adf48bcb3dc847735a20, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.6703815
+      objectReference: {fileID: 0}
+    - target: {fileID: 4291763268081462, guid: 6fdaddc3b693adf48bcb3dc847735a20, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4291763268081462, guid: 6fdaddc3b693adf48bcb3dc847735a20, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 6.195044e-14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4291763268081462, guid: 6fdaddc3b693adf48bcb3dc847735a20, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4291763268081462, guid: 6fdaddc3b693adf48bcb3dc847735a20, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.000000021855705
+      objectReference: {fileID: 0}
+    - target: {fileID: 4291763268081462, guid: 6fdaddc3b693adf48bcb3dc847735a20, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.0000029653306
+      objectReference: {fileID: 0}
+    - target: {fileID: 4291763268081462, guid: 6fdaddc3b693adf48bcb3dc847735a20, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4291763268081462, guid: 6fdaddc3b693adf48bcb3dc847735a20, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4291763268081462, guid: 6fdaddc3b693adf48bcb3dc847735a20, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180.00002
+      objectReference: {fileID: 0}
+    - target: {fileID: 4291763268081462, guid: 6fdaddc3b693adf48bcb3dc847735a20, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4291763268081462, guid: 6fdaddc3b693adf48bcb3dc847735a20, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4291763268081462, guid: 6fdaddc3b693adf48bcb3dc847735a20, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4291763268081462, guid: 6fdaddc3b693adf48bcb3dc847735a20, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.15
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6fdaddc3b693adf48bcb3dc847735a20, type: 3}
+--- !u!4 &785823981 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4291763268081462, guid: 6fdaddc3b693adf48bcb3dc847735a20,
+    type: 3}
+  m_PrefabInstance: {fileID: 785823980}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &785823982 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1668312570272644, guid: 6fdaddc3b693adf48bcb3dc847735a20,
+    type: 3}
+  m_PrefabInstance: {fileID: 785823980}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &785823983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785823982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: bananas
+  picked: 0
+--- !u!114 &785823984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785823982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b95c7569fe38af042bb412b9a737b8e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Objeto: VERDULERIA
+--- !u!65 &785823985
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785823982}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 28.968225, y: 11.309387, z: 10.783266}
+  m_Center: {x: 8.9700836e-20, y: 5.6546865, z: -0.00000047683716}
 --- !u!1 &795360028
 GameObject:
   m_ObjectHideFlags: 0
@@ -21317,6 +21614,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Objeto: BEBIDAS
+--- !u!114 &868452974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868452968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: bebidas
+  picked: 0
 --- !u!1 &868715536
 GameObject:
   m_ObjectHideFlags: 0
@@ -21554,6 +21865,48 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 29.58387, y: 22.137518, z: 11.681785}
   m_Center: {x: 0.0000004768372, y: 11.068756, z: -0.59334105}
+--- !u!114 &876446342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876446336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: rompecabezas
+  picked: 0
+--- !u!114 &876446343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876446336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: auto_policia
+  picked: 0
+--- !u!114 &876446344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876446336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: osito
+  picked: 0
 --- !u!1001 &877235400
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26203,6 +26556,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 29.58387, y: 21.302748, z: 9.911632}
   m_Center: {x: -0.0000038146973, y: 10.651372, z: 0.29173157}
+--- !u!114 &1104941158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104941152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: monitor
+  picked: 0
 --- !u!1 &1107038217
 GameObject:
   m_ObjectHideFlags: 0
@@ -26588,6 +26955,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 29.58387, y: 21.302748, z: 9.911632}
   m_Center: {x: -0.0000047683716, y: 10.651371, z: 0.29172966}
+--- !u!114 &1120514431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120514425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: monitor
+  picked: 0
 --- !u!1 &1127522879
 GameObject:
   m_ObjectHideFlags: 0
@@ -29219,6 +29600,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: leche
+  picked: 0
+--- !u!114 &1222026565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222026557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: crema
   picked: 0
 --- !u!1 &1232108757 stripped
 GameObject:
@@ -31875,6 +32270,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 29.58387, y: 21.302748, z: 9.911632}
   m_Center: {x: -0.0000047683716, y: 10.651372, z: 0.29173157}
+--- !u!114 &1359074643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359074637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: monitor
+  picked: 0
 --- !u!1 &1360031032
 GameObject:
   m_ObjectHideFlags: 0
@@ -32916,6 +33325,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Objeto: BEBIDAS
+--- !u!114 &1398169139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398169133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: bebidas
+  picked: 0
 --- !u!1 &1402303979
 GameObject:
   m_ObjectHideFlags: 0
@@ -36630,6 +37053,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Objeto: BEBIDAS
+--- !u!114 &1500695934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500695928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: bebidas
+  picked: 0
 --- !u!1 &1500929820
 GameObject:
   m_ObjectHideFlags: 0
@@ -37296,6 +37733,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: leche
+  picked: 0
+--- !u!114 &1522032010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522032002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: crema
   picked: 0
 --- !u!1 &1522439188
 GameObject:
@@ -38118,6 +38569,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Objeto: BEBIDAS
+--- !u!114 &1563929844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563929838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: bebidas
+  picked: 0
 --- !u!1 &1565116685
 GameObject:
   m_ObjectHideFlags: 0
@@ -43386,6 +43851,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Objeto: BEBIDAS
+--- !u!114 &1768976433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768976427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: bebidas
+  picked: 0
 --- !u!1 &1770689255
 GameObject:
   m_ObjectHideFlags: 0
@@ -43661,7 +44140,7 @@ GameObject:
   - component: {fileID: 1778469591}
   - component: {fileID: 1778469590}
   m_Layer: 0
-  m_Name: Juguetes
+  m_Name: Jugueteria
   m_TagString: Selectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45952,6 +46431,7 @@ Transform:
   - {fileID: 76863009}
   - {fileID: 516277590}
   - {fileID: 255541671}
+  - {fileID: 785823981}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -46543,7 +47023,7 @@ GameObject:
   - component: {fileID: 1848086053}
   - component: {fileID: 1848086052}
   m_Layer: 0
-  m_Name: Perfume
+  m_Name: Perfumeria
   m_TagString: Selectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46892,6 +47372,48 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 29.58387, y: 22.137518, z: 11.681785}
   m_Center: {x: 0.000002861023, y: 11.068756, z: -0.59334487}
+--- !u!114 &1865306409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865306403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: rompecabezas
+  picked: 0
+--- !u!114 &1865306410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865306403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: auto_policia
+  picked: 0
+--- !u!114 &1865306411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865306403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: osito
+  picked: 0
 --- !u!1 &1868196022 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1461237810109404, guid: 61cbad69f3f23ef4e8421c4d22e537ae,
@@ -48757,6 +49279,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 29.58387, y: 21.302748, z: 9.911632}
   m_Center: {x: -0.00000095367426, y: 10.651371, z: 0.29172775}
+--- !u!114 &1943401366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943401360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: monitor
+  picked: 0
 --- !u!1 &1947139895
 GameObject:
   m_ObjectHideFlags: 0
@@ -49603,6 +50139,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Objeto: BEBIDAS
+--- !u!114 &1960532199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1960532193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: bebidas
+  picked: 0
 --- !u!1 &1962471070 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1668312570272644, guid: 6fdaddc3b693adf48bcb3dc847735a20,
@@ -51133,6 +51683,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Objeto: BEBIDAS
+--- !u!114 &2018699908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018699902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: bebidas
+  picked: 0
 --- !u!1 &2019831707
 GameObject:
   m_ObjectHideFlags: 0
@@ -51910,7 +52474,7 @@ GameObject:
   - component: {fileID: 2062818940}
   - component: {fileID: 2062818939}
   m_Layer: 0
-  m_Name: bebidas
+  m_Name: Bebidas
   m_TagString: Selectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52482,6 +53046,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Objeto: BEBIDAS
+--- !u!114 &2085859955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085859949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: bebidas
+  picked: 0
 --- !u!1 &2088238799
 GameObject:
   m_ObjectHideFlags: 0
