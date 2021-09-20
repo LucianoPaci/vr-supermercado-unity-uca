@@ -119,5 +119,8 @@ public class UIController : MonoBehaviour
             _listPanel.gameObject.SetActive(true);
             _wrongItemsListPanel.gameObject.SetActive(true);
             _wrongItemsListPanel.GetComponent<Canvas>().enabled = true;
+            _wrongItemsListPanel.GetComponent<CheckListManager>().DisplayElapsedTimes();
+            _listPanel.GetComponent<CheckListManager>().DisplayElapsedTimes();
     }
+    
 }

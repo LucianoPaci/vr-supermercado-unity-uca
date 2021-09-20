@@ -7,21 +7,27 @@ public class Timer : MonoBehaviour
     private static bool _tick;
     private static float _gameTimer = 0f;
     private static string _timerString;
-    private static float _lastTime = 0f;
+    public static float _lastLap = 0f;
+
     void Update()
     {
         if (_tick)
         {
             _gameTimer += Time.deltaTime;
-            int seconds = (int) (_gameTimer % 60);
-            int minutes = (int) (_gameTimer / 60) % 60;
-            
-            _timerString = $"{minutes:00}:{seconds:00}";
+            _timerString = TimeToString(_gameTimer);
         }
         else
         {
-           ResetTimer();
+            ResetTimer();
         }
+    }
+
+    public static string TimeToString(float Time)
+    {
+        int seconds = (int) (Time % 60);
+        int minutes = (int) (Time / 60) % 60;
+        
+        return  $"{minutes:00}:{seconds:00}";
     }
 
     public static void StartTimer()
@@ -45,15 +51,19 @@ public class Timer : MonoBehaviour
         return _timerString;
     }
 
-     void SetLap()
+     public static string SetLap()
      {
-         if (_lastTime == 0f)
+         if (_lastLap == 0f)
          {
-             _lastTime = _gameTimer;
+             _lastLap = _gameTimer;
          }
          else
          {
-             _lastTime = _gameTimer - _lastTime;
+             _lastLap = _gameTimer - _lastLap;
          }
+         Debug.Log("PARE: " + TimeToString(_lastLap) );
+         Debug.Log("LLEVAMOS: " + _gameTimer);
+
+         return TimeToString(_lastLap) ;
      }
 }

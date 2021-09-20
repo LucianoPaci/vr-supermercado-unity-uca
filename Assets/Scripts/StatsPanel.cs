@@ -14,6 +14,11 @@ public class StatsPanel : MonoBehaviour
     {
         textTime = GetComponentsInChildren<TMP_Text>().ToList().Find(go => go.name == "ActualTimer");
         previousTextTime = GetComponentsInChildren<TMP_Text>().ToList().Find(go => go.name == "PreviousTimer");
+        
+        if (PlayerPrefs.HasKey("previousTime"))
+        {
+            previousTextTime.text = PlayerPrefs.GetString("previousTime");
+        }
     }
 
     void Update()
@@ -23,10 +28,7 @@ public class StatsPanel : MonoBehaviour
             textTime.text = Timer.GetCurrentTime();
         }
 
-        if (PlayerPrefs.HasKey("previousTime"))
-        {
-            previousTextTime.text = PlayerPrefs.GetString("previousTime");
-        }
+       
     }
     
 }

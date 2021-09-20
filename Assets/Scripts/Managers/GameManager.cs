@@ -96,7 +96,8 @@ public class GameManager : MonoBehaviour
             {
                 if (!myDictionary.ContainsKey(e.GetKey()))
                 {
-                    myDictionary.Add(e.GetKey(), new EntityWithTime(Timer.GetCurrentTime(), e));
+                    myDictionary.Add(e.GetKey(), new EntityWithTime(Timer.SetLap(), e));
+                    // myDictionary.Add(e.GetKey(), new EntityWithTime(Timer.GetCurrentTime(), e));
                     OnNewElementAddedToDictionary?.Invoke(e);
                 }
                 else

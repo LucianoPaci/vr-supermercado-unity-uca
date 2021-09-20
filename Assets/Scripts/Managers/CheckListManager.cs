@@ -49,13 +49,11 @@ public class CheckListManager : MonoBehaviour
     private void Awake()
     {
        LoadJSONFile();
-       GameManager.OnGameEnded += DisplayElapsedTimes;
        GameManager.OnNewElementAddedToDictionary += AddTimeToListItem;
     }
 
     private void OnDisable()
     {
-        GameManager.OnGameEnded -= DisplayElapsedTimes;
         GameManager.OnNewElementAddedToDictionary -= AddTimeToListItem;
     }
 
