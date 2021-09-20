@@ -6,11 +6,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-
-
 public class OptionsManager : MonoBehaviour
 {
-
     [Header("Where to render")]
     public Transform content;
     

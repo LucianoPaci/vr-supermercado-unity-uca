@@ -7,7 +7,7 @@ public class Timer : MonoBehaviour
     private static bool _tick;
     private static float _gameTimer = 0f;
     private static string _timerString;
-
+    private static float _lastTime = 0f;
     void Update()
     {
         if (_tick)
@@ -41,6 +41,19 @@ public class Timer : MonoBehaviour
 
     public static string GetCurrentTime()
     {
+        
         return _timerString;
     }
+
+     void SetLap()
+     {
+         if (_lastTime == 0f)
+         {
+             _lastTime = _gameTimer;
+         }
+         else
+         {
+             _lastTime = _gameTimer - _lastTime;
+         }
+     }
 }

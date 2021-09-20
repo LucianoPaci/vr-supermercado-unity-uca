@@ -6,10 +6,6 @@ using TMPro;
 using UnityEngine.UI;
 public class ListPanel : MonoBehaviour
 {
-
-    [SerializeField] private TMP_Text _text;
-
-
     private Entity _boundEntity;
     private List<CheckListItem> _checkListObjects = new List<CheckListItem>();
     
@@ -49,10 +45,6 @@ public class ListPanel : MonoBehaviour
         if(found)
         {
             found.gameObject.GetComponentInParent<Toggle>().isOn = true;
-            // var text = GameManager.fetchedEntitiesWithTime.TryGetValue(entity, out string outputText);
-            // found.gameObject.GetComponentInParent<Text>().text = outputText;
-            // found.gameObject.GetComponentInParent<Text>().gameObject.SetActive(true);
-
         }
         
        

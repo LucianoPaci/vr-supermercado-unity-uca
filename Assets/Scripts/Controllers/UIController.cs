@@ -66,18 +66,21 @@ public class UIController : MonoBehaviour
 
     private void DisplayInformation(Entity e)
     {
-        InformationPanel.SetActive(true);
-
-        if (e)
+        if (!InformationPanel.activeInHierarchy)
         {
-            InformationPanel.GetComponentInChildren<TMP_Text>().text = $"Recogiste {e.GetKey()}";
-        }
-        else
-        {
-            InformationPanel.GetComponentInChildren<TMP_Text>().text = "Ya habias recogido eso!";
-        }
+            InformationPanel.SetActive(true);
+            if (e != null)
+            {
+                InformationPanel.GetComponentInChildren<TMP_Text>().text = $"Recogiste {e.GetKey()}";
+            }
+            else
+            {
+                InformationPanel.GetComponentInChildren<TMP_Text>().text = "Ya habias recogido eso!";
+            }
             
-        StartCoroutine(DisableCanvas());
+            StartCoroutine(DisableCanvas());
+        }
+        
     }
     
     IEnumerator DisableCanvas(int seconds = 3)
@@ -90,9 +93,7 @@ public class UIController : MonoBehaviour
     {
         if (_optionsCanvas.selectableOptionsList.Count > 0)
         {
-            Debug.Log("SelectedEntity " + SelectController.SelectedEntity);
             if (_optionsCanvas.GetComponent<Canvas>().enabled && !_optionsCanvas.isLoading)
-            
             {
                 StartCoroutine(_optionsCanvas.DisableCanvasLateCall());
             }
@@ -106,37 +107,17 @@ public class UIController : MonoBehaviour
 
     private void SetStartGameUI()
     {
-        if (_statsPanel != null)
-        {
             _statsPanel.gameObject.SetActive(true);
-        }
-
-        if (_listPanel != null)
-        {
             _listPanel.gameObject.SetActive(true);
-        }
-
-        if (_wrongItemsListPanel != null)
-        {
-            _wrongItemsListPanel.gameObject.SetActive(false);
-        }
+            _wrongItemsListPanel.gameObject.SetActive(true);
+            _wrongItemsListPanel.GetComponent<Canvas>().enabled = false;
     }
 
     private void SetEndGameUI()
     {
-        if (_statsPanel != null)
-        {
             _statsPanel.gameObject.SetActive(true);
-        }
-
-        if (_listPanel != null)
-        {
             _listPanel.gameObject.SetActive(true);
-        }
-
-        if (_wrongItemsListPanel != null)
-        {
             _wrongItemsListPanel.gameObject.SetActive(true);
-        }
+            _wrongItemsListPanel.GetComponent<Canvas>().enabled = true;
     }
 }

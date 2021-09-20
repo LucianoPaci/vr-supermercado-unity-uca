@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,18 +17,15 @@ public class CheckListItem : MonoBehaviour
     {
         itemText = GetComponentInChildren<Text>();
         itemText.text = label;
-
-        key = label.ToLower();
-
     }
 
-    public void SetObjectInfo(string label, bool required)
+    public void SetObjectInfo(string label, bool required, string key)
     {
         itemText = GetComponentInChildren<Text>();
 
         this.label = label;
         this.required = required;
-        this.key = label.ToLower();
-        this.itemText.text = label.ToLower();
+        this.key = key;
+        this.itemText.text = label;
     }
 }

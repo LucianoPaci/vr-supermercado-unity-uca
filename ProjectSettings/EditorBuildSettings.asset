@@ -14,16 +14,16 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/MAP.unity
     guid: a464978e8efd3ea4a998c5c93938c9f5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Main_Scene-VR.unity
     guid: f073d294098314da78f6acc3fb36ca03
   - enabled: 1
-    path: Assets/Scenes/Final.unity
-    guid: 6a7920a54c46a384e9f5a83afc51dd2a
-  - enabled: 0
     path: Assets/Scenes/v2-Main_Scene-VR.unity
     guid: 302d8277c3a484288b4ec8021e2c3bf6
   - enabled: 1
     path: Assets/Scenes/UI.unity
     guid: ca588928f85524cf79037673a205c109
+  - enabled: 1
+    path: Assets/Scenes/Final.unity
+    guid: 6a7920a54c46a384e9f5a83afc51dd2a
   m_configObjects: {}

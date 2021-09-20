@@ -19,9 +19,6 @@ public class UIManager : MonoBehaviour
     //public Text commonText;
     private void Awake()
     {
-
-
-        Debug.Log(canvas);
         if (canvas != null)
         {
             canvasGameObject = canvas.gameObject;

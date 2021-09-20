@@ -3148,7 +3148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: auto_policia
+  key: autito
   picked: 0
 --- !u!114 &111815373
 MonoBehaviour:
@@ -20715,8 +20715,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707daf33d414c48eabadfb18e4d48b6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fetchedEntities: []
-  fetchedEntitiesTime: []
 --- !u!1001 &820987734
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21891,7 +21889,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: auto_policia
+  key: autito
   picked: 0
 --- !u!114 &876446344
 MonoBehaviour:
@@ -45558,8 +45556,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707daf33d414c48eabadfb18e4d48b6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fetchedEntities: []
-  fetchedEntitiesTime: []
 --- !u!4 &1801697658
 Transform:
   m_ObjectHideFlags: 0
@@ -47398,7 +47394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86662837d51104c7cbcc93fe42640293, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: auto_policia
+  key: autito
   picked: 0
 --- !u!114 &1865306411
 MonoBehaviour:

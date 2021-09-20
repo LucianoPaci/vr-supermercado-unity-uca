@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using System.Globalization;
+using TMPro;
+
 public class CheckListManager : MonoBehaviour
 {
     [Header("JSON File with items list")]
@@ -46,8 +49,16 @@ public class CheckListManager : MonoBehaviour
     private void Awake()
     {
        LoadJSONFile();
+       GameManager.OnGameEnded += DisplayElapsedTimes;
+       GameManager.OnNewElementAddedToDictionary += AddTimeToListItem;
     }
-    
+
+    private void OnDisable()
+    {
+        GameManager.OnGameEnded -= DisplayElapsedTimes;
+        GameManager.OnNewElementAddedToDictionary -= AddTimeToListItem;
+    }
+
 
     void LoadJSONFile()
     {
@@ -57,19 +68,45 @@ public class CheckListManager : MonoBehaviour
 
             foreach (PlainCheckListItem plainItem in plainList.checkList)
             {
-                CreateCheckListObject(plainItem.label, plainItem.required);
+                CreateCheckListObject(plainItem.label, plainItem.required, plainItem.key);
             }
 
         }
     }
 
-    void CreateCheckListObject(string label, bool required)
+    void AddTimeToListItem(Entity e)
+    {
+        if (e != null)
+        {
+            EntityWithTime ewt = GameManager.GetEntityWithTime(e.GetKey());
+            try
+            {
+                if (ewt != null)
+                {
+                    CheckListItem listItem = checkListObjects.Find(item => item.key == ewt.entity.GetKey());
+                    if (listItem != null)
+                    {
+                        listItem.GetComponentInChildren<TMP_Text>().text = ewt.elaspedTime;
+                    }
+                }
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception);
+              
+            }
+        }
+       
+       
+    }
+
+    void CreateCheckListObject(string label, bool required, string key)
     {
         GameObject item = Instantiate(checkListItemPrefab);
         item.transform.SetParent(content, false);
 
         CheckListItem itemObject = item.GetComponent<CheckListItem>();
-        itemObject.SetObjectInfo(label, required);
+        itemObject.SetObjectInfo(label, required, key);
 
         checkListObjects.Add(itemObject);
 
@@ -78,6 +115,11 @@ public class CheckListManager : MonoBehaviour
     public List<CheckListItem> GetList()
     {
         return checkListObjects;
+    }
+
+    public void DisplayElapsedTimes()
+    {
+        checkListObjects.ForEach(listObject => listObject.GetComponentInChildren<TMP_Text>().enabled = true);
     }
 
 }

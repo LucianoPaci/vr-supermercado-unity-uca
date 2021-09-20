@@ -20,7 +20,12 @@ public class StatsPanel : MonoBehaviour
     {
         if (GameManager.GameStarted())
         {
-            textTime.text= Timer.GetCurrentTime();
+            textTime.text = Timer.GetCurrentTime();
+        }
+
+        if (PlayerPrefs.HasKey("previousTime"))
+        {
+            previousTextTime.text = PlayerPrefs.GetString("previousTime");
         }
     }
     

@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
     public static event Action<Entity> OnNewElementAddedToDictionary;
-    private Dictionary<string, EntityWithTime> myDictionary = new Dictionary<string, EntityWithTime>();
+    public static Dictionary<string, EntityWithTime> myDictionary = new Dictionary<string, EntityWithTime>();
 
     private static bool _gameStarted = false;
     private GameObject _player;
@@ -28,10 +28,6 @@ public class GameManager : MonoBehaviour
     public static event Action OnGameStarted;
     public static event Action OnGameEnded;
 
-    public List<Entity> fetchedEntities = new List<Entity>();
-    public List<string> fetchedEntitiesTime = new List<string>();
-    
-    
     public static bool GameStarted()
     {
         return _gameStarted;
@@ -43,7 +39,7 @@ public class GameManager : MonoBehaviour
         PlayerManager.OnPlayerEndedGame += EndGame;
         SelectController.OnSelectedEntityChanged += HandleEntitiesFetched;
         
-        myDictionary.Clear();
+       
     }
 
     // Update is called once per frame
@@ -54,7 +50,7 @@ public class GameManager : MonoBehaviour
             RestartGame();
         }
 
-        PrintDictionary();
+        // PrintDictionary();
     }
 
     private void OnEnable()
@@ -79,6 +75,7 @@ public class GameManager : MonoBehaviour
     {
         _gameStarted = true;
         Timer.StartTimer();
+        myDictionary.Clear();
         OnGameStarted?.Invoke();
     }
 
@@ -87,19 +84,26 @@ public class GameManager : MonoBehaviour
     {
         _gameStarted = false;
         Timer.StopTimer();
+        PlayerPrefs.SetString("previousTime", Timer.GetCurrentTime());
         OnGameEnded?.Invoke();
     }
 
     void HandleEntitiesFetched(Entity e)
     {
-        if (e)
+        if (e != null)
         {
             try
             {
-                myDictionary.Add(e.GetKey(), new EntityWithTime(Timer.GetCurrentTime(), e));
-                fetchedEntitiesTime.Add(Timer.GetCurrentTime());
-                fetchedEntities.Add(e);
-                OnNewElementAddedToDictionary?.Invoke(e);
+                if (!myDictionary.ContainsKey(e.GetKey()))
+                {
+                    myDictionary.Add(e.GetKey(), new EntityWithTime(Timer.GetCurrentTime(), e));
+                    OnNewElementAddedToDictionary?.Invoke(e);
+                }
+                else
+                {
+                    OnNewElementAddedToDictionary?.Invoke(null);
+                }
+                
             }
             catch (Exception exception)
             {
@@ -109,10 +113,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // public static List<Entity> GetFetchedEntities()
-    // {
-    //     return fetchedEntities;
-    // }
+    public static EntityWithTime GetEntityWithTime(string key)
+    {
+        if(myDictionary.TryGetValue(key, out var ewt))
+        {
+            return ewt;
+        }
+
+        return null;
+    }
 
     void RestartGame()
     {
@@ -126,12 +135,12 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Intro");
     }
 
-    void PrintDictionary()
-    {
-        foreach (var pair in myDictionary)
-        {
-            Debug.Log("Key: " + pair.Key + " Value: " + pair.Value.elaspedTime);
-        }
-    }
+    // void PrintDictionary()
+    // {
+    //     foreach (var pair in myDictionary)
+    //     {
+    //         Debug.Log("Key: " + pair.Key + " Value: " + pair.Value.elaspedTime);
+    //     }
+    // }
 }
 
