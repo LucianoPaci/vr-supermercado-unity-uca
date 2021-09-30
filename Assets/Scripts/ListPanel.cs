@@ -13,6 +13,7 @@ public class ListPanel : MonoBehaviour
     {
         _checkListObjects = GetComponent<CheckListManager>().GetList();
         this.gameObject.SetActive(false);
+        GameManager.OnNewElementAddedToDictionary += AddTimeToListItem;
     }
 
     private void OnDestroy()
@@ -21,6 +22,7 @@ public class ListPanel : MonoBehaviour
         {
             _boundEntity.OnStatusChanged -= HandleStatusChanged;
         }
+        GameManager.OnNewElementAddedToDictionary -= AddTimeToListItem;
     }
 
     public void Bind(Entity entity)
@@ -47,6 +49,32 @@ public class ListPanel : MonoBehaviour
             found.gameObject.GetComponentInParent<Toggle>().isOn = true;
         }
         
+       
+    }
+    
+    void AddTimeToListItem(Entity e)
+    {
+        if (e != null)
+        {
+            EntityWithTime ewt = GameManager.GetEntityWithTime(e.GetKey());
+            try
+            {
+                if (ewt != null)
+                {
+                    CheckListItem listItem = _checkListObjects.Find(item => item.key == ewt.entity.GetKey());
+                    if (listItem != null)
+                    {
+                        listItem.GetComponentInChildren<TMP_Text>().text = ewt.elaspedTime;
+                    }
+                }
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception);
+              
+            }
+        }
+       
        
     }
 }

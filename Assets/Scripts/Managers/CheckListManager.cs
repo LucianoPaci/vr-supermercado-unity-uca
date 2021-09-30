@@ -2,8 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.IO;
-using System.Globalization;
 using TMPro;
 
 public class CheckListManager : MonoBehaviour
@@ -49,14 +47,7 @@ public class CheckListManager : MonoBehaviour
     private void Awake()
     {
        LoadJSONFile();
-       GameManager.OnNewElementAddedToDictionary += AddTimeToListItem;
     }
-
-    private void OnDisable()
-    {
-        GameManager.OnNewElementAddedToDictionary -= AddTimeToListItem;
-    }
-
 
     void LoadJSONFile()
     {
@@ -71,33 +62,6 @@ public class CheckListManager : MonoBehaviour
 
         }
     }
-
-    void AddTimeToListItem(Entity e)
-    {
-        if (e != null)
-        {
-            EntityWithTime ewt = GameManager.GetEntityWithTime(e.GetKey());
-            try
-            {
-                if (ewt != null)
-                {
-                    CheckListItem listItem = checkListObjects.Find(item => item.key == ewt.entity.GetKey());
-                    if (listItem != null)
-                    {
-                        listItem.GetComponentInChildren<TMP_Text>().text = ewt.elaspedTime;
-                    }
-                }
-            }
-            catch (Exception exception)
-            {
-                Console.WriteLine(exception);
-              
-            }
-        }
-       
-       
-    }
-
     void CreateCheckListObject(string label, bool required, string key)
     {
         GameObject item = Instantiate(checkListItemPrefab);

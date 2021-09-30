@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
             RestartGame();
         }
 
-        // PrintDictionary();
+        PrintDictionary();
     }
 
     private void OnEnable()
@@ -136,12 +136,12 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Intro");
     }
 
-    // void PrintDictionary()
-    // {
-    //     foreach (var pair in myDictionary)
-    //     {
-    //         Debug.Log("Key: " + pair.Key + " Value: " + pair.Value.elaspedTime);
-    //     }
-    // }
+    void PrintDictionary()
+    {
+        foreach (var pair in myDictionary)
+        {
+            Debug.Log("Key: " + pair.Key + " Value: " + pair.Value.elaspedTime);
+        }
+    }
 }
 
