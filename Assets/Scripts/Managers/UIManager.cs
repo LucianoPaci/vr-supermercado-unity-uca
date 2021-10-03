@@ -1,101 +1,126 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class UIManager : MonoBehaviour
 {
-    //
-    // Start is called before the first frame update
+    [SerializeField] private ListPanel _listPanel;
+    [SerializeField] private ListPanel _wrongItemsListPanel;
 
-    public Canvas canvas;
-    private GameObject canvasGameObject;
-    private Text variableText;
-    private GameObject variableTextGO;
-    private GameObject commonTextGO;
-    private Text commonText;
+    [SerializeField] private OptionsManager _optionsCanvas;
+    [SerializeField] private StatsPanel _statsPanel;
+    [SerializeField] private GameObject InformationPanel;
+    public float spawnDistance = 2f;
 
-    //public Text variableText;
-    //public Text commonText;
+
     private void Awake()
     {
-        if (canvas != null)
-        {
-            canvasGameObject = canvas.gameObject;
-            var tests = canvasGameObject?.GetComponentsInChildren<Text>();
-            //variableText = canvasGameObject?.GetComponentInChildren<Text>();
-            //commonText = canvasGameObject?.GetComponentInChildren<Text>();
+        SelectController.OnSelectedEntityChanged += HandleSelectedEntityChanged;
+        HandleSelectedEntityChanged(SelectController.SelectedEntity);
+        SelectController.OnDisplayingSelectionCanvas += AppendOptionsCanvasToObject;
+        GameManager.OnGameStarted += SetStartGameUI;
+        GameManager.OnGameEnded += SetEndGameUI;
+        GameManager.OnNewElementAddedToDictionary += DisplayInformation;
+    }
 
-            var test = GameObject.FindGameObjectWithTag("Text_startgame");
-            variableText = GameObject.FindGameObjectWithTag("Text_startgame").GetComponent<Text>();
-            commonText = GameObject.FindGameObjectWithTag("Text_PickedObject").GetComponent<Text>();
+    private void OnDestroy()
+    {
+        SelectController.OnSelectedEntityChanged -= HandleSelectedEntityChanged;
+        SelectController.OnDisplayingSelectionCanvas -= AppendOptionsCanvasToObject;
+        GameManager.OnGameStarted -= SetStartGameUI;
+        GameManager.OnGameEnded -= SetEndGameUI;
+        GameManager.OnNewElementAddedToDictionary -= DisplayInformation;
+    }
+
+
+
+    private void HandleSelectedEntityChanged(Entity entity)
+    {
+
+        if (_listPanel != null)
+        {
+            _listPanel.Bind(entity);
+        }
+
+        if (_wrongItemsListPanel != null)
+        {
+            _wrongItemsListPanel.Bind(entity);
+        }
+
+    }
+
+    // Faltaria ver el DESTROY del Canvas
+    private void AppendOptionsCanvasToObject(Transform targetTransform)
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        Camera mainCam = player.GetComponentInChildren<Camera>();
+
+        _optionsCanvas.gameObject.transform.SetParent(targetTransform, true);
+        _optionsCanvas.gameObject.transform.position =
+            mainCam.transform.position + mainCam.transform.forward * spawnDistance;
+        _optionsCanvas.gameObject.transform.rotation = mainCam.transform.rotation;
+    }
+
+    private void DisplayInformation(Entity e)
+    {
+        if (!InformationPanel.activeInHierarchy)
+        {
+            InformationPanel.SetActive(true);
+            if (e != null)
+            {
+                InformationPanel.GetComponentInChildren<TMP_Text>().text = $"Recogiste {e.GetKey()}";
+            }
+            else
+            {
+                InformationPanel.GetComponentInChildren<TMP_Text>().text = "Ya habias recogido eso!";
+            }
+            
+            StartCoroutine(DisableCanvas());
+        }
+        
+    }
+    
+    IEnumerator DisableCanvas(int seconds = 3)
+    {
+        yield return new WaitForSeconds(seconds);
+        InformationPanel.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (_optionsCanvas.selectableOptionsList.Count > 0)
+        {
+            if (_optionsCanvas.GetComponent<Canvas>().enabled && !_optionsCanvas.isLoading)
+            {
+                StartCoroutine(_optionsCanvas.DisableCanvasLateCall());
+            }
+            else
+            {
+            
+                _optionsCanvas.GetComponent<Canvas>().enabled = true;
+            }
         }
     }
 
-    /*
-
-    void Start()
+    private void SetStartGameUI()
     {
-        
-        //Debug.Log(canvas);
-        //if (canvas != null)
-        //{
-        //    canvasGameObject = canvas.gameObject;
-        //    var tests = canvasGameObject.GetComponentsInChildren<Text>();
-        //    variableText = canvas.gameObject.GetComponentInChildren<Text>();
-        //    commonText = canvas.gameObject.GetComponentInChildren<Text>();
-        //    Debug.Log(variableText);
-        //    Debug.Log(commonText);
-
-        //}
+            _statsPanel.gameObject.SetActive(true);
+            _listPanel.gameObject.SetActive(true);
+            _wrongItemsListPanel.gameObject.SetActive(true);
+            _wrongItemsListPanel.GetComponent<Canvas>().enabled = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void SetEndGameUI()
     {
-        
+            _statsPanel.gameObject.SetActive(true);
+            _listPanel.gameObject.SetActive(true);
+            _wrongItemsListPanel.gameObject.SetActive(true);
+            _wrongItemsListPanel.GetComponent<Canvas>().enabled = true;
+            _wrongItemsListPanel.GetComponent<CheckListManager>().DisplayElapsedTimes();
+            _listPanel.GetComponent<CheckListManager>().DisplayElapsedTimes();
     }
-    */
-
-    private void OnEnable()
-    {
-        
-        PlayerManager.OnPlayerStartedGame += DisplayBasicUI;
-        PlayerManager.OnPlayerEndedGame += DisplayBasicUI;
-    }
-
-    private void OnDisable()
-    {
-        PlayerManager.OnPlayerStartedGame -= DisplayBasicUI;
-        PlayerManager.OnPlayerEndedGame -= DisplayBasicUI;
-    }
-
-
-    void DisplayPickedObject (string name)
-    {
-        variableText.gameObject.SetActive(true);
-        variableText.text = name.ToString();
-        //canvas.GetComponentInChildren<TextMesh>().text = name;
-        StartCoroutine(LateCall(variableText.gameObject));
-    }
-
-
-    void DisplayBasicUI ()
-    {
-        variableText.gameObject.SetActive(true);
-        variableText.text = "Game Started!";
-
-        commonText.gameObject.SetActive(true);
-        commonText.text = "Game Started!";
-        //canvas.GetComponentInChildren<Text>().text = "Game Started!";
-        StartCoroutine(LateCall(variableText.gameObject));
-        StartCoroutine(LateCall(commonText.gameObject));
-    }
-
-    IEnumerator LateCall(GameObject gameObject)
-    {
-
-        yield return new WaitForSeconds(2);
-        gameObject.SetActive(false);
-    }
+    
 }

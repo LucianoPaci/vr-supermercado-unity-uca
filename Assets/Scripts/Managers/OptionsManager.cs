@@ -20,9 +20,6 @@ public class OptionsManager : MonoBehaviour
     
     private Canvas canvas;
     public bool isLoading = false;
-
-    public static event Action<Entity> ReturnEntity;
-
     public static event Action<bool> OnDisplayingOptions;
 
     private void Awake()
@@ -39,13 +36,6 @@ public class OptionsManager : MonoBehaviour
         SelectController.OnSelectingEntity -= DisplayPickingOptions;
         canvas.enabled = false;
     }
-
-    private void Start()
-    {
-        // Instanciar los prefabs como botones
-      
-    }
-    
 
     public void DisplayPickingOptions(List<Entity> entities)
     {
