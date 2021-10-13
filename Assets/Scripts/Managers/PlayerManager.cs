@@ -1,26 +1,10 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class PlayerManager : MonoBehaviour
 {
-    public static event Action OnPlayerStartedGame = null;
-    public static event Action OnPlayerEndedGame = null;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    public static event Action OnPlayerStartedGame;
+    public static event Action OnPlayerEndedGame;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -28,7 +12,6 @@ public class PlayerManager : MonoBehaviour
         {
             if (OnPlayerStartedGame != null)
             {
-
                 OnPlayerStartedGame();
                 return;
             }
@@ -37,7 +20,6 @@ public class PlayerManager : MonoBehaviour
         {
             if (OnPlayerEndedGame != null)
             {
-
                 OnPlayerEndedGame();
                 return;
             }

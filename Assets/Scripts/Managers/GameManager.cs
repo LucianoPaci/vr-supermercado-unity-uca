@@ -20,11 +20,9 @@ public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
     public static event Action<Entity> OnNewElementAddedToDictionary;
-    public static Dictionary<string, EntityWithTime> myDictionary = new Dictionary<string, EntityWithTime>();
+    public static Dictionary<string, EntityWithTime> TimeRecordsDictionary = new Dictionary<string, EntityWithTime>();
 
     private static bool _gameStarted = false;
-    private GameObject _player;
-    public static event Action OnRestart;
     public static event Action OnGameStarted;
     public static event Action OnGameEnded;
 
@@ -53,11 +51,6 @@ public class GameManager : MonoBehaviour
         PrintDictionary();
     }
 
-    private void OnEnable()
-    {
-        
-    }
-
     private void OnDisable()
     {
         PlayerManager.OnPlayerStartedGame -= StartGame;
@@ -65,17 +58,12 @@ public class GameManager : MonoBehaviour
         SelectController.OnSelectedEntityChanged -= HandleEntitiesFetched;
     }
 
-    void OnLoadPlayer()
-    {
-        _player = GameObject.FindGameObjectWithTag("Player");
-    }
-
 
     void StartGame()
     {
         _gameStarted = true;
         Timer.StartTimer();
-        myDictionary.Clear();
+        TimeRecordsDictionary.Clear();
         OnGameStarted?.Invoke();
     }
 
@@ -94,10 +82,10 @@ public class GameManager : MonoBehaviour
         {
             try
             {
-                if (!myDictionary.ContainsKey(e.GetKey()))
+                if (!TimeRecordsDictionary.ContainsKey(e.GetKey()))
                 {
-                    myDictionary.Add(e.GetKey(), new EntityWithTime(Timer.SetLap(), e));
-                    // myDictionary.Add(e.GetKey(), new EntityWithTime(Timer.GetCurrentTime(), e));
+                    TimeRecordsDictionary.Add(e.GetKey(), new EntityWithTime(Timer.SetLap(), e));
+                    // TimeRecordsDictionary.Add(e.GetKey(), new EntityWithTime(Timer.GetCurrentTime(), e));
                     OnNewElementAddedToDictionary?.Invoke(e);
                 }
                 else
@@ -116,7 +104,7 @@ public class GameManager : MonoBehaviour
 
     public static EntityWithTime GetEntityWithTime(string key)
     {
-        if(myDictionary.TryGetValue(key, out var ewt))
+        if(TimeRecordsDictionary.TryGetValue(key, out var ewt))
         {
             return ewt;
         }
@@ -126,11 +114,6 @@ public class GameManager : MonoBehaviour
 
     void RestartGame()
     {
-        //if (OnRestart != null)
-        //{
-        //    OnRestart();
-        //}
-
         Timer.StopTimer();
         Timer.ResetTimer();
         SceneManager.LoadScene("Intro");
@@ -138,7 +121,7 @@ public class GameManager : MonoBehaviour
 
     void PrintDictionary()
     {
-        foreach (var pair in myDictionary)
+        foreach (var pair in TimeRecordsDictionary)
         {
             Debug.Log("Key: " + pair.Key + " Value: " + pair.Value.elaspedTime);
         }

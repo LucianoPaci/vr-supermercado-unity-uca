@@ -1,5 +1,29 @@
 # [UI] Al seleccionar una gondola, deberian mostrarse las opciones en un cuadro de Dialogo Flotante
 
+---
+### UIManager
+
+Propiedades: 
+
+* *private* **ListPanel** listPanel
+* *private* **ListPanel** wrongItemsListPanel
+* *private* **OptionsManager** optionsCanvas
+* *private* **StatsPanel** statsPanel
+* *private* **GameObject** InformationPanel
+* *public* **float** spawnDistance
+
+#### Proposito: Gestionar la UI y los objetos relacionados a ella
+
+#### Caso: `Al seleccionar una gondola, deberian mostrarse las opciones en un cuadro de Dialogo Flotante`
+
+Para esto, `UIManager` se suscribe a los eventos de `SelectController::OnDisplayingSelectionCanvas` y ejecuta el metodo `AppendOptionsCanvasToObject` que recibe un objeto `Transform` que hace referencia a la posicion dentro del espacio 3D a donde se debera renderizar el cuadro de dialogo de opciones.
+
+Basicamente, lo que este metodo hace es colocar al ***optionsCanvas*** como hijo del elemento que se recibe como parametro. Ademas, se lo posiciona enfrente de la camara de juego (a una distancia establecida por el *spawnDistance*) y se establece la rotacion.
+
+
+---
+
+
 ### OptionsManager
 
 Propiedades: 
@@ -51,6 +75,7 @@ Recibe una Entidad y lo que hace es
 ### SelectableOptionItem
 
 Propiedades: 
+
 * *private* **TMP_Text** title
 * *private* **TMP_Text** subtitle
 * *private* **Entity** associatedEntity
@@ -80,18 +105,3 @@ public static class ButtonExtension
     }
 }
 ```
-
-
----
-### UIManager
-
-Propiedades: 
-* *private* **ListPanel** listPanel
-* *private* **ListPanel** wrongItemsListPanel
-* *private* **OptionsManager** optionsCanvas
-* *private* **StatsPanel** statsPanel
-* *private* **GameObject** InformationPanel
-* *public* **float** spawnDistance
-
-#### Proposito: Gestionar la UI y los objetos relacionados a ella
-

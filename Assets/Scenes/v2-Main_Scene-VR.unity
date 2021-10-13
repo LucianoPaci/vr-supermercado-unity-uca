@@ -2035,9 +2035,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 79833226}
+  - component: {fileID: 79833227}
   m_Layer: 0
   m_Name: Entrada
-  m_TagString: Untagged
+  m_TagString: StartGame
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2052,11 +2053,23 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -15.9, y: 1.32, z: -25.228373}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 83511503}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &79833227
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79833225}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2.3315082, z: 8.567852}
+  m_Center: {x: 0.00000011920929, y: 0, z: -0.15110588}
 --- !u!1 &80894352
 GameObject:
   m_ObjectHideFlags: 0
@@ -2150,64 +2163,6 @@ Transform:
   m_Father: {fileID: 443110859}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &83511499
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 83511503}
-  - component: {fileID: 83511500}
-  - component: {fileID: 83511504}
-  m_Layer: 0
-  m_Name: Iniciar
-  m_TagString: StartGame
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!65 &83511500
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 83511499}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 4.6328173}
-  m_Center: {x: 0.00000011603629, y: 0, z: 1.816411}
---- !u!4 &83511503
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 83511499}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -3.461628}
-  m_LocalScale: {x: 1, y: 2.4172943, z: 1.9057512}
-  m_Children: []
-  m_Father: {fileID: 79833226}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &83511504
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 83511499}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b95c7569fe38af042bb412b9a737b8e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Objeto: Iniciar
 --- !u!1 &85248623
 GameObject:
   m_ObjectHideFlags: 0
@@ -8704,7 +8659,7 @@ MonoBehaviour:
   BEBIDAS: {fileID: 1659377084}
   PAN: {fileID: 1148756469}
   JUGUETES: {fileID: 1148756469}
-  Iniciar: {fileID: 83511499}
+  Iniciar: {fileID: 0}
   Terminar: {fileID: 1087272953603944}
   Tiempo: {fileID: 574012506}
   feedbackCARNE: {fileID: 585061463}
@@ -54344,27 +54299,13 @@ GameObject:
   m_Component:
   - component: {fileID: 2133409800}
   - component: {fileID: 2133409799}
-  - component: {fileID: 2133409798}
   m_Layer: 0
-  m_Name: Finalizar
+  m_Name: Salida
   m_TagString: EndGame
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2133409798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2133409797}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b95c7569fe38af042bb412b9a737b8e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Objeto: Terminar
 --- !u!65 &2133409799
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -54577,7 +54518,6 @@ GameObject:
   - component: {fileID: 4587541869953566}
   - component: {fileID: 1087272953603947}
   - component: {fileID: 1087272953603946}
-  - component: {fileID: 1087272953603945}
   m_Layer: 0
   m_Name: Salida
   m_TagString: Selectable
@@ -54585,19 +54525,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1087272953603945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1087272953603944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b95c7569fe38af042bb412b9a737b8e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Objeto: Terminar
 --- !u!65 &1087272953603946
 BoxCollider:
   m_ObjectHideFlags: 0

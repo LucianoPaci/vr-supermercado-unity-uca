@@ -8,9 +8,6 @@ public class Entity : MonoBehaviour
 
     public event Action<Entity> OnStatusChanged;
     public bool picked = false;
-    // Start is called before the first frame update
-    
-    
     void Start()
     {
         entityName = transform.root.name;
@@ -18,13 +15,6 @@ public class Entity : MonoBehaviour
         {
             gameObject.name = key;
         }
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public bool IsPicked()

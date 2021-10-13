@@ -1,33 +1,29 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
+// Hacemos requerido el Componente de este tipo. Sin él, Unity lanza una excepción
 [RequireComponent(typeof(CharacterController))]
 public class VR_Movement : MonoBehaviour
 {
-    // VR Main Camera
-
+    // Camara Principal de VR
     private Transform vrCamera;
 
-    // Speed to move the player
+    // Velocidad del jugador
     public float speed = 3f;
 
     CharacterController myCC;
 
     void Start()
     {
-        // Find the CharacterController
+        // Hallar el Controlador del Personaje/Player
         myCC = gameObject.GetComponent<CharacterController>();
 
-        // Find the main camera
+        // Hallar la camara principal
         vrCamera = Camera.main.transform;
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
-        // Move with SimpleMove based on Horizontal and Vertical Input
-
+        // Se utiliza el metodo SimpleMove, basado en input horizontal y vertical 
         myCC.SimpleMove(speed * vrCamera.TransformDirection(Vector3.forward * Input.GetAxis("Vertical") + Vector3.right * Input.GetAxis("Horizontal")));
 
     }

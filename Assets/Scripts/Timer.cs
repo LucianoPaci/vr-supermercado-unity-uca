@@ -7,7 +7,7 @@ public class Timer : MonoBehaviour
     private static bool _tick;
     private static float _gameTimer = 0f;
     private static string _timerString;
-    public static float _lastLap = 0f;
+    private static float _lastLap = 0f;
 
     void Update()
     {
@@ -61,8 +61,6 @@ public class Timer : MonoBehaviour
          {
              _lastLap = _gameTimer - _lastLap;
          }
-         Debug.Log("PARE: " + TimeToString(_lastLap) );
-         Debug.Log("LLEVAMOS: " + _gameTimer);
 
          return TimeToString(_lastLap) ;
      }
