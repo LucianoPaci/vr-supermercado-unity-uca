@@ -5,6 +5,7 @@ using Gvr.Internal;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public static class ButtonExtension
 {
@@ -14,6 +15,7 @@ public static class ButtonExtension
         {
             onClick(param);
         });
+
     }
 }
 public class SelectableOptionItem : MonoBehaviour
@@ -47,6 +49,8 @@ public class SelectableOptionItem : MonoBehaviour
         this.button.AddEventListener(this.associatedEntity, returnEntity);
 
     }
+    
+    
     
 
     public void DestroyOption()

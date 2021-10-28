@@ -26,7 +26,7 @@ public class SelectController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))// TODO: agregar las variantes    
+        if (Input.GetButtonDown("Fire1") || Input.GetButtonDown("BottomTrigger"))// TODO: agregar las variantes    
         {
             var ray = GvrPointerInputModule.CurrentRaycastResult;
             if (ray.gameObject)
