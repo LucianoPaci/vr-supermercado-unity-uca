@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Gvr.Internal;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,7 +19,7 @@ public static class ButtonExtension
 
     }
 }
-public class SelectableOptionItem : MonoBehaviour
+public class SelectableOptionItem : MonoBehaviour, IPointerClickHandler
 {
     // Start is called before the first frame update
 
@@ -27,6 +28,8 @@ public class SelectableOptionItem : MonoBehaviour
 
     private Entity associatedEntity;
     private Button button;
+
+    private Action<Entity> delegatedAction = null;
 
     void Start()
     {
@@ -41,26 +44,30 @@ public class SelectableOptionItem : MonoBehaviour
         this.title = this.transform.Find("Title").GetComponent<TMP_Text>();
         this.subtitle = this.transform.Find("Subtitle").GetComponent<TMP_Text>();
         this.button = this.gameObject.GetComponentInParent<Button>();
-        
+        this.delegatedAction = returnEntity;
 
         this.associatedEntity = e;
         this.title.SetText(title);
         this.subtitle.SetText(subtitle);
+
         this.button.AddEventListener(this.associatedEntity, returnEntity);
 
     }
     
-    
-    
-
     public void DestroyOption()
     {
         Destroy(gameObject);
     }
+    
 
-    // Update is called once per frame
-    void Update()
+    public void OnPointerClick(PointerEventData eventData)
     {
-       
+        HandleSelect();
     }
+
+    public void HandleSelect()
+    {
+        this.delegatedAction(this.associatedEntity);
+    }
+    
 }

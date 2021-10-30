@@ -6,7 +6,8 @@ using UnityEngine;
 
 public class CartManager : MonoBehaviour
 {
-    private List<Entity> objectList = new List<Entity>(); 
+    private List<Entity> objectList = new List<Entity>();
+
     void Awake()
     {
         objectList = this.GetComponentsInChildren<Entity>(includeInactive: true).ToList();
@@ -22,12 +23,14 @@ public class CartManager : MonoBehaviour
 
     void HandleUpdateCart(Entity e)
     {
-       var found = objectList.Find(obj => obj.name == e.GetKey());
+        if (e)
+        {
+            var found = objectList.Find(obj => obj.name == e.GetKey());
 
-       if (found)
-       {
-            found.gameObject.SetActive(true);
-           
-       }
+            if (found)
+            {
+                found.gameObject.SetActive(true);
+            }
+        }
     }
 }

@@ -123,8 +123,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3681227012601395584}
-        m_MethodName: Select
+      - m_Target: {fileID: 4361233300411461515}
+        m_MethodName: HandleSelect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -164,8 +164,8 @@ MonoBehaviour:
   GVRClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3681227012601395584}
-        m_MethodName: Select
+      - m_Target: {fileID: 4361233300411461515}
+        m_MethodName: HandleSelect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -174,7 +174,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 1
+        m_CallState: 2
 --- !u!114 &4567856494610491733
 MonoBehaviour:
   m_ObjectHideFlags: 0
