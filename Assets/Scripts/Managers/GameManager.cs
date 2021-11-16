@@ -48,7 +48,6 @@ public class GameManager : MonoBehaviour
             RestartGame();
         }
 
-        PrintDictionary();
     }
 
     private void OnDisable()
@@ -74,6 +73,7 @@ public class GameManager : MonoBehaviour
         Timer.StopTimer();
         PlayerPrefs.SetString("previousTime", Timer.GetCurrentTime());
         OnGameEnded?.Invoke();
+        SceneManager.LoadScene("Final");
     }
 
     void HandleEntitiesFetched(Entity e)
