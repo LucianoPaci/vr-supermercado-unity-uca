@@ -107,6 +107,7 @@ public class UIManager : MonoBehaviour
 
     private void SetStartGameUI()
     {
+        Debug.Log("EJECUTO START GAME");
             _statsPanel.gameObject.SetActive(true);
             _listPanel.gameObject.SetActive(true);
             _wrongItemsListPanel.gameObject.SetActive(true);

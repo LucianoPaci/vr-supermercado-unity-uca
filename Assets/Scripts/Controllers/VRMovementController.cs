@@ -3,7 +3,7 @@ using UnityEngine;
 
 // Hacemos requerido el Componente de este tipo. Sin él, Unity lanza una excepción
 [RequireComponent(typeof(CharacterController))]
-public class VR_Movement : MonoBehaviour
+public class VRMovementController : MonoBehaviour
 {
     // Camara Principal de VR
     private Transform vrCamera;

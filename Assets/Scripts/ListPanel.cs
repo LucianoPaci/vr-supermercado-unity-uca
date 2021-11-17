@@ -13,6 +13,7 @@ public class ListPanel : MonoBehaviour
     {
         _checkListObjects = GetComponent<CheckListManager>().GetList();
         this.gameObject.SetActive(false);
+        
         GameManager.OnNewElementAddedToDictionary += AddTimeToListItem;
     }
 
@@ -51,6 +52,7 @@ public class ListPanel : MonoBehaviour
         
        
     }
+    
     
     void AddTimeToListItem(Entity e)
     {

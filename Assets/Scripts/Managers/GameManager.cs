@@ -31,11 +31,21 @@ public class GameManager : MonoBehaviour
         return _gameStarted;
     }
 
-    private void Awake()
+    // private void Awake()
+    // {
+    //     PlayerManager.OnPlayerStartedGame += StartGame;
+    //     PlayerManager.OnPlayerEndedGame += EndGame;
+    //     SelectController.OnSelectedEntityChanged += HandleEntitiesFetched;
+    //     
+    //    
+    // }
+    
+    private void OnEnable()
     {
         PlayerManager.OnPlayerStartedGame += StartGame;
         PlayerManager.OnPlayerEndedGame += EndGame;
         SelectController.OnSelectedEntityChanged += HandleEntitiesFetched;
+        RebootGameState();
         
        
     }
@@ -112,19 +122,17 @@ public class GameManager : MonoBehaviour
         return null;
     }
 
-    void RestartGame()
+    void RebootGameState()
     {
         Timer.StopTimer();
         Timer.ResetTimer();
-        SceneManager.LoadScene("Intro");
     }
 
-    void PrintDictionary()
+    void RestartGame()
     {
-        foreach (var pair in TimeRecordsDictionary)
-        {
-            Debug.Log("Key: " + pair.Key + " Value: " + pair.Value.elaspedTime);
-        }
+        RebootGameState();
+        PlayerPrefs.SetInt("RestartCount", (PlayerPrefs.GetInt("RestartCount") | 1));
+        SceneManager.LoadScene("Intro");
     }
 }
 
