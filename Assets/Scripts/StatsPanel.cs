@@ -27,8 +27,6 @@ public class StatsPanel : MonoBehaviour
         {
             textTime.text = Timer.GetCurrentTime();
         }
-
-       
     }
     
 }

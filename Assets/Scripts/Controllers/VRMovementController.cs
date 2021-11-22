@@ -32,17 +32,30 @@ public class VRMovementController : MonoBehaviour
     
     void Update()
     {
-        MoveForward();
-        Rotate();
+        if (PlayerPrefs.GetString("ControlsSchema") == ControlSchema.TYPE_A.ToString())
+        {
+            ExecuteLocomotion();
+            Rotate();
+        }
+        else
+        {
+            ExecuteLocomotion(true);
+        }
     }
 
-    private void MoveForward()
+    private void ExecuteLocomotion(bool allowStrafe = false)
     {
         // De esta manera, el movimiento es vertical y horizontal
-        // myCC.SimpleMove(speed * vrCamera.TransformDirection(Vector3.forward * Input.GetAxis("Vertical") + Vector3.right * Input.GetAxis("Horizontal")));
+        if (allowStrafe)
+        {
+            myCC.SimpleMove(speed * vrCamera.TransformDirection(Vector3.forward * Input.GetAxis("Vertical") + Vector3.right * Input.GetAxis("Horizontal")));
+        }
+        else
+        {
+            // De esta manera, el movimiento es unicamente vertical
+            myCC.SimpleMove(speed * vrCamera.TransformDirection(Vector3.forward * Input.GetAxis("Vertical")));
+        }
         
-        // De esta manera, el movimiento es unicamente vertical
-        myCC.SimpleMove(speed * vrCamera.TransformDirection(Vector3.forward * Input.GetAxis("Vertical")));
     }
     
     void GlideLocomotion()

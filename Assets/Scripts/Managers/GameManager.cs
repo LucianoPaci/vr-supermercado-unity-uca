@@ -124,6 +124,7 @@ public class GameManager : MonoBehaviour
 
     void RebootGameState()
     {
+        _gameStarted = false;
         Timer.StopTimer();
         Timer.ResetTimer();
     }
@@ -132,7 +133,7 @@ public class GameManager : MonoBehaviour
     {
         RebootGameState();
         PlayerPrefs.SetInt("RestartCount", (PlayerPrefs.GetInt("RestartCount") | 1));
-        SceneManager.LoadScene("Intro");
+        SceneManager.LoadScene("MainMenu");
     }
 }
 
