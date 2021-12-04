@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -45,17 +46,17 @@ public class OptionsManager : MonoBehaviour
             if (entities.Count == 1)
             {
                 titleText.SetText("Deseas comprar " + entities.First().GetKey() + " ?");
-                CreateOptionObject("SI", "Presionar 1", entities.First());
-                CreateOptionObject("NO", "Presionar 2", null);
+                CreateOptionObject(entities.First(), "SI");
+                CreateOptionObject(null, "NO");
             }
             else if (entities.Count > 1)
             {
                 titleText.SetText("Qué deseas comprar?");
                 foreach (var entity in entities)
                 {
-                    CreateOptionObject(entity.GetKey(), "", entity);
+                    CreateOptionObject(entity, entity.GetKey());
                 }
-                CreateOptionObject("Cancelar", "--", null);
+                CreateOptionObject(null, "Cancelar");
             }
         }
         
@@ -63,13 +64,13 @@ public class OptionsManager : MonoBehaviour
         
     }
 
-    void CreateOptionObject(string title, string subtitle, Entity e)
+    void CreateOptionObject(Entity e, string title, [Optional] string subtitle )
     {
         GameObject item = Instantiate(selectableOptionPrefab);
         item.transform.SetParent(content, false);
         
         SelectableOptionItem itemObject = item.GetComponent<SelectableOptionItem>();
-        itemObject.SetObjectInfo(title, subtitle, e, TriggerEntitySelection);
+        itemObject.SetObjectInfo(e, TriggerEntitySelection, title, subtitle );
         
         selectableOptionsList.Add(itemObject);
     }

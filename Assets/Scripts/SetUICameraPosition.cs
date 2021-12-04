@@ -12,7 +12,8 @@ public class SetUICameraPosition : MonoBehaviour
 
         void Start()
         {
-        var player = GameObject.FindGameObjectWithTag("Player");
+            var player = GameObject.FindGameObjectWithTag("Player");
+            // var player = GameObject.FindGameObjectWithTag("CameraRig");
 
         if (player != null)
         {
@@ -23,6 +24,8 @@ public class SetUICameraPosition : MonoBehaviour
             this.gameObject.transform.localPosition = playerPosition;
             this.gameObject.transform.localRotation = playerRotation;
             this.gameObject.transform.SetParent(playerCamera.transform);
+            
+            // this.gameObject.transform.SetParent(player.transform);
         }
     }
     
