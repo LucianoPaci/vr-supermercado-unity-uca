@@ -12,6 +12,7 @@ TagManager:
   - Text_startgame
   - Text_PickedObject
   - UI_Camera
+  - CameraRig
   layers:
   - Default
   - TransparentFX
