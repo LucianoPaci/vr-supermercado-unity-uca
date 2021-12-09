@@ -7,7 +7,8 @@ public class SetMinimapCameraPosition : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        var minimapRef = GameObject.Find("MiniMapReference");
+        // var minimapRef = GameObject.Find("MiniMapReference");
+        var minimapRef = GameObject.Find("MinimapReference");
 
         // if (player != null)
         // {

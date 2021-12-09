@@ -13,6 +13,11 @@ public class UIManager : MonoBehaviour
     [SerializeField] private OptionsManager _optionsCanvas;
     [SerializeField] private StatsPanel _statsPanel;
     [SerializeField] private GameObject InformationPanel;
+
+    [SerializeField] private GameObject _MinimapCanvas;
+    
+    private List<GameObject> mainUIPanels = new List<GameObject>();
+    
     public float spawnDistance = 2f;
 
 
@@ -24,6 +29,12 @@ public class UIManager : MonoBehaviour
         GameManager.OnGameStarted += SetStartGameUI;
         GameManager.OnGameEnded += SetEndGameUI;
         GameManager.OnNewElementAddedToDictionary += DisplayInformation;
+        
+        mainUIPanels.Add(_statsPanel.gameObject);
+        mainUIPanels.Add(_listPanel.gameObject);
+        mainUIPanels.Add(_wrongItemsListPanel.gameObject);
+        
+        
     }
 
     private void OnDestroy()
@@ -78,18 +89,24 @@ public class UIManager : MonoBehaviour
                 InformationPanel.GetComponentInChildren<TMP_Text>().text = "Ya habias recogido eso!";
             }
             
-            StartCoroutine(DisableCanvas());
+            StartCoroutine(AsyncHide(InformationPanel));
         }
         
     }
     
-    IEnumerator DisableCanvas(int seconds = 3)
+    IEnumerator AsyncHide(GameObject obj, int seconds = 3)
     {
         yield return new WaitForSeconds(seconds);
-        InformationPanel.SetActive(false);
+        obj.SetActive(false);
     }
 
     private void Update()
+    {
+        ShowSelectableOptions();
+        ShowMap();
+    }
+
+    private void ShowSelectableOptions()
     {
         if (_optionsCanvas.selectableOptionsList.Count > 0)
         {
@@ -105,22 +122,46 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    private void ShowMap()
+    {
+        if ((Input.GetButtonDown("Fire2") || Input.GetButtonDown("TopTrigger")) && !_MinimapCanvas.activeInHierarchy)
+        {
+            ToggleObjects(mainUIPanels, false);
+            _MinimapCanvas.SetActive(true);
+            StartCoroutine(AsyncHide(_MinimapCanvas));
+            StartCoroutine(AsyncToggleObjects(ToggleObjects, mainUIPanels, true));
+        }
+    }
+
     private void SetStartGameUI()
     {
-            _statsPanel.gameObject.SetActive(true);
-            _listPanel.gameObject.SetActive(true);
-            _wrongItemsListPanel.gameObject.SetActive(true);
-            _wrongItemsListPanel.GetComponent<Canvas>().enabled = false;
+        ToggleObjects(mainUIPanels, true);
+        _wrongItemsListPanel.GetComponent<Canvas>().enabled = false;
     }
 
     private void SetEndGameUI()
+    { 
+        ToggleObjects(mainUIPanels, true);
+        _MinimapCanvas.SetActive(false);
+        _wrongItemsListPanel.GetComponent<Canvas>().enabled = true;
+        _wrongItemsListPanel.GetComponent<CheckListManager>().DisplayElapsedTimes();
+        _listPanel.GetComponent<CheckListManager>().DisplayElapsedTimes();
+    }
+
+
+    IEnumerator AsyncToggleObjects(Action<List<GameObject>, bool> func, List<GameObject> list, bool status = true, int seconds = 3)
     {
-            _statsPanel.gameObject.SetActive(true);
-            _listPanel.gameObject.SetActive(true);
-            _wrongItemsListPanel.gameObject.SetActive(true);
-            _wrongItemsListPanel.GetComponent<Canvas>().enabled = true;
-            _wrongItemsListPanel.GetComponent<CheckListManager>().DisplayElapsedTimes();
-            _listPanel.GetComponent<CheckListManager>().DisplayElapsedTimes();
+        yield return new WaitForSeconds(seconds);
+        func(list, status);
+
+
+    }
+    private void ToggleObjects(List<GameObject> objectsList, bool status = true)
+    {
+        foreach (var obj in objectsList.ToArray())
+        {
+            obj.SetActive(status);
+        }
     }
     
 }
