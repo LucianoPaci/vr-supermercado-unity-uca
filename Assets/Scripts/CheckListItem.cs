@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,7 +12,6 @@ public class CheckListItem : MonoBehaviour
     public string key;
 
     private Text itemText;
-
     private void Start()
     {
         itemText = GetComponentInChildren<Text>();
@@ -22,10 +21,11 @@ public class CheckListItem : MonoBehaviour
     public void SetObjectInfo(string label, bool required, string key)
     {
         itemText = GetComponentInChildren<Text>();
-
+        
         this.label = label;
         this.required = required;
         this.key = key;
         this.itemText.text = label;
     }
+    
 }

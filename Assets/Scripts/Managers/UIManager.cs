@@ -124,7 +124,7 @@ public class UIManager : MonoBehaviour
 
     private void ShowMap()
     {
-        if ((Input.GetButtonDown("Fire2") || Input.GetButtonDown("TopTrigger")) && !_MinimapCanvas.activeInHierarchy)
+        if ((Input.GetKey(KeyCode.M) || Input.GetButtonDown("TopTrigger")) && !_MinimapCanvas.activeInHierarchy)
         {
             ToggleObjects(mainUIPanels, false);
             _MinimapCanvas.SetActive(true);
