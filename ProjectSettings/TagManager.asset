@@ -5,6 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - Selectable
+  - StartGame
+  - EndGame
+  - CartCamera
+  - TestingCanvas
+  - Text_startgame
+  - Text_PickedObject
+  - UI_Camera
+  - CameraRig
   layers:
   - Default
   - TransparentFX
@@ -15,14 +23,14 @@ TagManager:
   - 
   - 
   - Minimapa
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - CartCamera
+  - BLUE
+  - RED
+  - UI_2
+  - OptionsCanvas
+  - VR_Interactive
+  - IgnoredByMiniMap
+  - Roof
   - 
   - 
   - 

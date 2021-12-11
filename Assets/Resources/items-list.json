@@ -1,0 +1,35 @@
+{
+    "checkList": [
+        {
+            "key": "bananas",
+            "label": "Bananas",
+            "required": true
+        },
+        {
+            "key": "harina",
+            "label": "Harina",
+            "required": true
+        },
+        {
+            "key": "bebidas",
+            "label": "Bebidas",
+            "required": true
+        },
+        {
+            "key": "carne",
+            "label": "Carne",
+            "required": true
+        },
+        {
+            "key": "rompecabezas",
+            "label": "Rompecabezas",
+            "required": true
+        },
+        {
+            "key": "queso",
+            "label": "Queso",
+            "required": true
+        }
+
+    ]
+}
