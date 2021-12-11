@@ -29,6 +29,7 @@ public class UIManager : MonoBehaviour
         GameManager.OnGameStarted += SetStartGameUI;
         GameManager.OnGameEnded += SetEndGameUI;
         GameManager.OnNewElementAddedToDictionary += DisplayInformation;
+        GameManager.OnDisplayMap += ShowMap;
         
         mainUIPanels.Add(_statsPanel.gameObject);
         mainUIPanels.Add(_listPanel.gameObject);
@@ -44,6 +45,7 @@ public class UIManager : MonoBehaviour
         GameManager.OnGameStarted -= SetStartGameUI;
         GameManager.OnGameEnded -= SetEndGameUI;
         GameManager.OnNewElementAddedToDictionary -= DisplayInformation;
+        GameManager.OnDisplayMap -= ShowMap;
     }
 
 
@@ -63,7 +65,7 @@ public class UIManager : MonoBehaviour
 
     }
 
-    // Faltaria ver el DESTROY del Canvas
+   
     private void AppendOptionsCanvasToObject(Transform targetTransform)
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -103,7 +105,6 @@ public class UIManager : MonoBehaviour
     private void Update()
     {
         ShowSelectableOptions();
-        ShowMap();
     }
 
     private void ShowSelectableOptions()
@@ -124,12 +125,13 @@ public class UIManager : MonoBehaviour
 
     private void ShowMap()
     {
-        if ((Input.GetKey(KeyCode.M) || Input.GetButtonDown("TopTrigger")) && !_MinimapCanvas.activeInHierarchy)
+        if (!_MinimapCanvas.activeInHierarchy)
         {
             ToggleObjects(mainUIPanels, false);
             _MinimapCanvas.SetActive(true);
             StartCoroutine(AsyncHide(_MinimapCanvas));
             StartCoroutine(AsyncToggleObjects(ToggleObjects, mainUIPanels, true));
+            PlayerPrefs.SetInt(Prefs.MAP_INVOCATIONS.ToString(), PlayerPrefs.GetInt(Prefs.MAP_INVOCATIONS.ToString()) + 1);
         }
     }
 

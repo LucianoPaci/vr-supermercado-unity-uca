@@ -20,15 +20,10 @@ public class ControlsMenuController : MonoBehaviour
       ChangeColor();
    }
 
-   // private void Update()
-   // {
-   //    ChangeColor(controlsSchema);
-   // }
-
 
    public void ChangeColor()
    {
-      string controlsSchema = PlayerPrefs.GetString("ControlsSchema");
+      string controlsSchema = PlayerPrefs.GetString(Prefs.CONRTROLS_SCHEMA.ToString());
       foreach (var option in Options.ToArray())
       {
          
@@ -50,13 +45,13 @@ public class ControlsMenuController : MonoBehaviour
    
    public void OnSelect_TypeA()
    {
-      PlayerPrefs.SetString("ControlsSchema", ControlSchema.TYPE_A.ToString());
+      PlayerPrefs.SetString(Prefs.CONRTROLS_SCHEMA.ToString(), ControlSchema.TYPE_A.ToString());
       ChangeColor();
    }
    
    public void OnSelect_TypeB()
    {
-      PlayerPrefs.SetString("ControlsSchema", ControlSchema.TYPE_B.ToString());
+      PlayerPrefs.SetString(Prefs.CONRTROLS_SCHEMA.ToString(), ControlSchema.TYPE_B.ToString());
       ChangeColor();
    }
 

@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
     public static event Action OnGameStarted;
     public static event Action OnGameEnded;
 
+    public static event Action OnDisplayMap;
+
     public static bool GameStarted()
     {
         return _gameStarted;
@@ -58,6 +60,11 @@ public class GameManager : MonoBehaviour
             RestartGame();
         }
 
+        if (Input.GetKey(KeyCode.M) || Input.GetButtonDown("TopTrigger"))
+        {
+            OnDisplayMap?.Invoke();
+        }
+
     }
 
     private void OnDisable()
@@ -73,6 +80,7 @@ public class GameManager : MonoBehaviour
         _gameStarted = true;
         Timer.StartTimer();
         TimeRecordsDictionary.Clear();
+        PlayerPrefs.DeleteKey(Prefs.MAP_INVOCATIONS.ToString());
         OnGameStarted?.Invoke();
     }
 
@@ -81,7 +89,7 @@ public class GameManager : MonoBehaviour
     {
         _gameStarted = false;
         Timer.StopTimer();
-        PlayerPrefs.SetString("previousTime", Timer.GetCurrentTime());
+        PlayerPrefs.SetString(Prefs.PREVIOUS_TIME.ToString(), Timer.GetCurrentTime());
         OnGameEnded?.Invoke();
         SceneManager.LoadScene("Final");
     }
@@ -127,12 +135,13 @@ public class GameManager : MonoBehaviour
         _gameStarted = false;
         Timer.StopTimer();
         Timer.ResetTimer();
+        PlayerPrefs.DeleteKey(Prefs.MAP_INVOCATIONS.ToString());
     }
 
     void RestartGame()
     {
         RebootGameState();
-        PlayerPrefs.SetInt("RestartCount", (PlayerPrefs.GetInt("RestartCount") | 1));
+        PlayerPrefs.SetInt(Prefs.RESTART_COUNT.ToString(), (PlayerPrefs.GetInt(Prefs.RESTART_COUNT.ToString()) | 1));
         SceneManager.LoadScene("MainMenu");
     }
 }

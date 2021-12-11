@@ -32,7 +32,7 @@ public class VRMovementController : MonoBehaviour
     
     void Update()
     {
-        if (PlayerPrefs.GetString("ControlsSchema") == ControlSchema.TYPE_A.ToString())
+        if (PlayerPrefs.GetString(Prefs.CONRTROLS_SCHEMA.ToString()) == ControlSchema.TYPE_A.ToString())
         {
             ExecuteLocomotion();
             Rotate();
