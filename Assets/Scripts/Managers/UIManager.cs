@@ -91,7 +91,7 @@ public class UIManager : MonoBehaviour
                 InformationPanel.GetComponentInChildren<TMP_Text>().text = "Ya habias recogido eso!";
             }
             
-            StartCoroutine(AsyncHide(InformationPanel));
+            StartCoroutine(AsyncHide(InformationPanel, 2));
         }
         
     }

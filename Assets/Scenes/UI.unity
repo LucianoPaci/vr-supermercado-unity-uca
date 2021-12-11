@@ -3215,7 +3215,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -37.68, y: -26.813}
+  m_AnchoredPosition: {x: -59.1, y: -26.813}
   m_SizeDelta: {x: 1935.2422, y: 570.1318}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1661465075
@@ -3689,8 +3689,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1911556356}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 15.2}
-  m_LocalScale: {x: 0.0016971767, y: 0.006543308, z: 0.0032287145}
+  m_LocalPosition: {x: 0, y: 0, z: 15.201}
+  m_LocalScale: {x: 0.0010537431, y: 0.0040626093, z: 0.0020046444}
   m_Children:
   - {fileID: 1747596011}
   m_Father: {fileID: 1180920881}
@@ -3698,7 +3698,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.6499, y: -3.0952}
+  m_AnchoredPosition: {x: -0.6499, y: -3.083}
   m_SizeDelta: {x: 1932.8213, y: 420.1009}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1911556358
@@ -3895,7 +3895,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -222.2, y: -17.6}
+  m_AnchoredPosition: {x: -195.3, y: -38.7}
   m_SizeDelta: {x: 1532, y: 391.13245}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1919827489
@@ -4304,7 +4304,7 @@ PrefabInstance:
     - target: {fileID: 7499763871835611124, guid: d69134be60a774142b698d29e3fe1b37,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7499763871835611124, guid: d69134be60a774142b698d29e3fe1b37,
         type: 3}
@@ -4370,6 +4370,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7499763871835611124, guid: d69134be60a774142b698d29e3fe1b37,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.004216499
+      objectReference: {fileID: 0}
+    - target: {fileID: 7499763871835611124, guid: d69134be60a774142b698d29e3fe1b37,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.0071331775
+      objectReference: {fileID: 0}
+    - target: {fileID: 7499763871835611124, guid: d69134be60a774142b698d29e3fe1b37,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.0060951733
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d69134be60a774142b698d29e3fe1b37, type: 3}
