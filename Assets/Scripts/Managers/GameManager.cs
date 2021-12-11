@@ -136,6 +136,7 @@ public class GameManager : MonoBehaviour
         Timer.StopTimer();
         Timer.ResetTimer();
         PlayerPrefs.DeleteKey(Prefs.MAP_INVOCATIONS.ToString());
+        PlayerPrefs.DeleteKey(Prefs.RESTART_COUNT.ToString());
     }
 
     void RestartGame()
