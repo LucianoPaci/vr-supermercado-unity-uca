@@ -1,0 +1,54 @@
+{
+    "checkList": [
+        {
+            "key": "pollo",
+            "label": "Pollo",
+            "required": false
+        },
+        {
+            "key": "perfume",
+            "label": "Perfume",
+            "required": false
+        },
+        {
+            "key": "balanceado",
+            "label": "Balanceado",
+            "required": false
+        },
+        {
+            "key": "monitor",
+            "label": "Monitor",
+            "required": false
+        },
+        {
+            "key": "pelota",
+            "label": "Pelota",
+            "required": false
+        },
+        {
+            "key": "autito",
+            "label": "Auto Policia",
+            "required": false
+        },
+        {
+            "key": "crema",
+            "label": "Crema",
+            "required": false
+        },
+        {
+            "key": "leche",
+            "label": "Leche",
+            "required": false
+        },
+        {
+            "key": "cerdo",
+            "label": "Cerdo",
+            "required": false
+        },
+        {
+            "key": "osito",
+            "label": "Osito",
+            "required": false
+        }
+    ]
+}

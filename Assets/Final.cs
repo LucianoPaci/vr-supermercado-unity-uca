@@ -7,6 +7,7 @@ public class Final : MonoBehaviour
     [SerializeField] private SelectorManager Caja;
     private void OnTriggerEnter(Collider other)
     {
-        Caja.Finalizar();
+        if(other.gameObject.CompareTag("Player")) Caja.Finalizar();
+
     }
 }

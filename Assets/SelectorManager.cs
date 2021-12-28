@@ -88,8 +88,6 @@ public class SelectorManager : MonoBehaviour
     [SerializeField] private Text GuardarTiempoPAN;
     [SerializeField] private Text GuardarTiempoJUGUETES;
 
-    [SerializeField] private GameObject Resetboton;
-
     [SerializeField] private int sec;
 
     [SerializeField] private GameObject Minimapa_Camara;
@@ -110,13 +108,17 @@ public class SelectorManager : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Tiempo.GetComponent<Timer>().tick = true;
-        //UnityEngine.Debug.Log(SELECTOR);
-        Iniciado = true;
-        if (Iniciado)
+        if (other.gameObject.CompareTag("StartGame"))
         {
-
+            Tiempo.GetComponent<Timer_v1>().tick = true;
+            Iniciado = true;
         }
+
+        // Logica que puede llevarse al gameController
+        if(other.gameObject.CompareTag("EndGame"))
+        {
+            Finalizar();
+        }    
     }
     public void carne()
     {
@@ -141,13 +143,13 @@ public class SelectorManager : MonoBehaviour
     {
         if (Iniciado)
         {
-            Tiempo.GetComponent<Timer>().saveTime();
-            Tiempo.GetComponent<Timer>().tick = false;
-            Tiempo.GetComponent<Timer>().resettime();
+            Tiempo.GetComponent<Timer_v1>().saveTime();
+            Tiempo.GetComponent<Timer_v1>().tick = false;
+            Tiempo.GetComponent<Timer_v1>().resettime();
             cuadro.SetActive(true);
-            string esto = Tiempo.GetComponent<Timer>().tiempotextAnterior.text;
+            string esto = Tiempo.GetComponent<Timer_v1>().tiempotextAnterior.text;
 
-            FinalFrase.text = "Ud a finalizado las compras con un tiempo total de " + esto + " tiempo";
+            FinalFrase.text = "Ud ha finalizado las compras con un tiempo total de " + esto + " tiempo";
             ProductosErroneos.SetActive(true);
             /*_panaderia.SetActive(false);
             PAN.SetActive(false);
@@ -203,16 +205,16 @@ public class SelectorManager : MonoBehaviour
         {
             case 1://carne
 
-                if (Input.GetKeyDown(KeyCode.Alpha1))
+                if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetButtonDown("ButtonB"))
                 {
                     carne();
                     //boolCarne = true;
                     //StartCoroutine(LateCall(feedbackCARNE));
                     feedbackCARNE.SetActive(false);
-                    GuardarTiempoCARNE.text = Tiempo.GetComponent<Timer>().tiempotext.text;
+                    GuardarTiempoCARNE.text = Tiempo.GetComponent<Timer_v1>().tiempotext.text;
                     stan = 0;
                 }
-                if (Input.GetKeyDown(KeyCode.Alpha2))
+                if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetButtonDown("ButtonC"))
                 {
                     //queso();
                     //StartCoroutine(LateCall(feedbackCARNE));
@@ -221,7 +223,7 @@ public class SelectorManager : MonoBehaviour
                     PE_Pollo.SetActive(true);
                     stan = 0;
                 }
-                if (Input.GetKeyDown(KeyCode.Alpha3))
+                if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetButtonDown("ButtonA"))
                 {
                     //juguetes();
                     //StartCoroutine(LateCall(feedbackCARNE));
@@ -233,7 +235,7 @@ public class SelectorManager : MonoBehaviour
                 break;
             case 2://Juguetes
 
-                if (Input.GetKeyDown(KeyCode.Alpha1))
+                if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetButtonDown("ButtonB"))
                 {
                     //carne();
                     StartCoroutine(LateCall(feedbackJUGUETES));
@@ -242,7 +244,7 @@ public class SelectorManager : MonoBehaviour
                     PE_Osito.SetActive(true);
                     stan = 0;
                 }
-                if (Input.GetKeyDown(KeyCode.Alpha2))
+                if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetButtonDown("ButtonC"))
                 {
                     //queso();
                     StartCoroutine(LateCall(feedbackJUGUETES));
@@ -251,19 +253,19 @@ public class SelectorManager : MonoBehaviour
                     PE_Auto.SetActive(true);
                     stan = 0;
                 }
-                if (Input.GetKeyDown(KeyCode.Alpha3))
+                if (Input.GetKeyDown(KeyCode.Alpha3)|| Input.GetButtonDown("ButtonA"))
                 {
                     juguetes();
                     //boolJuguetes = true;
                     //StartCoroutine(LateCall(feedbackJUGUETES)); 
                     feedbackJUGUETES.SetActive(false);
-                    GuardarTiempoJUGUETES.text = Tiempo.GetComponent<Timer>().tiempotext.text;
+                    GuardarTiempoJUGUETES.text = Tiempo.GetComponent<Timer_v1>().tiempotext.text;
                     stan = 0;
                 }
                 break;
             case 3://Lacteos
 
-                if (Input.GetKeyDown(KeyCode.Alpha1))
+                if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetButtonDown("ButtonB"))
                 {
                     //carne();
                     //StartCoroutine(LateCall(feedbackLACTEOS));
@@ -272,17 +274,17 @@ public class SelectorManager : MonoBehaviour
                     PE_Leche.SetActive(true);
                     stan = 0;
                 }
-                if (Input.GetKeyDown(KeyCode.Alpha2))
+                if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetButtonDown("ButtonC"))
                 {
 
                     //StartCoroutine(LateCall(feedbackLACTEOS));
                     //boolLacteos = true;
                     feedbackLACTEOS.SetActive(false);
-                    GuardarTiempoLACTEOS.text = Tiempo.GetComponent<Timer>().tiempotext.text;
+                    GuardarTiempoLACTEOS.text = Tiempo.GetComponent<Timer_v1>().tiempotext.text;
                     queso();
                     stan = 0;
                 }
-                if (Input.GetKeyDown(KeyCode.Alpha3))
+                if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetButtonDown("ButtonA"))
                 {
                     //juguetes();
                     feedbackLACTEOS.SetActive(false);
@@ -294,7 +296,7 @@ public class SelectorManager : MonoBehaviour
                 break;
             case 4://Perfumes
 
-                if (Input.GetKeyDown(KeyCode.Alpha1))
+                if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetButtonDown("ButtonB"))
                 {
                     feedbackPERFUME.SetActive(true);
                     StartCoroutine(LateCall(feedbackPERFUME));
@@ -303,7 +305,7 @@ public class SelectorManager : MonoBehaviour
                     PE_Perfume.SetActive(true);
                     stan = 0;
                 }
-                if (Input.GetKeyDown(KeyCode.Alpha2))
+                if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetButtonDown("ButtonC"))
                 {
                     Opciones.SetActive(false);
                     stan = 0;
@@ -311,7 +313,7 @@ public class SelectorManager : MonoBehaviour
                 break;
             case 5://Electronica
 
-                if (Input.GetKeyDown(KeyCode.Alpha1))
+                if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetButtonDown("ButtonB"))
                 {
                     feedbackELECTRONICA.SetActive(true);
                     StartCoroutine(LateCall(feedbackELECTRONICA));
@@ -320,7 +322,7 @@ public class SelectorManager : MonoBehaviour
                     PE_Monitor.SetActive(true);
                     stan = 0;
                 }
-                if (Input.GetKeyDown(KeyCode.Alpha2))
+                if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetButtonDown("ButtonC"))
                 {
                     Opciones.SetActive(false);
                     stan = 0;
@@ -328,7 +330,7 @@ public class SelectorManager : MonoBehaviour
                 break;
             case 6://Deporte
 
-                if (Input.GetKeyDown(KeyCode.Alpha1))
+                if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetButtonDown("ButtonB"))
                 {
                     feedbackDEPORTES.SetActive(true);
                     StartCoroutine(LateCall(feedbackDEPORTES));
@@ -337,7 +339,7 @@ public class SelectorManager : MonoBehaviour
                     PE_Pelota.SetActive(true);
                     stan = 0;
                 }
-                if (Input.GetKeyDown(KeyCode.Alpha2))
+                if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetButtonDown("ButtonC"))
                 {
                     Opciones.SetActive(false);
                     stan = 0;
@@ -345,13 +347,13 @@ public class SelectorManager : MonoBehaviour
                 break;
             case 7://Harinas
 
-                if (Input.GetKeyDown(KeyCode.Alpha1))
+                if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetButtonDown("ButtonB"))
                 {
                     boolHarinas = true;
                     _harinas.SetActive(true);
                     HARINAS.SetActive(true);
                     feedbackHARINAS.SetActive(true);
-                    GuardarTiempoHARINAS.text = Tiempo.GetComponent<Timer>().tiempotext.text;
+                    GuardarTiempoHARINAS.text = Tiempo.GetComponent<Timer_v1>().tiempotext.text;
                     StartCoroutine(LateCall(feedbackHARINAS));
                     Opciones.SetActive(false);
                     stan = 0;
@@ -364,18 +366,18 @@ public class SelectorManager : MonoBehaviour
                 break;
             case 8://Bebidas
 
-                if (Input.GetKeyDown(KeyCode.Alpha1))
+                if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetButtonDown("ButtonB"))
                 {
                     boolBebidas = true;
                     _bebidas.SetActive(true);
                     BEBIDAS.SetActive(true);
                     feedbackBEBIDAS.SetActive(true);
-                    GuardarTiempoBEBIDAS.text = Tiempo.GetComponent<Timer>().tiempotext.text;
+                    GuardarTiempoBEBIDAS.text = Tiempo.GetComponent<Timer_v1>().tiempotext.text;
                     StartCoroutine(LateCall(feedbackBEBIDAS));
                     Opciones.SetActive(false);
                     stan = 0;
                 }
-                if (Input.GetKeyDown(KeyCode.Alpha2))
+                if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetButtonDown("ButtonC"))
                 {
                     Opciones.SetActive(false);
                     stan = 0;
@@ -383,18 +385,18 @@ public class SelectorManager : MonoBehaviour
                 break;
             case 9://Verduras
 
-                if (Input.GetKeyDown(KeyCode.Alpha1))
+                if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetButtonDown("ButtonB"))
                 {
                     boolVerdura = true;
                     _verdura.SetActive(true);
                     VERDURA.SetActive(true);
                     feedbackVERDURA.SetActive(true);
-                    GuardarTiempoVERDURA.text = Tiempo.GetComponent<Timer>().tiempotext.text;
+                    GuardarTiempoVERDURA.text = Tiempo.GetComponent<Timer_v1>().tiempotext.text;
                     StartCoroutine(LateCall(feedbackVERDURA));
                     Opciones.SetActive(false);
                     stan = 0;
                 }
-                if (Input.GetKeyDown(KeyCode.Alpha2))
+                if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetButtonDown("ButtonC"))
                 {
                     Opciones.SetActive(false);
                     stan = 0;
@@ -402,7 +404,7 @@ public class SelectorManager : MonoBehaviour
                 break;
             case 10://Veterinaria
 
-                if (Input.GetKeyDown(KeyCode.Alpha1))
+                if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetButtonDown("ButtonB"))
                 {
                     feedbackVETERINARIA.SetActive(true);
                     StartCoroutine(LateCall(feedbackVETERINARIA));
@@ -411,13 +413,13 @@ public class SelectorManager : MonoBehaviour
                     PE_Balanceado.SetActive(true);
                     stan = 0;
                 }
-                if (Input.GetKeyDown(KeyCode.Alpha2))
+                if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetButtonDown("ButtonC"))
                 {
                     Opciones.SetActive(false);
                     stan = 0;
                 }
                 break;
-                
+
         }
     }
     private void Update()
@@ -430,125 +432,132 @@ public class SelectorManager : MonoBehaviour
             StartCoroutine(LateCall(Minimapa_Camara));
         }
         Condicionales();
-        if (CarneBool)
-        {
-            
-        }
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         //var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit))
+        //RaycastHit hit;
+
+        //if (Physics.Raycast(ray, out hit))
+        if (GvrPointerInputModule.CurrentRaycastResult.isValid)
         {
-            var selection = hit.transform;
-            if (hit.distance < 5 && selection.CompareTag(selectableTag) && Input.GetMouseButtonDown(0))
-            {
+
+            //var selection = hit.transform;
+            var selection = GvrPointerInputModule.CurrentRaycastResult.gameObject.transform;
+
+            //if (hit.distance < 5 && selection.CompareTag(selectableTag) && (Input.GetMouseButtonDown(0) || Input.GetButtonDown("BottomTrigger")))
+                if (selection.CompareTag(selectableTag) && (Input.GetMouseButtonDown(0) || Input.GetButtonDown("BottomTrigger")))
+                {
                 string SELECTOR = selection.GetComponent<NombreObjeto>().Objeto;
+
+                Debug.Log("SELECTOR" + SELECTOR);
 
                 if (SELECTOR != null)
                 {
                     switch (SELECTOR)
                     {
-                        case "Iniciar":
-                            Tiempo.GetComponent<Timer>().tick = true;
-                            UnityEngine.Debug.Log(SELECTOR);
-                            Iniciado = true;
-                            break;
-                        case "Terminar":
-                            Tiempo.GetComponent<Timer>().saveTime();
-                            Tiempo.GetComponent<Timer>().tick = false;
-                            Tiempo.GetComponent<Timer>().resettime();
-                            cuadro.SetActive(true);
-                            string esto= Tiempo.GetComponent<Timer>().tiempotextAnterior.text;
-                            
-                            FinalFrase.text = "Ud a finalizado las compras con un tiempo total de " + esto;
-                            _panaderia.SetActive(false);
-                            PAN.SetActive(false);
-                            _verdura.SetActive(false);
-                            VERDURA.SetActive(false);
-                            _carne.SetActive(false);
-                            CARNE.SetActive(false);
-                            _bebidas.SetActive(false);
-                            BEBIDAS.SetActive(false);
-                            _harinas.SetActive(false);
-                            HARINAS.SetActive(false);
-                            _lacteos.SetActive(false);
-                            LACTEOS.SetActive(false);
-                            _juguetes.SetActive(true);
-                            JUGUETES.SetActive(false);
+                        //case "Iniciar":
+                        //    Tiempo.GetComponent<Timer_v1>().tick = true;
+                        //    UnityEngine.Debug.Log(SELECTOR);
+                        //    Iniciado = true;
+                        //    break;
+                        //case "Terminar":
+                        //    Tiempo.GetComponent<Timer_v1>().saveTime();
+                        //    Tiempo.GetComponent<Timer_v1>().tick = false;
+                        //    Tiempo.GetComponent<Timer_v1>().resettime();
+                        //    cuadro.SetActive(true);
+                        //    string esto = Tiempo.GetComponent<Timer_v1>().tiempotextAnterior.text;
 
-                            boolBebidas = false;
-                            boolCarne = false;
-                            boolHarinas = false;
-                            boolJuguetes = false;
-                            boolLacteos = false;
-                            boolPanaderia = false;
-                            boolVerdura = false;
-                            Iniciado = false;
+                        //    Debug.Log("Tiempo!!! " + esto);
 
-                            GuardarTiempoPAN.text = "00:00";
-                            GuardarTiempoVERDURA.text = "00:00";
-                            GuardarTiempoCARNE.text = "00:00";
-                            GuardarTiempoBEBIDAS.text = "00:00";
-                            GuardarTiempoHARINAS.text = "00:00";
-                            GuardarTiempoLACTEOS.text = "00:00";
-                            GuardarTiempoJUGUETES.text = "00:00";
+                        //    FinalFrase.text = "Ud a finalizado las compras con un tiempo total de " + esto;
+                        //    _panaderia.SetActive(false);
+                        //    PAN.SetActive(false);
+                        //    _verdura.SetActive(false);
+                        //    VERDURA.SetActive(false);
+                        //    _carne.SetActive(false);
+                        //    CARNE.SetActive(false);
+                        //    _bebidas.SetActive(false);
+                        //    BEBIDAS.SetActive(false);
+                        //    _harinas.SetActive(false);
+                        //    HARINAS.SetActive(false);
+                        //    _lacteos.SetActive(false);
+                        //    LACTEOS.SetActive(false);
+                        //    _juguetes.SetActive(true);
+                        //    JUGUETES.SetActive(false);
 
-                            
+                        //    boolBebidas = false;
+                        //    boolCarne = false;
+                        //    boolHarinas = false;
+                        //    boolJuguetes = false;
+                        //    boolLacteos = false;
+                        //    boolPanaderia = false;
+                        //    boolVerdura = false;
+                        //    Iniciado = false;
+
+                        //    GuardarTiempoPAN.text = "00:00";
+                        //    GuardarTiempoVERDURA.text = "00:00";
+                        //    GuardarTiempoCARNE.text = "00:00";
+                        //    GuardarTiempoBEBIDAS.text = "00:00";
+                        //    GuardarTiempoHARINAS.text = "00:00";
+                        //    GuardarTiempoLACTEOS.text = "00:00";
+                        //    GuardarTiempoJUGUETES.text = "00:00";
 
 
-                            break;
+
+
+                        //    break;
                         case "PANADERIA":
-                            if (Iniciado&&boolPanaderia!=true) {
-                                boolPanaderia=true;
+                            if (Iniciado && boolPanaderia != true)
+                            {
+                                boolPanaderia = true;
                                 _panaderia.SetActive(true);
                                 PAN.SetActive(true);
                                 UnityEngine.Debug.Log(SELECTOR);
                                 feedbackPAN.SetActive(true);
-                                GuardarTiempoPAN.text = Tiempo.GetComponent<Timer>().tiempotext.text;
+                                GuardarTiempoPAN.text = Tiempo.GetComponent<Timer_v1>().tiempotext.text;
                                 StartCoroutine(LateCall(feedbackPAN));
-                                
+
                             }
                             break;
                         case "VERDULERIA":
-                            if (Iniciado&& boolVerdura!=true)
+                            if (Iniciado && boolVerdura != true)
                             {
-                                
+
                                 Opciones.SetActive(true);
                                 SioNo.text = ("Desea agregar Verdura?");
                                 stan = 9;
                             }
                             break;
                         case "CARNICERIA":
-                            if (Iniciado&&boolCarne!=true)
+                            if (Iniciado && boolCarne != true)
                             {
                                 //boolCarne = true;
                                 //_carne.SetActive(true);
                                 //CARNE.SetActive(true);
                                 //UnityEngine.Debug.Log(SELECTOR);
                                 feedbackCARNE.SetActive(true);
-                                //GuardarTiempoCARNE.text = Tiempo.GetComponent<Timer>().tiempotext.text;
+                                //GuardarTiempoCARNE.text = Tiempo.GetComponent<Timer_v1>().tiempotext.text;
                                 // StartCoroutine(LateCall(feedbackCARNE));
                                 stan = 1;
                             }
                             break;
                         case "BEBIDAS":
-                            if (Iniciado&&boolBebidas!=true)
+                            if (Iniciado && boolBebidas != true)
                             {
-                                
+
                                 Opciones.SetActive(true);
                                 SioNo.text = ("Desea agregar Bebida?");
                                 stan = 8;
                             }
                             break;
                         case "HARINAS":
-                            if (Iniciado&&boolHarinas!=true)
+                            if (Iniciado && boolHarinas != true)
                             {
                                 /*boolHarinas = true;
                                 _harinas.SetActive(true);
                                 HARINAS.SetActive(true);
                                 UnityEngine.Debug.Log(SELECTOR);
                                 feedbackHARINAS.SetActive(true);
-                                GuardarTiempoHARINAS.text = Tiempo.GetComponent<Timer>().tiempotext.text;
+                                GuardarTiempoHARINAS.text = Tiempo.GetComponent<Timer_v1>().tiempotext.text;
                                 StartCoroutine(LateCall(feedbackHARINAS));*/
                                 Opciones.SetActive(true);
                                 SioNo.text = ("Desea agregar Harina?");
@@ -556,27 +565,27 @@ public class SelectorManager : MonoBehaviour
                             }
                             break;
                         case "LACTEOS":
-                            if (Iniciado&&boolLacteos!=true)
+                            if (Iniciado && boolLacteos != true)
                             {
                                 //boolLacteos = true;
                                 //_lacteos.SetActive(true);
                                 //LACTEOS.SetActive(true);
                                 //UnityEngine.Debug.Log(SELECTOR);
                                 feedbackLACTEOS.SetActive(true);
-                                //GuardarTiempoLACTEOS.text = Tiempo.GetComponent<Timer>().tiempotext.text;
+                                //GuardarTiempoLACTEOS.text = Tiempo.GetComponent<Timer_v1>().tiempotext.text;
                                 //StartCoroutine(LateCall(feedbackLACTEOS));
                                 stan = 3;
                             }
                             break;
                         case "JUGUETES":
-                            if (Iniciado&&boolJuguetes!=true)
+                            if (Iniciado && boolJuguetes != true)
                             {
                                 //boolJuguetes = true;
                                 //_juguetes.SetActive(true);
                                 //JUGUETES.SetActive(true);
                                 //UnityEngine.Debug.Log(SELECTOR);
                                 feedbackJUGUETES.SetActive(true);
-                                //GuardarTiempoJUGUETES.text = Tiempo.GetComponent<Timer>().tiempotext.text;
+                                //GuardarTiempoJUGUETES.text = Tiempo.GetComponent<Timer_v1>().tiempotext.text;
                                 //StartCoroutine(LateCall(feedbackJUGUETES));
                                 stan = 2;
                             }
@@ -607,14 +616,14 @@ public class SelectorManager : MonoBehaviour
                                 //feedbackPERFUME.SetActive(true);
                                 //StartCoroutine(LateCall(feedbackPERFUME));
                                 Opciones.SetActive(true);
-                                SioNo.text=("Desea agregar Perfume?");
+                                SioNo.text = ("Desea agregar Perfume?");
                                 stan = 4;
                             }
                             break;
                         case "VETERINARIA":
                             if (Iniciado)
                             {
-                             
+
                                 Opciones.SetActive(true);
                                 SioNo.text = ("Desea agregar Balanceado?");
                                 stan = 10;
