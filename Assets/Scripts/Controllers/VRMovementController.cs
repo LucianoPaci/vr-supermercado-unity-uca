@@ -12,9 +12,7 @@ public class VRMovementController : MonoBehaviour
     public float speed = 3f;
 
     public float rotationSpeed = 100f;
-
-    private Transform trackedTransform; 
-
+    
     CharacterController myCC;
 
     void Start()
@@ -25,9 +23,7 @@ public class VRMovementController : MonoBehaviour
 
         // Hallar la camara principal
         vrCamera = Camera.main.transform;
-
-        trackedTransform = vrCamera;
-
+        
     }
     
     void Update()
@@ -58,24 +54,6 @@ public class VRMovementController : MonoBehaviour
         
     }
     
-    void GlideLocomotion()
-    {
-        float forward = Input.GetAxis("Vertical");
-
-        if (forward != 0f)
-        {
-            Vector3 moveDirection = Vector3.forward;
-            if (trackedTransform != null)
-            {
-                moveDirection = trackedTransform.forward;
-                moveDirection.y = 0f;
-            }
-            moveDirection *= -forward * speed * Time.deltaTime;
-            myCC.transform.Translate(moveDirection);
-        }
-
-
-    }
     private void Rotate()
     {
         var sideways = Input.GetAxis("Horizontal");
