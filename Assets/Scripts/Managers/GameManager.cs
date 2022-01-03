@@ -4,18 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class EntityWithTime
-{
-    public string elaspedTime { get; private set; }
-    public Entity entity { get; private set; }
-    public EntityWithTime(string time, Entity e)
-    {
-        this.elaspedTime = time;
-        this.entity = e;
-    }
-
-}
-
 public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -32,15 +20,6 @@ public class GameManager : MonoBehaviour
     {
         return _gameStarted;
     }
-
-    // private void Awake()
-    // {
-    //     PlayerManager.OnPlayerStartedGame += StartGame;
-    //     PlayerManager.OnPlayerEndedGame += EndGame;
-    //     SelectController.OnSelectedEntityChanged += HandleEntitiesFetched;
-    //     
-    //    
-    // }
     
     private void OnEnable()
     {
@@ -103,7 +82,6 @@ public class GameManager : MonoBehaviour
                 if (!TimeRecordsDictionary.ContainsKey(e.GetKey()))
                 {
                     TimeRecordsDictionary.Add(e.GetKey(), new EntityWithTime(Timer.SetLap(), e));
-                    // TimeRecordsDictionary.Add(e.GetKey(), new EntityWithTime(Timer.GetCurrentTime(), e));
                     OnNewElementAddedToDictionary?.Invoke(e);
                 }
                 else

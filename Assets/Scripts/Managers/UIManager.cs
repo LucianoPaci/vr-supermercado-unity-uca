@@ -68,7 +68,7 @@ public class UIManager : MonoBehaviour
    
     private void AppendOptionsCanvasToObject(Transform targetTransform)
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        GameObject player = PlayerManager.GetPlayer();
         Camera mainCam = player.GetComponentInChildren<Camera>();
 
         _optionsCanvas.gameObject.transform.SetParent(targetTransform, true);
