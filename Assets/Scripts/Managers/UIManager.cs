@@ -129,8 +129,8 @@ public class UIManager : MonoBehaviour
         {
             ToggleObjects(mainUIPanels, false);
             _MinimapCanvas.SetActive(true);
-            StartCoroutine(AsyncHide(_MinimapCanvas));
-            StartCoroutine(AsyncToggleObjects(ToggleObjects, mainUIPanels, true));
+            StartCoroutine(AsyncHide(_MinimapCanvas, 5));
+            StartCoroutine(AsyncToggleObjects(ToggleObjects, mainUIPanels, true, 5));
             PlayerPrefs.SetInt(Prefs.MAP_INVOCATIONS.ToString(), PlayerPrefs.GetInt(Prefs.MAP_INVOCATIONS.ToString()) + 1);
         }
     }
