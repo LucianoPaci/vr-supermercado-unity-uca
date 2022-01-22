@@ -6,11 +6,12 @@ using UnityEngine.SceneManagement;
 public class UILoader : MonoBehaviour
 {
     // Update is called once per frame
+    public string UISceneName;
     void Start()
     {
-        if (!SceneManager.GetSceneByName("UI").isLoaded)
+        if (UISceneName != null && !SceneManager.GetSceneByName(UISceneName).isLoaded)
         {
-            SceneManager.LoadSceneAsync("UI", LoadSceneMode.Additive);
+            SceneManager.LoadSceneAsync(UISceneName, LoadSceneMode.Additive);
         }
         
         else
