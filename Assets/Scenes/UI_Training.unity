@@ -1010,7 +1010,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edee3df00851c42ceafeebed8564fd59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jsonText: {fileID: 4900000, guid: 3e014cec142e547e6b36a442761069ab, type: 3}
+  jsonText: {fileID: 4900000, guid: 6f4924d53f642432993d6b09b7e05aeb, type: 3}
   content: {fileID: 1200151257}
   checkListItemPrefab: {fileID: 3649461907785981553, guid: 59c276e44c32c456a950adf3d6d9f149,
     type: 3}
@@ -2082,7 +2082,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1200151256}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.000021816}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1.4016091, y: 1.4016091, z: 1.4016091}
   m_Children: []
   m_Father: {fileID: 747207813}
@@ -2090,8 +2090,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -325.54993, y: 24.17456}
-  m_SizeDelta: {x: -131.33801, y: 668.83215}
+  m_AnchoredPosition: {x: -326, y: -72.28644}
+  m_SizeDelta: {x: -131.33801, y: 273.46033}
   m_Pivot: {x: 0.053496417, y: 0.91309637}
 --- !u!114 &1200151258
 MonoBehaviour:
@@ -2165,8 +2165,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.2331543, y: -34.798233}
-  m_SizeDelta: {x: 23.075073, y: 400.42163}
+  m_AnchoredPosition: {x: 1.2331543, y: -33.43248}
+  m_SizeDelta: {x: 23.075073, y: 185.17401}
   m_Pivot: {x: 0.053496417, y: 0.91309637}
 --- !u!114 &1224902356
 MonoBehaviour:
@@ -2227,8 +2227,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -19.3}
-  m_SizeDelta: {x: 0, y: 35.322754}
+  m_AnchoredPosition: {x: 0, y: 84.1}
+  m_SizeDelta: {x: 0, y: -153.8374}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1281122636
 MonoBehaviour:
@@ -3028,8 +3028,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -19.3}
-  m_SizeDelta: {x: 0, y: 35.322754}
+  m_AnchoredPosition: {x: 0, y: 269.5}
+  m_SizeDelta: {x: 0, y: -492.94373}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1431883793
 MonoBehaviour:
@@ -3982,7 +3982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edee3df00851c42ceafeebed8564fd59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jsonText: {fileID: 4900000, guid: 355366bbff63e4a0a9cadc7bf16f8dd4, type: 3}
+  jsonText: {fileID: 4900000, guid: 4bd1a0963533d44389f8fd92ceae8bbe, type: 3}
   content: {fileID: 1224902355}
   checkListItemPrefab: {fileID: 3649461907785981553, guid: 59c276e44c32c456a950adf3d6d9f149,
     type: 3}

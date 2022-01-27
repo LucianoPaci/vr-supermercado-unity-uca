@@ -12,4 +12,9 @@ public class MainMenuController : MonoBehaviour
    {
       MenuManager.OpenMenu(Menu.CONTROLS, gameObject);
    }
+
+   public void OnSelect_Training()
+   {
+      MenuManager.OpenMenu(Menu.TRAINING, gameObject);
+   }
 }

@@ -2,5 +2,6 @@
 {
     MAIN_MENU,
     OPTIONS,
-    CONTROLS
+    CONTROLS,
+    TRAINING
 }
