@@ -71,10 +71,15 @@ public class UIManager : MonoBehaviour
         GameObject player = PlayerManager.GetPlayer();
         Camera mainCam = player.GetComponentInChildren<Camera>();
 
-        _optionsCanvas.gameObject.transform.SetParent(targetTransform, true);
-        _optionsCanvas.gameObject.transform.position =
-            mainCam.transform.position + mainCam.transform.forward * spawnDistance;
+       GameObject anchor = targetTransform.GetComponentInChildren<AnchorElement>().gameObject;
+        
+        _optionsCanvas.gameObject.transform.SetParent(anchor.transform, true);
+        _optionsCanvas.gameObject.transform.position = anchor.transform.position + mainCam.transform.forward * spawnDistance;
         _optionsCanvas.gameObject.transform.rotation = mainCam.transform.rotation;
+        
+        // _optionsCanvas.gameObject.transform.SetParent(targetTransform, true);
+        // _optionsCanvas.gameObject.transform.position = mainCam.transform.position + mainCam.transform.forward * spawnDistance;
+        // _optionsCanvas.gameObject.transform.rotation = mainCam.transform.rotation;
     }
 
     private void DisplayInformation(Entity e)
