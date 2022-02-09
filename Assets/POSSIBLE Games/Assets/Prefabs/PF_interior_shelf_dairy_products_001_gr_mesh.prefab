@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4696415584225386}
   - component: {fileID: 33387809208719466}
   - component: {fileID: 23845127070541472}
-  - component: {fileID: 7655101160350981608}
   m_Layer: 0
   m_Name: PF_interior_shelf_dairy_products_001_gr_mesh
   m_TagString: Untagged
@@ -30,7 +29,7 @@ Transform:
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2374675754194234139}
+  - {fileID: 4119861195051654055}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -81,19 +80,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &7655101160350981608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1977577977232312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83632cf39476e45909ba4645d687ca99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1001 &605435897826006236
+--- !u!1001 &1278692802933482592
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -162,9 +149,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 880254d60e2724fa7908dcedf6dd0ea7, type: 3}
---- !u!4 &2374675754194234139 stripped
+--- !u!4 &4119861195051654055 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2923535145187852231, guid: 880254d60e2724fa7908dcedf6dd0ea7,
     type: 3}
-  m_PrefabInstance: {fileID: 605435897826006236}
+  m_PrefabInstance: {fileID: 1278692802933482592}
   m_PrefabAsset: {fileID: 0}
