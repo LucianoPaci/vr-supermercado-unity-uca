@@ -30,7 +30,8 @@ public class UIManager : MonoBehaviour
         GameManager.OnGameEnded += SetEndGameUI;
         GameManager.OnNewElementAddedToDictionary += DisplayInformation;
         GameManager.OnDisplayMap += ShowMap;
-        
+        GameManager.OnGamePaused += ShowPauseGameUI;
+
         mainUIPanels.Add(_statsPanel.gameObject);
         mainUIPanels.Add(_listPanel.gameObject);
         mainUIPanels.Add(_wrongItemsListPanel.gameObject);
@@ -46,6 +47,7 @@ public class UIManager : MonoBehaviour
         GameManager.OnGameEnded -= SetEndGameUI;
         GameManager.OnNewElementAddedToDictionary -= DisplayInformation;
         GameManager.OnDisplayMap -= ShowMap;
+        GameManager.OnGamePaused -= ShowPauseGameUI;
     }
 
 
@@ -153,6 +155,18 @@ public class UIManager : MonoBehaviour
         _wrongItemsListPanel.GetComponent<Canvas>().enabled = true;
         _wrongItemsListPanel.GetComponent<CheckListManager>().DisplayElapsedTimes();
         _listPanel.GetComponent<CheckListManager>().DisplayElapsedTimes();
+    }
+
+    private void ShowPauseGameUI()
+    {
+        if (GameManager.GamePaused())
+        {
+            Debug.Log("Game Paused!!!!");
+        }
+        else
+        {
+            Debug.Log("Game Unpaused!!!!");
+        }
     }
 
 

@@ -11,8 +11,11 @@ public class GameManager : MonoBehaviour
     public static Dictionary<string, EntityWithTime> TimeRecordsDictionary = new Dictionary<string, EntityWithTime>();
 
     private static bool _gameStarted = false;
+    private static bool _gamePaused = false;
     public static event Action OnGameStarted;
     public static event Action OnGameEnded;
+
+    public static event Action OnGamePaused;
 
     public static event Action OnDisplayMap;
 
@@ -20,9 +23,15 @@ public class GameManager : MonoBehaviour
     {
         return _gameStarted;
     }
-    
-    private void OnEnable()
+
+    public static bool GamePaused()
     {
+        return _gamePaused;
+    }
+    
+    private void Awake()
+    {   
+        
         PlayerManager.OnPlayerStartedGame += StartGame;
         PlayerManager.OnPlayerEndedGame += EndGame;
         SelectController.OnSelectedEntityChanged += HandleEntitiesFetched;
@@ -31,7 +40,6 @@ public class GameManager : MonoBehaviour
        
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetButtonDown("ButtonD") || Input.GetKeyDown(KeyCode.R))
@@ -39,9 +47,14 @@ public class GameManager : MonoBehaviour
             RestartGame();
         }
 
-        if (Input.GetKey(KeyCode.M) || Input.GetButtonDown("TopTrigger"))
+        if (Input.GetKeyDown(KeyCode.M) || Input.GetButtonDown("TopTrigger"))
         {
             OnDisplayMap?.Invoke();
+        }
+
+        if (Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("ButtonA"))
+        {
+            PauseGame();    
         }
 
     }
@@ -54,6 +67,13 @@ public class GameManager : MonoBehaviour
     }
 
 
+    void PauseGame()
+    {
+        _gamePaused = !_gamePaused;
+        Time.timeScale = _gamePaused ? 0: 1;
+        OnGamePaused?.Invoke();
+    }
+    
     void StartGame()
     {
         _gameStarted = true;
@@ -62,6 +82,7 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.DeleteKey(Prefs.MAP_INVOCATIONS.ToString());
         OnGameStarted?.Invoke();
     }
+
 
 
     void EndGame()

@@ -51,7 +51,7 @@ public class Timer : MonoBehaviour
         return _timerString;
     }
 
-     public static string SetLap()
+    public static string SetLap()
      {
          if (_lastLap == 0f)
          {
