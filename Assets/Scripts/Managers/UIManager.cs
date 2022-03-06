@@ -183,14 +183,12 @@ public class UIManager : MonoBehaviour
     {
         if (GameManager.GamePaused())
         {
-            Debug.Log("Game Paused!!!!");
             ToggleObjects(mainUIPanels, false);
             ToggleObjects(pauseMenuPanels);
             AppendCanvasToObject(CartManager.GetAnchorElement().transform);
         }
         else
         {
-            Debug.Log("Game Unpaused!!!!");
             ToggleObjects(mainUIPanels);
             ToggleObjects(pauseMenuPanels, false);
         }
