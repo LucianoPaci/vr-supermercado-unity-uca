@@ -16,16 +16,20 @@ public class CartMovementController : MonoBehaviour
     }
     private void LateUpdate()
     {
-        // //Set your input right here to start the rotation
-        if (Input.GetAxis("Vertical") != 0)
-            _isRotating = !_isRotating; //Starts the rotation
+        if (!GameManager.GamePaused())
+        {
+            // //Set your input right here to start the rotation
+            if (Input.GetAxis("Vertical") != 0)
+                _isRotating = !_isRotating; //Starts the rotation
 
-        if (true) //Check if your game object is currently rotating
-            SetRotate(this.gameObject, _mainCamera);
+            if (true) //Check if your game object is currently rotating
+                SetRotate(this.gameObject, _mainCamera);
         
-        // //When your child game object and your camera have the same rotation.y value, it stops the rotation
-        if (Math.Abs(transform.rotation.eulerAngles.y - _mainCamera.transform.rotation.eulerAngles.y) == 0)
-            _isRotating = !_isRotating;
+            // //When your child game object and your camera have the same rotation.y value, it stops the rotation
+            if (Math.Abs(transform.rotation.eulerAngles.y - _mainCamera.transform.rotation.eulerAngles.y) == 0)
+                _isRotating = !_isRotating;    
+        }
+        
     }  
     void SetRotate(GameObject toRotate, GameObject cam)
     {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 public class MenuManager: MonoBehaviour
@@ -9,10 +10,9 @@ public class MenuManager: MonoBehaviour
 
     private void Awake()
     {
-        PlayerPrefs.SetString("ControlsSchema", ControlSchema.TYPE_A.ToString());
-        GameObject canvas = GameObject.Find("Canvas");
-        mainMenu = canvas.transform.Find("MainMenu").gameObject;
-        controlsMenu = canvas.transform.Find("ControlsMenu").gameObject;
+        GameObject canvas = GameObject.Find("MainMenuCanvas");
+        mainMenu = canvas.transform.Find("MainMenuPanel").gameObject;
+        controlsMenu = canvas.transform.Find("ControlsMenuPanel").gameObject;
     }
     
     public static void OpenMenu(Menu menu, GameObject callingMenu)

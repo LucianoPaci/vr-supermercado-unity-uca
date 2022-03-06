@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,6 +18,8 @@ public class GameManager : MonoBehaviour
 
     public static event Action OnGamePaused;
 
+
+
     public static event Action OnDisplayMap;
 
     public static bool GameStarted()
@@ -28,16 +31,17 @@ public class GameManager : MonoBehaviour
     {
         return _gamePaused;
     }
-    
+
     private void Awake()
-    {   
-        
+    {
+        PlayerPrefs.SetString("ControlsSchema", ControlSchema.TYPE_A.ToString());
         PlayerManager.OnPlayerStartedGame += StartGame;
         PlayerManager.OnPlayerEndedGame += EndGame;
         SelectController.OnSelectedEntityChanged += HandleEntitiesFetched;
+        MainMenuController.OnGameResumed += PauseGame;
         RebootGameState();
-        
-       
+
+
     }
 
     void Update()
@@ -54,20 +58,22 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("ButtonA"))
         {
-            PauseGame();    
+            PauseGame();
         }
-
     }
+
+    
 
     private void OnDisable()
     {
         PlayerManager.OnPlayerStartedGame -= StartGame;
         PlayerManager.OnPlayerEndedGame -= EndGame;
         SelectController.OnSelectedEntityChanged -= HandleEntitiesFetched;
+        MainMenuController.OnGameResumed -= PauseGame;
     }
 
 
-    void PauseGame()
+    public static void PauseGame()
     {
         _gamePaused = !_gamePaused;
         Time.timeScale = _gamePaused ? 0: 1;
