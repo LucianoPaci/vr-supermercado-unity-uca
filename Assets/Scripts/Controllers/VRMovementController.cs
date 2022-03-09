@@ -2,7 +2,7 @@
 using UnityEngine;
 
 // Hacemos requerido el Componente de este tipo. Sin él, Unity lanza una excepción
-[RequireComponent(typeof(CharacterController))]
+[RequireComponent(typeof(Rigidbody))]
 public class VRMovementController : MonoBehaviour
 {
     // Camara Principal de VR
@@ -12,55 +12,69 @@ public class VRMovementController : MonoBehaviour
     public float speed = 3f;
 
     public float rotationSpeed = 100f;
-    
-    CharacterController myCC;
 
+    private Rigidbody myRb;
+    private Vector3 movement;
+    private float deltaRotation;
+    private Quaternion rotation;
+    
     void Start()
     {
-        // Hallar el Controlador del Personaje/Player
-        myCC = gameObject.GetComponent<CharacterController>();
-        
-
         // Hallar la camara principal
         vrCamera = Camera.main.transform;
         
+        // Hallar el Rigidbody del Personaje/Player
+        myRb = gameObject.GetComponent<Rigidbody>();
+        
+        
+    }
+    
+    private Quaternion GetRotation()
+    {
+        deltaRotation = Input.GetAxis("Horizontal") * rotationSpeed * Time.fixedDeltaTime;
+        Vector3 eulerAngleVelocity = new Vector3(0, deltaRotation, 0);
+        return Quaternion.Euler(eulerAngleVelocity);
+    }
+    
+    private void MoveCharacter(Vector3 direction)
+    {
+        myRb.MovePosition(transform.position + (direction * speed * Time.deltaTime));
+    }
+
+    private void RotateCharacter(Quaternion characterRotation)
+    {
+        myRb.MoveRotation(myRb.rotation * characterRotation);
     }
     
     void Update()
     {
+        // De esta manera, el movimiento es unicamente vertical y se permite la rotacion
         if (PlayerPrefs.GetString(Prefs.CONRTROLS_SCHEMA.ToString()) == ControlSchema.TYPE_A.ToString())
         {
-            ExecuteLocomotion();
-            Rotate();
+            movement = vrCamera.TransformDirection(Vector3.forward * Input.GetAxis("Vertical"));
+            rotation = GetRotation();
+            
         }
         else
         {
-            ExecuteLocomotion(true);
+            // De esta manera, el movimiento es vertical y horizontal
+            movement = vrCamera.TransformDirection(Vector3.forward * Input.GetAxis("Vertical") +
+                                                   Vector3.right * Input.GetAxis("Horizontal"));
         }
     }
 
-    private void ExecuteLocomotion(bool allowStrafe = false)
+    private void FixedUpdate()
     {
-        // De esta manera, el movimiento es vertical y horizontal
-        if (allowStrafe)
+
+        MoveCharacter(movement);
+        
+        if (deltaRotation != 0f)
         {
-            myCC.SimpleMove(speed * vrCamera.TransformDirection(Vector3.forward * Input.GetAxis("Vertical") + Vector3.right * Input.GetAxis("Horizontal")));
-        }
-        else
-        {
-            // De esta manera, el movimiento es unicamente vertical
-            myCC.SimpleMove(speed * vrCamera.TransformDirection(Vector3.forward * Input.GetAxis("Vertical")));
+            RotateCharacter(rotation);    
         }
         
     }
     
-    private void Rotate()
-    {
-        var sideways = Input.GetAxis("Horizontal");
-        if (sideways == 0f) return;
-        var rotation = sideways * rotationSpeed * Time.deltaTime;
-        myCC.transform.Rotate(0, rotation, 0);
-    }
     
-    
+ 
 }
