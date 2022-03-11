@@ -17,15 +17,15 @@ public class VRMovementController : MonoBehaviour
     private Vector3 movement;
     private float deltaRotation;
     private Quaternion rotation;
+
     
     void Start()
     {
         // Hallar la camara principal
         vrCamera = Camera.main.transform;
-        
+
         // Hallar el Rigidbody del Personaje/Player
         myRb = gameObject.GetComponent<Rigidbody>();
-        
         
     }
     
@@ -72,8 +72,9 @@ public class VRMovementController : MonoBehaviour
         {
             RotateCharacter(rotation);    
         }
-        
+
     }
+    
     
     
  
