@@ -1972,6 +1972,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1180920881}
     m_Modifications:
+    - target: {fileID: 428922678341170341, guid: 63784dc177c164f46be5d3f0bb175a0f,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnHandlePlayerSpeedChange
+      objectReference: {fileID: 0}
     - target: {fileID: 691641012779432923, guid: 63784dc177c164f46be5d3f0bb175a0f,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -1992,6 +1997,31 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1684987197766238762, guid: 63784dc177c164f46be5d3f0bb175a0f,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1684987197766238762, guid: 63784dc177c164f46be5d3f0bb175a0f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7140588208709208053, guid: 63784dc177c164f46be5d3f0bb175a0f,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7140588208709208053, guid: 63784dc177c164f46be5d3f0bb175a0f,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7140588208709208053, guid: 63784dc177c164f46be5d3f0bb175a0f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7309361228753176300, guid: 63784dc177c164f46be5d3f0bb175a0f,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -2012,6 +2042,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7309361229006906263, guid: 63784dc177c164f46be5d3f0bb175a0f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7309361229030259715, guid: 63784dc177c164f46be5d3f0bb175a0f,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -2030,6 +2065,11 @@ PrefabInstance:
     - target: {fileID: 7309361229030259715, guid: 63784dc177c164f46be5d3f0bb175a0f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7309361229107937578, guid: 63784dc177c164f46be5d3f0bb175a0f,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7309361230191364202, guid: 63784dc177c164f46be5d3f0bb175a0f,
@@ -2166,6 +2206,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8709138257860619495, guid: 63784dc177c164f46be5d3f0bb175a0f,
+        type: 3}
+      propertyPath: m_WholeNumbers
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8709138257860619495, guid: 63784dc177c164f46be5d3f0bb175a0f,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnHandlePlayerRotationChange
+      objectReference: {fileID: 0}
+    - target: {fileID: 8709138257860619495, guid: 63784dc177c164f46be5d3f0bb175a0f,
+        type: 3}
+      propertyPath: m_Value
+      value: 70
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63784dc177c164f46be5d3f0bb175a0f, type: 3}

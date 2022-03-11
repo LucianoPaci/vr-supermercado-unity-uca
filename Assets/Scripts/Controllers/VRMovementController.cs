@@ -5,13 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class VRMovementController : MonoBehaviour
 {
-    // Camara Principal de VR
     private Transform vrCamera;
-
-    // Velocidad del jugador
-    public float speed = 3f;
-
-    public float rotationSpeed = 100f;
+    
+    private float playerSpeed;
+    private float rotationSpeed;
 
     private Rigidbody myRb;
     private Vector3 movement;
@@ -26,7 +23,11 @@ public class VRMovementController : MonoBehaviour
 
         // Hallar el Rigidbody del Personaje/Player
         myRb = gameObject.GetComponent<Rigidbody>();
-        
+
+        rotationSpeed = PlayerPrefs.GetFloat(Prefs.ROTATION_SPEED.ToString());
+
+        playerSpeed = PlayerPrefs.GetFloat(Prefs.MOVEMENT_SPEED.ToString());
+
     }
     
     private Quaternion GetRotation()
@@ -38,7 +39,7 @@ public class VRMovementController : MonoBehaviour
     
     private void MoveCharacter(Vector3 direction)
     {
-        myRb.MovePosition(transform.position + (direction * speed * Time.deltaTime));
+        myRb.MovePosition(transform.position + (direction * playerSpeed * Time.deltaTime));
     }
 
     private void RotateCharacter(Quaternion characterRotation)
@@ -61,6 +62,9 @@ public class VRMovementController : MonoBehaviour
             movement = vrCamera.TransformDirection(Vector3.forward * Input.GetAxis("Vertical") +
                                                    Vector3.right * Input.GetAxis("Horizontal"));
         }
+        
+        rotationSpeed = PlayerPrefs.GetFloat(Prefs.ROTATION_SPEED.ToString());
+        playerSpeed = PlayerPrefs.GetFloat(Prefs.MOVEMENT_SPEED.ToString());
     }
 
     private void FixedUpdate()
