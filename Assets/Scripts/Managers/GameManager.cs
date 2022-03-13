@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
 
 
     public static event Action OnDisplayMap;
+ 
 
     public static bool GameStarted()
     {
@@ -33,7 +34,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        PlayerPrefs.SetString("ControlsSchema", ControlSchema.TYPE_A.ToString());
+        InitializePlayerPrefs();
         PlayerManager.OnPlayerStartedGame += StartGame;
         PlayerManager.OnPlayerEndedGame += EndGame;
         SelectController.OnSelectedEntityChanged += HandleEntitiesFetched;
@@ -59,6 +60,13 @@ public class GameManager : MonoBehaviour
         {
             PauseGame();
         }
+    }
+
+    private void InitializePlayerPrefs ()
+    {
+        PlayerPrefs.SetString(Prefs.CONRTROLS_SCHEMA.ToString(), ControlSchema.TYPE_A.ToString());
+        PlayerPrefs.SetFloat(Prefs.ROTATION_SPEED.ToString(), 70f);
+        PlayerPrefs.SetFloat(Prefs.MOVEMENT_SPEED.ToString(), 10f);
     }
 
     
