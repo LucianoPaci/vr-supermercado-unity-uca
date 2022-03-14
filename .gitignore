@@ -51,3 +51,6 @@ crashlytics-build.properties
 
 # IntelliJ
 *.idea
+
+Assets/StreamingAssets
+
