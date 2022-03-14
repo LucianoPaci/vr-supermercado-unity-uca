@@ -16,7 +16,7 @@ public class FinalScreen : MonoBehaviour
     {
         if(Input.GetButtonDown("ButtonD") || Input.GetKeyDown(KeyCode.R))
         {
-            SceneManager.LoadScene("Intro");
+            SceneManager.LoadScene("MainMenu");
         }
     }
 }

@@ -21,12 +21,18 @@ EditorBuildSettings:
     path: Assets/Scenes/Final.unity
     guid: 6a7920a54c46a384e9f5a83afc51dd2a
   - enabled: 0
-    path: Assets/Scenes/Main_Scene.unity
+    path: Assets/Scenes/Legacy/Main_Scene.unity
     guid: 1a96369783ad6e047a717d3adcf7c1dc
   - enabled: 0
-    path: Assets/Scenes/MAP.unity
+    path: Assets/Scenes/Legacy/MAP.unity
     guid: a464978e8efd3ea4a998c5c93938c9f5
   - enabled: 0
-    path: Assets/Scenes/Main_Scene-VR.unity
+    path: Assets/Scenes/Legacy/Main_Scene-VR.unity
     guid: f073d294098314da78f6acc3fb36ca03
+  - enabled: 1
+    path: Assets/Scenes/Training.unity
+    guid: 271bc951e1de14adaac6ecc605411952
+  - enabled: 1
+    path: Assets/Scenes/UI_Training.unity
+    guid: d9c2eab054ca546d085f9cb3416292e8
   m_configObjects: {}

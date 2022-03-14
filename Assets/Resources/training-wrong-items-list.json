@@ -1,0 +1,15 @@
+{
+    "checkList": [
+
+        {
+            "key": "crema",
+            "label": "Crema",
+            "required": false
+        },
+        {
+            "key": "leche",
+            "label": "Leche",
+            "required": false
+        }
+    ]
+}

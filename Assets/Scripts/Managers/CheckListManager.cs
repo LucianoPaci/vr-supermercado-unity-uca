@@ -17,32 +17,7 @@ public class CheckListManager : MonoBehaviour
 
     [Header("List of Items")]
     public List<CheckListItem> checkListObjects = new List<CheckListItem>();
-
     
-
-    /*
-     * To Parse some JSON data, we must create Serializable Plain Classes
-     */
-    [System.Serializable]
-    public class PlainCheckList
-    {
-        public List<PlainCheckListItem> checkList;
-    }
-
-    [System.Serializable]
-    public class PlainCheckListItem
-    {
-        public string label;
-        public bool required;
-        public string key;
-
-        public PlainCheckListItem(string label, bool required, string key)
-        {
-            this.label = label;
-            this.required = required;
-            this.key = key;
-        }
-    }
 
     private void Awake()
     {

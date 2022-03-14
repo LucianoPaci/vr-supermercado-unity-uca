@@ -1,0 +1,15 @@
+{
+    "checkList": [
+        {
+            "key": "bananas",
+            "label": "Bananas",
+            "required": true
+        },
+        {
+            "key": "queso",
+            "label": "Queso",
+            "required": true
+        }
+
+    ]
+}

@@ -4,18 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class EntityWithTime
-{
-    public string elaspedTime { get; private set; }
-    public Entity entity { get; private set; }
-    public EntityWithTime(string time, Entity e)
-    {
-        this.elaspedTime = time;
-        this.entity = e;
-    }
-
-}
-
 public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -23,36 +11,39 @@ public class GameManager : MonoBehaviour
     public static Dictionary<string, EntityWithTime> TimeRecordsDictionary = new Dictionary<string, EntityWithTime>();
 
     private static bool _gameStarted = false;
+    private static bool _gamePaused = false;
     public static event Action OnGameStarted;
     public static event Action OnGameEnded;
 
+    public static event Action OnGamePaused;
+
+
+
     public static event Action OnDisplayMap;
+ 
 
     public static bool GameStarted()
     {
         return _gameStarted;
     }
 
-    // private void Awake()
-    // {
-    //     PlayerManager.OnPlayerStartedGame += StartGame;
-    //     PlayerManager.OnPlayerEndedGame += EndGame;
-    //     SelectController.OnSelectedEntityChanged += HandleEntitiesFetched;
-    //     
-    //    
-    // }
-    
-    private void OnEnable()
+    public static bool GamePaused()
     {
+        return _gamePaused;
+    }
+
+    private void Awake()
+    {
+        InitializePlayerPrefs();
         PlayerManager.OnPlayerStartedGame += StartGame;
         PlayerManager.OnPlayerEndedGame += EndGame;
         SelectController.OnSelectedEntityChanged += HandleEntitiesFetched;
+        MainMenuController.OnGameResumed += PauseGame;
         RebootGameState();
-        
-       
+
+
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetButtonDown("ButtonD") || Input.GetKeyDown(KeyCode.R))
@@ -60,21 +51,42 @@ public class GameManager : MonoBehaviour
             RestartGame();
         }
 
-        if (Input.GetKey(KeyCode.M) || Input.GetButtonDown("TopTrigger"))
+        if (Input.GetKeyDown(KeyCode.M) || Input.GetButtonDown("TopTrigger"))
         {
             OnDisplayMap?.Invoke();
         }
 
+        if (Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("ButtonA"))
+        {
+            PauseGame();
+        }
     }
+
+    private void InitializePlayerPrefs ()
+    {
+        PlayerPrefs.SetString(Prefs.CONRTROLS_SCHEMA.ToString(), ControlSchema.TYPE_A.ToString());
+        PlayerPrefs.SetFloat(Prefs.ROTATION_SPEED.ToString(), 70f);
+        PlayerPrefs.SetFloat(Prefs.MOVEMENT_SPEED.ToString(), 10f);
+    }
+
+    
 
     private void OnDisable()
     {
         PlayerManager.OnPlayerStartedGame -= StartGame;
         PlayerManager.OnPlayerEndedGame -= EndGame;
         SelectController.OnSelectedEntityChanged -= HandleEntitiesFetched;
+        MainMenuController.OnGameResumed -= PauseGame;
     }
 
 
+    public static void PauseGame()
+    {
+        _gamePaused = !_gamePaused;
+        Time.timeScale = _gamePaused ? 0: 1;
+        OnGamePaused?.Invoke();
+    }
+    
     void StartGame()
     {
         _gameStarted = true;
@@ -83,6 +95,7 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.DeleteKey(Prefs.MAP_INVOCATIONS.ToString());
         OnGameStarted?.Invoke();
     }
+
 
 
     void EndGame()
@@ -103,7 +116,6 @@ public class GameManager : MonoBehaviour
                 if (!TimeRecordsDictionary.ContainsKey(e.GetKey()))
                 {
                     TimeRecordsDictionary.Add(e.GetKey(), new EntityWithTime(Timer.SetLap(), e));
-                    // TimeRecordsDictionary.Add(e.GetKey(), new EntityWithTime(Timer.GetCurrentTime(), e));
                     OnNewElementAddedToDictionary?.Invoke(e);
                 }
                 else

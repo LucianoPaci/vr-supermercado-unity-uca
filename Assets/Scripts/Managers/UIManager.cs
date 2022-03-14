@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -15,8 +16,12 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject InformationPanel;
 
     [SerializeField] private GameObject _MinimapCanvas;
+
+    [SerializeField] private GameObject _PauseMenuCanvas;
     
     private List<GameObject> mainUIPanels = new List<GameObject>();
+
+    private List<GameObject> pauseMenuPanels = new List<GameObject>();
     
     public float spawnDistance = 2f;
 
@@ -30,11 +35,13 @@ public class UIManager : MonoBehaviour
         GameManager.OnGameEnded += SetEndGameUI;
         GameManager.OnNewElementAddedToDictionary += DisplayInformation;
         GameManager.OnDisplayMap += ShowMap;
-        
+        GameManager.OnGamePaused += ShowPauseGameUI;
+
         mainUIPanels.Add(_statsPanel.gameObject);
         mainUIPanels.Add(_listPanel.gameObject);
         mainUIPanels.Add(_wrongItemsListPanel.gameObject);
         
+        pauseMenuPanels.Add(_PauseMenuCanvas.gameObject);
         
     }
 
@@ -46,6 +53,7 @@ public class UIManager : MonoBehaviour
         GameManager.OnGameEnded -= SetEndGameUI;
         GameManager.OnNewElementAddedToDictionary -= DisplayInformation;
         GameManager.OnDisplayMap -= ShowMap;
+        GameManager.OnGamePaused -= ShowPauseGameUI;
     }
 
 
@@ -68,13 +76,34 @@ public class UIManager : MonoBehaviour
    
     private void AppendOptionsCanvasToObject(Transform targetTransform)
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        GameObject player = PlayerManager.GetPlayer();
         Camera mainCam = player.GetComponentInChildren<Camera>();
 
-        _optionsCanvas.gameObject.transform.SetParent(targetTransform, true);
-        _optionsCanvas.gameObject.transform.position =
-            mainCam.transform.position + mainCam.transform.forward * spawnDistance;
+       GameObject anchor = targetTransform.GetComponentInChildren<AnchorElement>().gameObject;
+        
+        _optionsCanvas.gameObject.transform.SetParent(anchor.transform, true);
+        _optionsCanvas.gameObject.transform.position = anchor.transform.position + mainCam.transform.forward * spawnDistance;
         _optionsCanvas.gameObject.transform.rotation = mainCam.transform.rotation;
+        
+        // _optionsCanvas.gameObject.transform.SetParent(targetTransform, true);
+        // _optionsCanvas.gameObject.transform.position = mainCam.transform.position + mainCam.transform.forward * spawnDistance;
+        // _optionsCanvas.gameObject.transform.rotation = mainCam.transform.rotation;
+    }
+    
+    private void AppendCanvasToObject(Transform targetTransform)
+    {
+        GameObject player = PlayerManager.GetPlayer();
+        Camera mainCam = player.GetComponentInChildren<Camera>();
+
+        GameObject anchor = targetTransform.GetComponentInChildren<AnchorElement>().gameObject;
+        
+        _PauseMenuCanvas.gameObject.transform.SetParent(anchor.transform, true);
+        _PauseMenuCanvas.gameObject.transform.position = anchor.transform.position + mainCam.transform.forward * spawnDistance;
+        _PauseMenuCanvas.gameObject.transform.rotation = mainCam.transform.rotation;
+        
+        // _optionsCanvas.gameObject.transform.SetParent(targetTransform, true);
+        // _optionsCanvas.gameObject.transform.position = mainCam.transform.position + mainCam.transform.forward * spawnDistance;
+        // _optionsCanvas.gameObject.transform.rotation = mainCam.transform.rotation;
     }
 
     private void DisplayInformation(Entity e)
@@ -129,8 +158,8 @@ public class UIManager : MonoBehaviour
         {
             ToggleObjects(mainUIPanels, false);
             _MinimapCanvas.SetActive(true);
-            StartCoroutine(AsyncHide(_MinimapCanvas));
-            StartCoroutine(AsyncToggleObjects(ToggleObjects, mainUIPanels, true));
+            StartCoroutine(AsyncHide(_MinimapCanvas, 5));
+            StartCoroutine(AsyncToggleObjects(ToggleObjects, mainUIPanels, true, 5));
             PlayerPrefs.SetInt(Prefs.MAP_INVOCATIONS.ToString(), PlayerPrefs.GetInt(Prefs.MAP_INVOCATIONS.ToString()) + 1);
         }
     }
@@ -148,6 +177,21 @@ public class UIManager : MonoBehaviour
         _wrongItemsListPanel.GetComponent<Canvas>().enabled = true;
         _wrongItemsListPanel.GetComponent<CheckListManager>().DisplayElapsedTimes();
         _listPanel.GetComponent<CheckListManager>().DisplayElapsedTimes();
+    }
+
+    private void ShowPauseGameUI()
+    {
+        if (GameManager.GamePaused())
+        {
+            ToggleObjects(mainUIPanels, false);
+            ToggleObjects(pauseMenuPanels);
+            AppendCanvasToObject(CartManager.GetAnchorElement().transform);
+        }
+        else
+        {
+            ToggleObjects(mainUIPanels);
+            ToggleObjects(pauseMenuPanels, false);
+        }
     }
 
 

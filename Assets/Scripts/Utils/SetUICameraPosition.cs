@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class SetUICameraPosition : MonoBehaviour
 {
-    // Start is called before the first frame update
-
-    // Se tendria que asignar como Child de MAIN CAMERA
-
-
-
-        void Start()
+    void Start()
         {
-            var player = GameObject.FindGameObjectWithTag("Player");
+            var player = PlayerManager.GetPlayer();
             // var player = GameObject.FindGameObjectWithTag("CameraRig");
 
         if (player != null)
