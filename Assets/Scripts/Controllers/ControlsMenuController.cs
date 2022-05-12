@@ -7,14 +7,13 @@ using UnityEngine.UI;
 
 public class ControlsMenuController : MonoBehaviour
 {
-
    [SerializeField]
    private List<GameObject> Options;
 
    [SerializeField] private GameObject PlayerSpeed;
    [SerializeField] private GameObject PlayerRotation;
-    [SerializeField] private float RotationSteps = 10f;
-    [SerializeField] private float MovementSteps = 1f;
+   [SerializeField] private float RotationSteps = 10f;
+   [SerializeField] private float MovementSteps = 1f;
 
     private float ROTATION_MAX = 100f;
     private float SPEED_MAX = 10f;
@@ -30,24 +29,19 @@ public class ControlsMenuController : MonoBehaviour
       {
          OnHandlePlayerRotationChange(PlayerPrefs.GetFloat(Prefs.ROTATION_SPEED.ToString()));
       }
-      
       if (PlayerPrefs.HasKey(Prefs.MOVEMENT_SPEED.ToString()))
       {
          OnHandlePlayerSpeedChange(PlayerPrefs.GetFloat(Prefs.MOVEMENT_SPEED.ToString()));
       }
       DontDestroyOnLoad(this);
-      
-      
-      
    }
 
    private void Start()
    {
       ChangeColor();
       rotationTextValue = PlayerRotation.GetComponentInChildren<TMP_Text>();
-        speedTextValue = PlayerSpeed.GetComponentInChildren<TMP_Text>();
-
-    }
+      speedTextValue = PlayerSpeed.GetComponentInChildren<TMP_Text>();
+   }
 
     public void OnHandleChangeRotation(string action)
     {
@@ -101,10 +95,7 @@ public class ControlsMenuController : MonoBehaviour
    public void OnHandlePlayerRotationChange(float value)
    {
       TMP_Text textValue = PlayerRotation.GetComponentInChildren<TMP_Text>();
-      
       textValue.text = value.ToString();
-      
-      
       PlayerPrefs.SetFloat(Prefs.ROTATION_SPEED.ToString(), value);
    }
 
@@ -113,7 +104,6 @@ public class ControlsMenuController : MonoBehaviour
       string controlsSchema = PlayerPrefs.GetString(Prefs.CONRTROLS_SCHEMA.ToString());
       foreach (var option in Options.ToArray())
       {
-         
          var img = option.GetComponentInChildren<RawImage>();
          if (option.name == controlsSchema)
          {
@@ -147,7 +137,6 @@ public class ControlsMenuController : MonoBehaviour
       var integerVal = (int) val;
       var integerMax = (int) max;
       var integerMin = (int) min;
-
       return integerVal >= integerMin && integerVal <= integerMax;
    }
    

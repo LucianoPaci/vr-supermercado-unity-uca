@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-// Hacemos requerido el Componente de este tipo. Sin él, Unity lanza una excepción
+// We make the Rigidbody a required component. Without it, Unity throws an exception
 [RequireComponent(typeof(Rigidbody))]
 public class VRMovementController : MonoBehaviour
 {
@@ -14,20 +14,16 @@ public class VRMovementController : MonoBehaviour
     private Vector3 movement;
     private float deltaRotation;
     private Quaternion rotation;
-
     
     void Start()
     {
-        // Hallar la camara principal
+        // Find Main Camera
         vrCamera = Camera.main.transform;
-
-        // Hallar el Rigidbody del Personaje/Player
+        // Find Player's Rigidbody
         myRb = gameObject.GetComponent<Rigidbody>();
 
         rotationSpeed = PlayerPrefs.GetFloat(Prefs.ROTATION_SPEED.ToString());
-
         playerSpeed = PlayerPrefs.GetFloat(Prefs.MOVEMENT_SPEED.ToString());
-
     }
     
     private Quaternion GetRotation()
@@ -49,16 +45,15 @@ public class VRMovementController : MonoBehaviour
     
     void Update()
     {
-        // De esta manera, el movimiento es unicamente vertical y se permite la rotacion
+        // Vertical Movement and Rotation Allowed
         if (PlayerPrefs.GetString(Prefs.CONRTROLS_SCHEMA.ToString()) == ControlSchema.TYPE_A.ToString())
         {
             movement = vrCamera.TransformDirection(Vector3.forward * Input.GetAxis("Vertical"));
             rotation = GetRotation();
-            
         }
         else
         {
-            // De esta manera, el movimiento es vertical y horizontal
+            // Horizontal and vertical movement (Strafe allowed)
             movement = vrCamera.TransformDirection(Vector3.forward * Input.GetAxis("Vertical") +
                                                    Vector3.right * Input.GetAxis("Horizontal"));
         }
@@ -69,14 +64,11 @@ public class VRMovementController : MonoBehaviour
 
     private void FixedUpdate()
     {
-
         MoveCharacter(movement);
-        
         if (deltaRotation != 0f)
         {
             RotateCharacter(rotation);    
         }
-
     }
     
     

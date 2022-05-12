@@ -5460,8 +5460,8 @@ GameObject:
   - component: {fileID: 156500329040518788}
   - component: {fileID: 1707317688867220490}
   - component: {fileID: 676679619432048145}
-  - component: {fileID: 5448639654556297507}
   - component: {fileID: 3775018508376034030}
+  - component: {fileID: 5448639654556297507}
   m_Layer: 14
   m_Name: Increment
   m_TagString: Untagged
@@ -5580,6 +5580,33 @@ MonoBehaviour:
           m_StringArgument: INCREASE
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3775018508376034030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8886387348984413887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4ad42ad180a445e48f55576a3c528e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  img: {fileID: 0}
+  GVRClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7309361229107937750}
+        m_MethodName: OnHandleChangeRotation
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: INCREASE
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5448639654556297507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5623,30 +5650,3 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &3775018508376034030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8886387348984413887}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4ad42ad180a445e48f55576a3c528e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  img: {fileID: 0}
-  GVRClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7309361229107937750}
-        m_MethodName: OnHandleChangeRotation
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: INCREASE
-          m_BoolArgument: 0
-        m_CallState: 2
